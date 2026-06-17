@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:replace="android:dataExtractionRules,android:fullBackupContent"
+        tools:ignore="UnusedAttribute">
+
+        <activity
+            android:name=".presentation.ui.splash.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".presentation.ui.manual.ManualCleanActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <activity
+            android:name=".presentation.ui.vibration.VibrationCleanActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <activity
+            android:name=".presentation.ui.airblow.AirBlowActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <activity
+            android:name=".presentation.ui.main.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <activity
+            android:name=".presentation.ui.main.TipDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <activity
+            android:name=".presentation.ui.language.LanguageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <activity
+            android:name=".presentation.ui.onboarding.OnboardActitivty"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <activity
+            android:name=".util.ActivityLoadNativeFullV1"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <activity
+            android:name=".util.ActivityLoadNativeFullV2"
+            android:exported="false"
+            android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+        <meta-data
+            android:name="com.facebook.sdk.AutoInitEnabled"
+            android:value="true" />
+        <meta-data
+            android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+            android:value="true" />
+        <meta-data
+            android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+    </application>
+
+</manifest>

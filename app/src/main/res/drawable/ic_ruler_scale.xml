@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="40dp"
+    android:viewportWidth="280"
+    android:viewportHeight="40">
+    <!-- Green ticks (Low range) -->
+    <path android:strokeColor="#4CAF50" android:strokeWidth="2" android:pathData="M10,5v30 M20,5v30 M30,5v30 M40,5v30 M50,5v30 M60,5v30 M70,5v30 M80,5v30 M90,5v30" />
+    <!-- Orange/Brown ticks (Medium range) -->
+    <path android:strokeColor="#FF9800" android:strokeWidth="2" android:pathData="M100,5v30 M110,5v30 M120,5v30 M130,5v30 M140,5v30 M150,5v30 M160,5v30 M170,5v30 M180,5v30 M190,5v30 M200,5v30 M210,5v30 M220,5v30 M230,5v30 M240,5v30 M250,5v30" />
+    <!-- Red ticks (High range) -->
+    <path android:strokeColor="#F44336" android:strokeWidth="2" android:pathData="M260,5v30 M270,5v30 M280,5v30" />
+</vector>

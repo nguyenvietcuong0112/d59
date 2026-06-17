@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">Remove trapped water and dust from your phone\'s speaker with sound frequencies.</string>
+    <string name="volume_warning_title">Volume Warning</string>
+    <string name="volume_warning_desc">Please turn your volume to MAXIMUM and place your phone screen down for the best results.</string>
+    <string name="btn_auto_clean">Auto Clean (80s)</string>
+    <string name="btn_manual_clean">Manual Clean</string>
+    <string name="btn_headphone_clean">Headphone Clean (45s)</string>
+    <string name="btn_sound_fix">Sound Fix (1000Hz)</string>
+    <string name="btn_stop">Stop</string>
+    <string name="text_remaining">Time Remaining: %1$ds</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">Ready to Clean</string>
+    <string name="state_cleaning">Cleaning Active</string>
+    <string name="state_complete">Cleaning Completed!</string>
+    <string name="state_error">Error: %1$s</string>
+    <string name="success_alert_desc">Your speaker has been cleaned successfully. If it still sounds muffled, run Sound Fix or try again.</string>
+    <string name="btn_ok">Got it</string>
+    <string name="toast_select_language_continue">Please select a language to continue</string>
+    <string name="language">Language</string>
+    <string name="splash_ads_warning">Ads may load shortly, please wait…</string>
+    <string name="intro_slide_1_title">Clean Water</string>
+    <string name="intro_slide_2_title">Physical Vibration</string>
+    <string name="intro_slide_3_title">Air Blow</string>
+    <string name="intro_next">Next</string>
+    <string name="intro_slide_4_title">Finished!</string>
+    <string name="lore_ipsum_tip">Trong thế giới lập trình đầy rẫy những cao thủ code thần tốc, có một nhân vật đặc biệt mang tên Cường Dev. Anh không nổi tiếng vì code sạch, cũng không được biết đến bởi khả năng tối ưu hệ thống. Điều khiến Cường trở nên khác biệt chính là khả năng tạo ra bug ở những nơi mà người ta nghĩ là không thể có bug.\n\nNgười ta thường nói:\n\"Code chạy được là tốt.\"\nNhưng với Cường:\n\"Code chạy được mới là vấn đề.\"\n\nMỗi lần nhận task, Cường luôn tự tin tuyên bố:\n\"Việc này đơn giản thôi, để em xử lý trong 30 phút.\"\n\nVà đúng như lời hứa, sau 30 phút, task vẫn chưa xong nhưng đã phát sinh thêm 12 bug mới, 3 lỗi UI và 1 lỗi không ai hiểu tại sao xuất hiện.\n\nĐồng nghiệp thường có một thói quen đặc biệt. Mỗi khi thấy commit của Cường được merge vào branch develop, mọi người sẽ:\n• Kiểm tra lại code.\n• Chạy lại app.</string>
+</resources>

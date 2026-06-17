@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- System Base Colors -->
+    <color name="transparent">#00000000</color>
+    <!-- Typography Text Colors -->
+    <color name="textPrimary">#111111</color>
+    <color name="textSecondary">#666666</color>
+    <color name="textHint">#999999</color>
+
+    <!-- Modern Brand colors (Electric Neon Palette) -->
+    <color name="primary">#00D2FF</color>
+    <color name="primary_light">#1E293B</color>
+    <color name="primary_dark">#0B132B</color>
+    <color name="secondary">#10B981</color>
+    <color name="secondary_light">#1F2937</color>
+    <color name="secondary_dark">#064E3B</color>
+
+    <!-- Modern Dark Surfaces (Glassmorphic vibe) -->
+    <color name="background_light">#0B0F19</color>
+    <color name="bg_light">#FFFFFF</color>
+    <color name="primaryBlue">#00D2FF</color>
+    <color name="primary_blue_selected">#4181FF</color>
+    <color name="text_language_dark">#1A202C</color>
+    <color name="surface_light">#171E30</color>
+    <color name="card_background_light">#202940</color>
+    <color name="text_primary_light">#FFFFFF</color>
+    <color name="text_secondary_light">#94A3B8</color>
+
+    <!-- Dark Mode Colors (Harmonized with main dark theme) -->
+    <color name="background_dark">#0B0F19</color>
+    <color name="surface_dark">#171E30</color>
+    <color name="card_background_dark">#202940</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_dark">#94A3B8</color>
+
+    <!-- Dark Gradient Palette -->
+    <color name="gradient_start">#E3EBFF</color>
+    <color name="gradient_end">#FFFEFE</color>
+
+    <!-- Standard & Status Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="error">#FF4A70</color>
+    <color name="success">#10B981</color>
+    <color name="warning">#F59E0B</color>
+    
+    <!-- Grays for Borders / Subtle outlines -->
+    <color name="gray_light">#334155</color>
+    <color name="gray_dark">#94A3B8</color>
+
+    <!-- UI Custom Palette -->
+    <color name="neon_blue">#00D2FF</color>
+    <color name="neon_green">#10B981</color>
+    <color name="neon_pink">#EC4899</color>
+    <color name="neon_yellow">#F59E0B</color>
+    <color name="dark_slate">#1E293B</color>
+</resources>

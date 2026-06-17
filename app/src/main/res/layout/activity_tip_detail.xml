@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_app_gradient"
+        tools:context=".presentation.ui.main.TipDetailActivity">
+
+        <!-- Top Back Button -->
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_back"
+            android:background="@drawable/bg_settings_circle_button"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="#1A202C"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Scrollable Content -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/btn_back"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="24dp">
+
+                <!-- Image Placeholder -->
+                <View
+                    android:id="@+id/view_image_placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@drawable/bg_tip_placeholder" />
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔNG AI MUỐN GẶP"
+                    android:textColor="#1A202C"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sora_bold"
+                    android:layout_marginTop="20dp" />
+
+                <!-- Date -->
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12 Jun, 2016"
+                    android:textColor="#71717A"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/sora_regular"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Body Content -->
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#1A202C"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/sora_regular"
+                    android:lineSpacingExtra="6dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/lore_ipsum_tip" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "502110338273",
+    "project_id": "d59---speaker-cleaner",
+    "storage_bucket": "d59---speaker-cleaner.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502110338273:android:fb8b25105ce17000a30ba0",
+        "android_client_info": {
+          "package_name": "com.removedust.speaker.cleaner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZn9fqYM-n1ATTIkH3ohk5dctOYnKnccU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

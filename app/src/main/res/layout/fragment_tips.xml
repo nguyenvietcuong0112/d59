@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_tips_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        android:background="@color/transparent">
+
+        <!-- Horizontal Toggle Tabs Speaker/Micro -->
+        <LinearLayout
+            android:id="@+id/layout_tips_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:id="@+id/btn_tips_speaker_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/bg_tips_tab_btn_selected"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/btn_tips_speaker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="Speaker"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sora_bold"
+                    android:textColor="@color/white"
+                    android:background="@android:color/transparent"
+                    android:clickable="false"
+                    android:focusable="false"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btn_tips_mic_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:background="@drawable/bg_tips_tab_btn_unselected"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/btn_tips_mic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="Micro"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sora_bold"
+                    android:textColor="@color/text_language_dark"
+                    android:background="@android:color/transparent"
+                    android:clickable="false"
+                    android:focusable="false"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/layout_tips_toggle"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- SPEAKER TIPS CONTAINER -->
+                <LinearLayout
+                    android:id="@+id/layout_speaker_tips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <FrameLayout
+                        android:id="@+id/card_tip_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_tips_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="12dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:background="@drawable/bg_tip_placeholder" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔ..."
+                                android:textColor="#1A202C"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/sora_bold"
+                                android:layout_marginTop="12dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Trong thế giới lập trình đầy rẫy những cao thủ code thầ..."
+                                android:textColor="#71717A"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/sora_regular"
+                                android:layout_marginTop="6dp" />
+
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/card_tip_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_tips_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="12dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:background="@drawable/bg_tip_placeholder" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔ..."
+                                android:textColor="#1A202C"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/sora_bold"
+                                android:layout_marginTop="12dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Trong thế giới lập trình đầy rẫy những cao thủ code thầ..."
+                                android:textColor="#71717A"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/sora_regular"
+                                android:layout_marginTop="6dp" />
+
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <!-- MIC TIPS CONTAINER -->
+                <LinearLayout
+                    android:id="@+id/layout_mic_tips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <FrameLayout
+                        android:id="@+id/card_tip_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_tips_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="12dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:background="@drawable/bg_tip_placeholder" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔ..."
+                                android:textColor="#1A202C"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/sora_bold"
+                                android:layout_marginTop="12dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Trong thế giới lập trình đầy rẫy những cao thủ code thầ..."
+                                android:textColor="#71717A"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/sora_regular"
+                                android:layout_marginTop="6dp" />
+
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/card_tip_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_tips_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="12dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+                                android:background="@drawable/bg_tip_placeholder" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔ..."
+                                android:textColor="#1A202C"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/sora_bold"
+                                android:layout_marginTop="12dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Trong thế giới lập trình đầy rẫy những cao thủ code thầ..."
+                                android:textColor="#71717A"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/sora_regular"
+                                android:layout_marginTop="6dp" />
+
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
