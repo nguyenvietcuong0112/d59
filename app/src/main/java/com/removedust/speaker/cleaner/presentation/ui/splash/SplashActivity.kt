@@ -153,7 +153,7 @@ class SplashActivity : BaseActivity() {
         if (isTransitioning) return
         isTransitioning = true
 
-        val nextIntent = Intent(this, LanguageActivity::class.java)
+        val nextIntent = Intent(this, MainActivity::class.java)
         startActivity(nextIntent)
         finish()
     }

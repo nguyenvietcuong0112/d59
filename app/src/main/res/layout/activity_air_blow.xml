@@ -49,12 +49,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Center Fan Card -->
+        <!-- Center Fan Card with Concentric Circles -->
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/layout_fan_casing"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
+            android:id="@+id/layout_circle_wrapper_outer"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
             android:layout_marginTop="32dp"
-            app:cardCornerRadius="110dp"
+            app:cardCornerRadius="@dimen/_100sdp"
             app:cardElevation="6dp"
             app:strokeWidth="0dp"
             app:cardBackgroundColor="@color/white"
@@ -62,21 +63,46 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <FrameLayout
+            <View
+                android:id="@+id/view_idle_gradient"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="32dp">
+                android:background="@drawable/bg_manual_circle_gradient" />
 
-                <ImageView
+            <View
+                android:id="@+id/view_active_blue_ring"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primary_blue_selected"
+                android:visibility="invisible" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layout_circle_wrapper"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_90sdp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/white">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_manual_circle_gradient" />
+
+                <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/iv_propeller"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_fan"
-                    android:scaleType="fitCenter"
-                    app:tint="#1A202C" />
-            </FrameLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    app:lottie_rawRes="@raw/anim_airblow"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="true"
+                    android:scaleType="fitCenter" />
 
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
         <!-- Speed scale visual box -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/layout_scale_box"
@@ -86,7 +112,7 @@
             app:cardCornerRadius="24dp"
             app:strokeWidth="0dp"
             app:cardBackgroundColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/layout_fan_casing">
+            app:layout_constraintTop_toBottomOf="@id/layout_circle_wrapper_outer">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

@@ -92,6 +92,7 @@ dependencies {
 
     // Timber
     implementation libs.timber
+    implementation libs.blurview
 
     // Testing
     testImplementation libs.junit

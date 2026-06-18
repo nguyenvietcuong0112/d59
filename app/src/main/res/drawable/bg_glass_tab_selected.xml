@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. Anti-Gravity Shadow (Offset X: -1dp, Y: 4dp, Color: #000000 at 10% opacity) -->
+    <item 
+        android:left="-1dp" 
+        android:top="4dp" 
+        android:right="1dp" 
+        android:bottom="-4dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <solid android:color="#00000000" />
+        </shape>
+    </item>
+
+    <!-- 2. Solid Blue Content Layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <solid android:color="@color/primary_blue_selected" />
+        </shape>
+    </item>
+</layer-list>

@@ -85,7 +85,10 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
             is CleaningState.Idle -> {
                 binding.tvCurrentState.text = "Ready to clean"
                 binding.progressIndicator.progress = 0
-                binding.btnMainAutoClean.setImageResource(R.drawable.ic_cleaner_unselected)
+                if (binding.btnMainAutoClean.isAnimating) {
+                    binding.btnMainAutoClean.cancelAnimation()
+                }
+                binding.btnMainAutoClean.progress = 0f
                 binding.btnMainAutoClean.isEnabled = true
 
                 binding.layoutActiveStatusTop.visibility = View.INVISIBLE
@@ -97,7 +100,9 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
             is CleaningState.Cleaning -> {
                 binding.tvCurrentState.text = "Cleaning Active"
                 binding.progressIndicator.progress = uiState.progress
-                binding.btnMainAutoClean.setImageResource(R.drawable.ic_cleaner_selected)
+                if (!binding.btnMainAutoClean.isAnimating) {
+                    binding.btnMainAutoClean.playAnimation()
+                }
 
                 binding.layoutActiveStatusTop.visibility = View.VISIBLE
                 binding.btnStopCleaning.visibility = View.VISIBLE

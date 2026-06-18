@@ -6,6 +6,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.media.AudioManager
 import android.os.Bundle
+import android.view.View
 import android.view.animation.LinearInterpolator
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -31,7 +32,6 @@ class AirBlowActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels { MainViewModel.Factory }
 
     private var selectedSpeed = AirBlowSpeed.MEDIUM
-    private var fanAnimator: ObjectAnimator? = null
     private var isPlaying = false
 
     private enum class AirBlowSpeed {
@@ -144,12 +144,14 @@ class AirBlowActivity : AppCompatActivity() {
             is CleaningState.Idle -> {
                 isPlaying = false
                 stopFanRotation()
+                binding.viewActiveBlueRing.visibility = View.INVISIBLE
                 binding.btnPowerStartStop.setCardBackgroundColor(ContextCompat.getColor(this, R.color.primary_blue_selected))
                 binding.tvStartStop.text = "Start"
             }
             is CleaningState.Cleaning -> {
                 isPlaying = true
                 startFanRotation(selectedSpeed)
+                binding.viewActiveBlueRing.visibility = View.VISIBLE
                 binding.btnPowerStartStop.setCardBackgroundColor(ContextCompat.getColor(this, R.color.error))
                 binding.tvStartStop.text = "Stop"
             }
@@ -164,24 +166,22 @@ class AirBlowActivity : AppCompatActivity() {
     }
 
     private fun startFanRotation(speed: AirBlowSpeed) {
-        fanAnimator?.cancel()
-        val duration = when (speed) {
-            AirBlowSpeed.LOW -> 1000L
-            AirBlowSpeed.MEDIUM -> 700L
-            AirBlowSpeed.BOOST -> 400L
+        val animationSpeed = when (speed) {
+            AirBlowSpeed.LOW -> 0.85f
+            AirBlowSpeed.MEDIUM -> 1.2f
+            AirBlowSpeed.BOOST -> 2f
         }
-        fanAnimator = ObjectAnimator.ofFloat(binding.ivPropeller, "rotation", 0f, 360f).apply {
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.RESTART
-            setDuration(duration)
-            interpolator = LinearInterpolator()
-            start()
+        binding.ivPropeller.speed = animationSpeed
+        if (!binding.ivPropeller.isAnimating) {
+            binding.ivPropeller.playAnimation()
         }
     }
 
     private fun stopFanRotation() {
-        fanAnimator?.cancel()
-        fanAnimator = null
+        if (binding.ivPropeller.isAnimating) {
+            binding.ivPropeller.cancelAnimation()
+        }
+        binding.ivPropeller.progress = 0f
     }
 
     private fun checkVolumeAndRun(action: () -> Unit) {

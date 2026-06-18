@@ -16,6 +16,7 @@ class TipsFragment : AbsBaseFragment<FragmentTipsBinding>() {
 
     override fun initView() {
         setupListeners()
+        setTipsTabActive(isSpeaker = true)
     }
 
     private fun setupListeners() {
@@ -60,14 +61,14 @@ class TipsFragment : AbsBaseFragment<FragmentTipsBinding>() {
         val context = requireContext()
         if (isSpeaker) {
             binding.btnTipsSpeaker.setTextColor(ContextCompat.getColor(context, R.color.white))
-            binding.btnTipsSpeakerContainer.setBackgroundResource(R.drawable.bg_tips_tab_btn_selected)
+            binding.btnTipsSpeakerContainer.setGlassTabState(true)
             binding.btnTipsMic.setTextColor(ContextCompat.getColor(context, R.color.text_language_dark))
-            binding.btnTipsMicContainer.setBackgroundResource(R.drawable.bg_tips_tab_btn_unselected)
+            binding.btnTipsMicContainer.setGlassTabState(false)
         } else {
             binding.btnTipsSpeaker.setTextColor(ContextCompat.getColor(context, R.color.text_language_dark))
-            binding.btnTipsSpeakerContainer.setBackgroundResource(R.drawable.bg_tips_tab_btn_unselected)
+            binding.btnTipsSpeakerContainer.setGlassTabState(false)
             binding.btnTipsMic.setTextColor(ContextCompat.getColor(context, R.color.white))
-            binding.btnTipsMicContainer.setBackgroundResource(R.drawable.bg_tips_tab_btn_selected)
+            binding.btnTipsMicContainer.setGlassTabState(true)
         }
     }
 }

@@ -68,23 +68,24 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     app:indicatorSize="@dimen/_150sdp"
-                    app:trackThickness="@dimen/_8sdp"
+                    app:trackThickness="@dimen/_10sdp"
                     app:trackColor="#E5EFFF"
                     app:indicatorColor="@color/primary_blue_selected"
                     android:progress="0"
                     android:max="100" />
 
                 <!-- Auto Clean Broom Circle -->
-                <com.google.android.material.imageview.ShapeableImageView
+                <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/btn_main_auto_clean"
-                    android:layout_width="@dimen/_120sdp"
-                    android:layout_height="@dimen/_120sdp"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_130sdp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_cleaner_unselected"
+                    app:lottie_rawRes="@raw/anim_cleaner"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="true"
                     android:scaleType="fitCenter"
                     android:clickable="true"
-                    android:focusable="true"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle" />
+                    android:focusable="true" />
 
             </FrameLayout>
 
