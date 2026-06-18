@@ -20,6 +20,7 @@ import com.removedust.speaker.cleaner.presentation.state.CleaningState
 import com.removedust.speaker.cleaner.presentation.state.CleanupUIState
 import com.removedust.speaker.cleaner.presentation.ui.main.MainViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.removedust.speaker.cleaner.util.showVolumeWarningDialog
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -79,36 +80,19 @@ class VibrationCleanActivity : AppCompatActivity() {
     }
 
     private fun updateSelectorUI() {
-        val selectedStroke = ContextCompat.getColor(this, R.color.primary)
-        val unselectedStroke = ContextCompat.getColor(this, R.color.gray_light)
-
-        if (!isStrongMode) {
-            binding.cardModeNormal.setStrokeColor(ColorStateList.valueOf(selectedStroke))
-            binding.cardModeNormal.setCardBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.primary_light)))
-            binding.ivModeNormal.imageTintList = ColorStateList.valueOf(selectedStroke)
-            binding.tvModeNormal.setTextColor(selectedStroke)
-
-            binding.cardModeStrong.setStrokeColor(ColorStateList.valueOf(unselectedStroke))
-            binding.cardModeStrong.setCardBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.surface_light)))
-            binding.ivModeStrong.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.gray_dark))
-            binding.tvModeStrong.setTextColor(ContextCompat.getColor(this, R.color.gray_dark))
-        } else {
-            binding.cardModeNormal.setStrokeColor(ColorStateList.valueOf(unselectedStroke))
-            binding.cardModeNormal.setCardBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.surface_light)))
-            binding.ivModeNormal.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.gray_dark))
-            binding.tvModeNormal.setTextColor(ContextCompat.getColor(this, R.color.gray_dark))
-
-            binding.cardModeStrong.setStrokeColor(ColorStateList.valueOf(selectedStroke))
-            binding.cardModeStrong.setCardBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.primary_light)))
-            binding.ivModeStrong.imageTintList = ColorStateList.valueOf(selectedStroke)
-            binding.tvModeStrong.setTextColor(selectedStroke)
-        }
+        binding.cardModeNormal.isSelected = !isStrongMode
+        binding.cardModeStrong.isSelected = isStrongMode
     }
 
     private fun startVibrationCleaning() {
         isVibrating = true
-        binding.btnVibrationStartStop.text = "Dá»«ng"
-        binding.btnVibrationStartStop.setBackgroundColor(ContextCompat.getColor(this, R.color.error))
+        binding.viewActiveBlueRing.visibility = android.view.View.VISIBLE
+        binding.lottieGlow.visibility = android.view.View.VISIBLE
+        binding.lottieGlow.playAnimation()
+        binding.btnVibrationStartStop.text = "Stop"
+        binding.btnVibrationStartStop.backgroundTintList = ColorStateList.valueOf(
+            ContextCompat.getColor(this, R.color.error)
+        )
 
         // Disable mode selectors
         binding.cardModeNormal.isEnabled = false
@@ -144,8 +128,13 @@ class VibrationCleanActivity : AppCompatActivity() {
         viewModel.stopCleaning()
         stopHardwareVibrate()
 
-        binding.btnVibrationStartStop.text = "Báº¯t Ä‘áº§u"
-        binding.btnVibrationStartStop.setBackgroundColor(ContextCompat.getColor(this, R.color.primary))
+        binding.viewActiveBlueRing.visibility = android.view.View.INVISIBLE
+        binding.lottieGlow.visibility = android.view.View.INVISIBLE
+        binding.lottieGlow.cancelAnimation()
+        binding.btnVibrationStartStop.text = "Start"
+        binding.btnVibrationStartStop.backgroundTintList = ColorStateList.valueOf(
+            ContextCompat.getColor(this, R.color.primary_blue_selected)
+        )
         binding.tvVibrationPercent.text = "0 %"
 
         // Re-enable mode selectors
@@ -218,12 +207,9 @@ class VibrationCleanActivity : AppCompatActivity() {
         val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
 
         if (currentVolume < maxVolume) {
-            MaterialAlertDialogBuilder(this)
-                .setTitle(R.string.volume_warning_title)
-                .setMessage(R.string.volume_warning_desc)
-                .setPositiveButton(R.string.btn_ok) { _, _ -> action() }
-                .setNegativeButton(android.R.string.cancel, null)
-                .show()
+            showVolumeWarningDialog {
+                action()
+            }
         } else {
             action()
         }
@@ -231,8 +217,8 @@ class VibrationCleanActivity : AppCompatActivity() {
 
     private fun showSuccessDialog() {
         MaterialAlertDialogBuilder(this)
-            .setTitle("HoÃ n thÃ nh")
-            .setMessage("ÄÃ£ lÃ m sáº¡ch mÃ ng loa báº±ng cÆ¡ cháº¿ rung váº­t lÃ½ thÃ nh cÃ´ng!")
+            .setTitle("Completed")
+            .setMessage("Successfully cleaned the speaker membrane using the physical vibration mechanism!")
             .setPositiveButton(R.string.btn_ok, null)
             .show()
     }

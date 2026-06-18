@@ -15,8 +15,11 @@ import com.removedust.speaker.cleaner.presentation.state.CleaningState
 import com.removedust.speaker.cleaner.presentation.state.CleanupUIState
 import com.removedust.speaker.cleaner.presentation.ui.main.MainViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.removedust.speaker.cleaner.util.showVolumeWarningDialog
 import kotlinx.coroutines.launch
 import dagger.hilt.android.AndroidEntryPoint
+
+import android.view.View
 
 @AndroidEntryPoint
 class ManualCleanActivity : AppCompatActivity() {
@@ -78,20 +81,28 @@ class ManualCleanActivity : AppCompatActivity() {
 
         when (val state = uiState.state) {
             is CleaningState.Idle -> {
-                binding.tvManualState.text = "Sáºµn sÃ ng"
-                binding.manualProgressIndicator.progress = 0
-                binding.manualProgressIndicator.isIndeterminate = false
-                binding.btnManualStartStop.text = "Báº¯t Ä‘áº§u"
-                binding.btnManualStartStop.setIconResource(android.R.drawable.ic_media_play)
+                binding.tvManualState.text = "Ready"
+
+                binding.lottieGlow.visibility = View.INVISIBLE
+                binding.lottieGlow.cancelAnimation()
+                binding.viewActiveBlueRing.visibility = View.INVISIBLE
+                binding.btnManualStartStop.text = "Start"
+                binding.btnManualStartStop.backgroundTintList = android.content.res.ColorStateList.valueOf(
+                    androidx.core.content.ContextCompat.getColor(this, R.color.primary_blue_selected)
+                )
                 binding.frequencySlider.setEnabled(true)
             }
             is CleaningState.Cleaning -> {
-                binding.tvManualState.text = "Äang phÃ¡t Ã¢m thanh"
+                binding.tvManualState.text = "Cleaning Active"
                 binding.tvManualFrequency.text = getString(R.string.text_frequency, uiState.currentFrequency)
                 binding.frequencySlider.setFrequency(uiState.currentFrequency)
-                binding.manualProgressIndicator.isIndeterminate = true
-                binding.btnManualStartStop.text = "Dá»«ng láº¡i"
-                binding.btnManualStartStop.setIconResource(android.R.drawable.ic_media_pause)
+                binding.lottieGlow.visibility = View.VISIBLE
+                binding.lottieGlow.playAnimation()
+                binding.viewActiveBlueRing.visibility = View.VISIBLE
+                binding.btnManualStartStop.text = "Stop"
+                binding.btnManualStartStop.backgroundTintList = android.content.res.ColorStateList.valueOf(
+                    androidx.core.content.ContextCompat.getColor(this, R.color.error)
+                )
             }
             is CleaningState.Complete -> {
                 viewModel.stopCleaning()
@@ -109,12 +120,9 @@ class ManualCleanActivity : AppCompatActivity() {
         val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
 
         if (currentVolume < maxVolume) {
-            MaterialAlertDialogBuilder(this)
-                .setTitle(R.string.volume_warning_title)
-                .setMessage(R.string.volume_warning_desc)
-                .setPositiveButton(R.string.btn_ok) { _, _ -> action() }
-                .setNegativeButton(android.R.string.cancel, null)
-                .show()
+            showVolumeWarningDialog {
+                action()
+            }
         } else {
             action()
         }

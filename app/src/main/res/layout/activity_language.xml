@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_language_light_gradient">
+    android:background="@drawable/bg_app_gradient">
 
     <!-- Top Toolbar -->
     <LinearLayout
@@ -28,12 +28,14 @@
                 android:id="@+id/iv_back"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="16dp"
-                android:padding="8dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_back"
+                android:layout_marginStart="20dp"
+                android:padding="12dp"
+                android:background="@drawable/bg_settings_circle_button"
+                android:src="@drawable/ic_back_arrow"
                 app:tint="#1A202C"
                 android:visibility="gone"
+                android:clickable="true"
+                android:focusable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

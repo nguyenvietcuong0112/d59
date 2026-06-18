@@ -1,5 +1,6 @@
 package com.removedust.speaker.cleaner.presentation.ui.main
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.removedust.speaker.cleaner.R
 import com.removedust.speaker.cleaner.databinding.ActivityMainBinding
+import com.removedust.speaker.cleaner.presentation.ui.settings.SettingsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -72,7 +74,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupListeners() {
         binding.btnSettings.setOnClickListener {
-            Toast.makeText(this, "Cấu hình - Ứng dụng đã được tối ưu tần số.", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
         }
     }
 

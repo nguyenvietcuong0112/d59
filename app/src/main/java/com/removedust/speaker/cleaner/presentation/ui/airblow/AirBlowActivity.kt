@@ -3,6 +3,7 @@ package com.removedust.speaker.cleaner.presentation.ui.airblow
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.media.AudioManager
 import android.os.Bundle
 import android.view.animation.LinearInterpolator
@@ -19,6 +20,7 @@ import com.removedust.speaker.cleaner.presentation.state.CleaningState
 import com.removedust.speaker.cleaner.presentation.state.CleanupUIState
 import com.removedust.speaker.cleaner.presentation.ui.main.MainViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.removedust.speaker.cleaner.util.showVolumeWarningDialog
 import kotlinx.coroutines.launch
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,7 +30,7 @@ class AirBlowActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAirBlowBinding
     private val viewModel: MainViewModel by viewModels { MainViewModel.Factory }
 
-    private var selectedSpeed = AirBlowSpeed.BOOST
+    private var selectedSpeed = AirBlowSpeed.MEDIUM
     private var fanAnimator: ObjectAnimator? = null
     private var isPlaying = false
 
@@ -54,7 +56,7 @@ class AirBlowActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.btnSpeedLow.setOnClickListener {
+        binding.btnSpeedDecrease.setOnClickListener {
             if (selectedSpeed != AirBlowSpeed.LOW) {
                 selectedSpeed = AirBlowSpeed.LOW
                 updateSpeedButtonsUI()
@@ -76,7 +78,7 @@ class AirBlowActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnSpeedBoost.setOnClickListener {
+        binding.btnSpeedIncrease.setOnClickListener {
             if (selectedSpeed != AirBlowSpeed.BOOST) {
                 selectedSpeed = AirBlowSpeed.BOOST
                 updateSpeedButtonsUI()
@@ -86,7 +88,6 @@ class AirBlowActivity : AppCompatActivity() {
                 }
             }
         }
-
 
         binding.btnPowerStartStop.setOnClickListener {
             if (isPlaying) {
@@ -105,38 +106,10 @@ class AirBlowActivity : AppCompatActivity() {
     }
 
     private fun updateSpeedButtonsUI() {
-        val activeColorLow = ContextCompat.getColor(this, R.color.neon_yellow)
-        val activeColorMedium = ContextCompat.getColor(this, R.color.primary)
-        val activeColorBoost = ContextCompat.getColor(this, R.color.success)
-        val inactiveBgColor = ContextCompat.getColor(this, R.color.primary_light)
-        val inactiveTextColor = ContextCompat.getColor(this, R.color.text_secondary_light)
-
-        // Reset all buttons to inactive styling
-        binding.btnSpeedLow.backgroundTintList = ColorStateList.valueOf(inactiveBgColor)
-        binding.btnSpeedLow.setTextColor(inactiveTextColor)
-        binding.btnSpeedMedium.backgroundTintList = ColorStateList.valueOf(inactiveBgColor)
-        binding.btnSpeedMedium.setTextColor(inactiveTextColor)
-        binding.btnSpeedBoost.backgroundTintList = ColorStateList.valueOf(inactiveBgColor)
-        binding.btnSpeedBoost.setTextColor(inactiveTextColor)
-
-        // Apply active styling based on selection
-        when (selectedSpeed) {
-            AirBlowSpeed.LOW -> {
-                binding.btnSpeedLow.backgroundTintList = ColorStateList.valueOf(activeColorLow)
-                binding.btnSpeedLow.setTextColor(ContextCompat.getColor(this, R.color.white))
-                moveArrowToSpeed(AirBlowSpeed.LOW)
-            }
-            AirBlowSpeed.MEDIUM -> {
-                binding.btnSpeedMedium.backgroundTintList = ColorStateList.valueOf(activeColorMedium)
-                binding.btnSpeedMedium.setTextColor(ContextCompat.getColor(this, R.color.white))
-                moveArrowToSpeed(AirBlowSpeed.MEDIUM)
-            }
-            AirBlowSpeed.BOOST -> {
-                binding.btnSpeedBoost.backgroundTintList = ColorStateList.valueOf(activeColorBoost)
-                binding.btnSpeedBoost.setTextColor(ContextCompat.getColor(this, R.color.white))
-                moveArrowToSpeed(AirBlowSpeed.BOOST)
-            }
-        }
+        binding.btnSpeedDecrease.isSelected = (selectedSpeed == AirBlowSpeed.LOW)
+        binding.btnSpeedMedium.isSelected = (selectedSpeed == AirBlowSpeed.MEDIUM)
+        binding.btnSpeedIncrease.isSelected = (selectedSpeed == AirBlowSpeed.BOOST)
+        moveArrowToSpeed(selectedSpeed)
     }
 
     private fun moveArrowToSpeed(speed: AirBlowSpeed) {
@@ -171,12 +144,14 @@ class AirBlowActivity : AppCompatActivity() {
             is CleaningState.Idle -> {
                 isPlaying = false
                 stopFanRotation()
-                binding.btnPowerStartStop.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.error))
+                binding.btnPowerStartStop.setCardBackgroundColor(ContextCompat.getColor(this, R.color.primary_blue_selected))
+                binding.tvStartStop.text = "Start"
             }
             is CleaningState.Cleaning -> {
                 isPlaying = true
                 startFanRotation(selectedSpeed)
-                binding.btnPowerStartStop.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.success))
+                binding.btnPowerStartStop.setCardBackgroundColor(ContextCompat.getColor(this, R.color.error))
+                binding.tvStartStop.text = "Stop"
             }
             is CleaningState.Complete -> {
                 viewModel.stopCleaning()
@@ -215,12 +190,9 @@ class AirBlowActivity : AppCompatActivity() {
         val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
 
         if (currentVolume < maxVolume) {
-            MaterialAlertDialogBuilder(this)
-                .setTitle(R.string.volume_warning_title)
-                .setMessage(R.string.volume_warning_desc)
-                .setPositiveButton(R.string.btn_ok) { _, _ -> action() }
-                .setNegativeButton(android.R.string.cancel, null)
-                .show()
+            showVolumeWarningDialog {
+                action()
+            }
         } else {
             action()
         }

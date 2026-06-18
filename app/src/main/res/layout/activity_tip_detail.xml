@@ -12,16 +12,15 @@
         <!-- Top Back Button -->
         <ImageView
             android:id="@+id/btn_back"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/ic_back_arrow"
             android:background="@drawable/bg_settings_circle_button"
             android:padding="12dp"
             android:clickable="true"
             android:focusable="true"
-            app:tint="#1A202C"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -7,116 +7,144 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_gradient"
-        android:padding="20dp"
-        tools:context=".presentation.ui.ManualCleanActivity">
+        android:paddingHorizontal="@dimen/_10sdp"
+        tools:context=".presentation.ui.manual.ManualCleanActivity">
 
         <!-- Top Navigation Bar -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_22sdp"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/btn_back"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_back"
-                android:scaleType="centerInside"
-                android:padding="8dp"
-                android:background="@drawable/circle_glass_bg"
+                android:src="@drawable/ic_back_arrow"
+                android:background="@drawable/bg_settings_circle_button"
+                android:padding="12dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:tint="@color/white"
+                app:tint="#1A202C"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LÃ m sáº¡ch thá»§ cÃ´ng"
-                android:textSize="20sp"
+                android:text="Manual Cleaning"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:fontFamily="@font/sora_bold"
+                android:textColor="#1A202C"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Visual frequency circle indicator -->
+        <!-- Center Stack Area for Lottie Glow and Circle Card -->
         <FrameLayout
-            android:id="@+id/layout_circle_wrapper"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="32dp"
+            android:id="@+id/layout_circle_wrapper_parent"
+            android:layout_width="@dimen/_210sdp"
+            android:layout_height="@dimen/_210sdp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- Background circle -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/circle_glass_bg" />
-
-            <!-- Blue ring indicating active state -->
-            <com.google.android.material.progressindicator.CircularProgressIndicator
-                android:id="@+id/manual_progress_indicator"
+            <!-- 1. Lottie Animation for Glow (bottom layer) -->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_glow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                app:indicatorSize="190dp"
-                app:trackThickness="10dp"
-                app:indicatorColor="@color/primary"
-                app:trackColor="#1F293D"
-                android:progress="0"
-                android:max="100" />
+                app:lottie_rawRes="@raw/glowing"
+                app:lottie_autoPlay="false"
+                app:lottie_speed="1.2"
+                app:lottie_loop="true"
+                android:visibility="invisible" />
 
-            <!-- Inside text showing frequency -->
-            <LinearLayout
+            <!-- 2. Outer Circle Card (middle layer, on top of Lottie) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layout_circle_wrapper_outer"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_100sdp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/white">
+
+                <View
+                    android:id="@+id/view_idle_gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_manual_circle_gradient" />
+
+                <!-- Active state blue ring (drawn on top of gradient, but below inner card) -->
+                <View
+                    android:id="@+id/view_active_blue_ring"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary_blue_selected"
+                    android:visibility="invisible" />
+
+                <!-- 3. Inner Circle Card (nested inside Outer Circle Card) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layout_circle_wrapper"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_130sdp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="@dimen/_90sdp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_manual_circle_gradient" />
+
+                    <!-- Text View for Frequency (inside inner card, top layer) -->
+                    <TextView
+                        android:id="@+id/tv_manual_frequency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="1000 Hz"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary_blue_selected"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/sora_bold" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_manual_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/tv_manual_state"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sáºµn sÃ ng"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_secondary_light"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_manual_frequency"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000 Hz"
-                    android:textSize="26sp"
-                    android:textColor="@color/primary"
-                    android:textStyle="bold"
-                    android:layout_marginTop="4dp" />
-
-            </LinearLayout>
         </FrameLayout>
 
-        <!-- Control Slider -->
+        <!-- Custom Frequency Slider Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_slider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="0dp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/gray_light"
-            app:cardBackgroundColor="@color/surface_light"
-            app:layout_constraintTop_toBottomOf="@id/layout_circle_wrapper">
+            app:cardCornerRadius="24dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/layout_circle_wrapper_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -132,19 +160,19 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Play/Stop control button -->
+        <!-- Start/Stop Button at the bottom -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_manual_start_stop"
-            style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Báº¯t Ä‘áº§u"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:layout_height="54dp"
             android:layout_marginBottom="24dp"
-            app:icon="@android:drawable/ic_media_play"
-            app:backgroundTint="@color/primary"
-            app:cornerRadius="18dp"
+            android:text="Start"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/primary_blue_selected"
+            app:cornerRadius="16dp"
+            app:elevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

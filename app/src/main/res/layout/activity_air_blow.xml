@@ -7,91 +7,99 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_gradient"
-        android:padding="20dp"
-        tools:context=".presentation.ui.AirBlowActivity">
+        android:paddingHorizontal="@dimen/_10sdp"
+        tools:context=".presentation.ui.airblow.AirBlowActivity">
 
         <!-- Top Navigation Bar -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_22sdp"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/btn_back"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_back"
-                android:scaleType="centerInside"
-                android:padding="8dp"
-                android:background="@drawable/circle_glass_bg"
+                android:src="@drawable/ic_back_arrow"
+                android:background="@drawable/bg_settings_circle_button"
+                android:padding="12dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:tint="@color/white"
+                app:tint="#1A202C"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thổi khí"
-                android:textSize="20sp"
+                android:text="Air Blow"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:fontFamily="@font/sora_bold"
+                android:textColor="#1A202C"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Center Fan Casing and Propeller -->
-        <FrameLayout
+        <!-- Center Fan Card -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/layout_fan_casing"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/ic_fan_box_bg"
-            android:padding="24dp"
+            app:cardCornerRadius="110dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageView
-                android:id="@+id/iv_propeller"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_fan"
-                android:scaleType="fitCenter"
-                app:tint="@color/white" />
-        </FrameLayout>
+                android:padding="32dp">
+
+                <ImageView
+                    android:id="@+id/iv_propeller"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_fan"
+                    android:scaleType="fitCenter"
+                    app:tint="#1A202C" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Speed scale visual box -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/layout_scale_box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="0dp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/gray_light"
-            app:cardBackgroundColor="@color/surface_light"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="24dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/layout_fan_casing">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <!-- Ruler Scale -->
                 <ImageView
                     android:id="@+id/iv_ruler_scale"
-                    android:layout_width="280dp"
-                    android:layout_height="32dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
                     android:src="@drawable/ic_ruler_scale"
-                    app:tint="@color/white"
+                    app:tint="#D9D9D9"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
@@ -102,10 +110,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Low"
-                    android:textSize="12sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_secondary_light"
-                    android:layout_marginTop="4dp"
+                    android:textColor="#1A202C"
+                    android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
                     app:layout_constraintStart_toStartOf="@id/iv_ruler_scale" />
 
@@ -114,10 +122,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Medium"
-                    android:textSize="12sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_secondary_light"
-                    android:layout_marginTop="4dp"
+                    android:textColor="#1A202C"
+                    android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
@@ -127,21 +135,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="High"
-                    android:textSize="12sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_secondary_light"
-                    android:layout_marginTop="4dp"
+                    android:textColor="#1A202C"
+                    android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
                     app:layout_constraintEnd_toEndOf="@id/iv_ruler_scale" />
 
                 <!-- Arrow indicator -->
                 <ImageView
                     android:id="@+id/iv_scale_arrow"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
                     android:src="@drawable/ic_green_arrow"
-                    android:layout_marginTop="20dp"
-                    app:tint="@color/primary"
+                    android:layout_marginTop="16dp"
+                    app:tint="#2F80ED"
                     app:layout_constraintTop_toBottomOf="@id/tv_medium_label"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
@@ -153,71 +161,112 @@
         <LinearLayout
             android:id="@+id/layout_speed_selectors"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="56dp"
             android:orientation="horizontal"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintTop_toBottomOf="@id/layout_scale_box">
 
-            <!-- Thấp button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_speed_low"
-                style="@style/Widget.Material3.Button"
+            <!-- Decrease button -->
+            <LinearLayout
+                android:id="@+id/btn_speed_decrease"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginEnd="6dp"
-                android:text="Thấp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:backgroundTint="@color/neon_yellow"
-                app:cornerRadius="14dp" />
+                android:background="@drawable/bg_air_blow_btn_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
 
-            <!-- Trung bình button -->
-            <com.google.android.material.button.MaterialButton
+                <TextView
+                    android:id="@+id/tv_decrease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Decrease"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:duplicateParentState="true"
+                    android:textColor="@color/color_air_blow_text_selector" />
+            </LinearLayout>
+
+            <!-- Medium button -->
+            <LinearLayout
                 android:id="@+id/btn_speed_medium"
-                style="@style/Widget.Material3.Button"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginStart="6dp"
                 android:layout_marginEnd="6dp"
-                android:text="Trung bình"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:backgroundTint="@color/primary"
-                app:cornerRadius="14dp" />
+                android:background="@drawable/bg_air_blow_btn_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
 
-            <!-- Tăng cường button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_speed_boost"
-                style="@style/Widget.Material3.Button"
+                <TextView
+                    android:id="@+id/tv_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medium"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:duplicateParentState="true"
+                    android:textColor="@color/color_air_blow_text_selector" />
+            </LinearLayout>
+
+            <!-- Increase button -->
+            <LinearLayout
+                android:id="@+id/btn_speed_increase"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginStart="6dp"
-                android:text="Tăng cường"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:backgroundTint="@color/success"
-                app:cornerRadius="14dp" />
+                android:background="@drawable/bg_air_blow_btn_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
+
+                <TextView
+                    android:id="@+id/tv_increase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Increase"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:duplicateParentState="true"
+                    android:textColor="@color/color_air_blow_text_selector" />
+            </LinearLayout>
         </LinearLayout>
 
-        <!-- Circular Red Power button at the bottom -->
-        <com.google.android.material.imageview.ShapeableImageView
+        <!-- Start/Stop Button at the bottom -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/btn_power_start_stop"
-            android:layout_width="74dp"
-            android:layout_height="74dp"
-            android:src="@drawable/ic_power"
-            android:background="@drawable/circle_red_bg"
-            android:elevation="6dp"
-            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/primary_blue_selected"
             android:clickable="true"
             android:focusable="true"
-            android:layout_marginBottom="32dp"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_start_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Start"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

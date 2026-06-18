@@ -12,25 +12,25 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginBottom="8dp">
+        android:layout_marginBottom="12dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tần số thủ công"
+            android:text="Custome Frequency"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:textColor="#1A202C" />
 
         <TextView
             android:id="@+id/tv_slider_frequency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1000 Hz"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/primary" />
+            android:textColor="@color/primary_blue_selected" />
     </LinearLayout>
 
     <com.google.android.material.slider.Slider
@@ -38,15 +38,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:labelBehavior="gone"
-        app:thumbColor="@color/primary"
-        app:trackColorActive="@color/primary"
-        app:trackColorInactive="@color/gray_light" />
+        app:thumbColor="@color/primary_blue_selected"
+        app:trackColorActive="@color/primary_blue_selected"
+        app:trackColorInactive="#E5EFFF"
+        app:thumbHeight="20dp"
+        app:thumbWidth="20dp"
+        app:trackHeight="8dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="8dp">
 
         <TextView
             android:layout_width="0dp"
@@ -54,13 +57,13 @@
             android:layout_weight="1"
             android:text="50 Hz"
             android:textSize="12sp"
-            android:textColor="@color/text_secondary_light" />
+            android:textColor="#94A3B8" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10,000 Hz"
             android:textSize="12sp"
-            android:textColor="@color/text_secondary_light" />
+            android:textColor="#94A3B8" />
     </LinearLayout>
 </merge>

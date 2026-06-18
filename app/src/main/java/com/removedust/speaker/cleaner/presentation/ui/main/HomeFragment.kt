@@ -19,6 +19,7 @@ import com.removedust.speaker.cleaner.presentation.ui.manual.ManualCleanActivity
 import com.removedust.speaker.cleaner.presentation.ui.vibration.VibrationCleanActivity
 import com.removedust.speaker.cleaner.presentation.ui.airblow.AirBlowActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.removedust.speaker.cleaner.util.showVolumeWarningDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -82,28 +83,28 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
         val binding = binding ?: return
         when (val state = uiState.state) {
             is CleaningState.Idle -> {
-                binding.tvCurrentState.text = getString(R.string.state_idle)
+                binding.tvCurrentState.text = "Ready to clean"
                 binding.progressIndicator.progress = 0
-                binding.btnMainAutoClean.setImageResource(R.drawable.ic_cleaner)
+                binding.btnMainAutoClean.setImageResource(R.drawable.ic_cleaner_unselected)
                 binding.btnMainAutoClean.isEnabled = true
 
-                binding.tvTimeRemaining.visibility = View.GONE
-                binding.tvLiveFrequency.visibility = View.GONE
+                binding.layoutActiveStatusTop.visibility = View.INVISIBLE
                 binding.btnStopCleaning.visibility = View.GONE
+                binding.tvTapBanner.visibility = View.VISIBLE
 
                 setCardsEnabled(true)
             }
             is CleaningState.Cleaning -> {
-                binding.tvCurrentState.text = getString(R.string.state_cleaning)
+                binding.tvCurrentState.text = "Cleaning Active"
                 binding.progressIndicator.progress = uiState.progress
-                binding.btnMainAutoClean.setImageResource(android.R.drawable.ic_media_pause)
+                binding.btnMainAutoClean.setImageResource(R.drawable.ic_cleaner_selected)
 
-                binding.tvTimeRemaining.visibility = View.VISIBLE
-                binding.tvLiveFrequency.visibility = View.VISIBLE
+                binding.layoutActiveStatusTop.visibility = View.VISIBLE
                 binding.btnStopCleaning.visibility = View.VISIBLE
+                binding.tvTapBanner.visibility = View.GONE
 
-                binding.tvTimeRemaining.text = getString(R.string.text_remaining, uiState.timeRemaining)
-                binding.tvLiveFrequency.text = getString(R.string.text_frequency, uiState.currentFrequency)
+                binding.tvTimeRemaining.text = "Time Remaining: ${uiState.timeRemaining}s"
+                binding.tvLiveFrequency.text = "${uiState.currentFrequency} Hz"
 
                 setCardsEnabled(false)
             }
@@ -130,12 +131,9 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
         val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
 
         if (currentVolume < maxVolume) {
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle(R.string.volume_warning_title)
-                .setMessage(R.string.volume_warning_desc)
-                .setPositiveButton(R.string.btn_ok) { _, _ -> action() }
-                .setNegativeButton(android.R.string.cancel, null)
-                .show()
+            requireContext().showVolumeWarningDialog {
+                action()
+            }
         } else {
             action()
         }
