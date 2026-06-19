@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:background="@drawable/bg_app_gradient">
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/ic_back_arrow"
+        android:padding="12dp"
+        android:background="@drawable/bg_settings_circle_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="18dp"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Speaker"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/layout_circle_wrapper_parent"
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="@dimen/_210sdp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <!-- 1. Lottie Animation for Glow (bottom layer) -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_glow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/glowing"
+            app:lottie_autoPlay="false"
+            app:lottie_speed="1.2"
+            app:lottie_loop="true"
+            android:visibility="invisible" />
+
+        <!-- 2. Outer Circle Card (middle layer, on top of Lottie) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/layout_circle_wrapper_outer"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/_95sdp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/white">
+
+            <View
+                android:id="@+id/view_idle_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_manual_circle_gradient" />
+
+            <!-- Active state blue ring -->
+            <View
+                android:id="@+id/view_active_blue_ring"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primary_blue_selected"
+                android:visibility="invisible" />
+
+            <!-- 3. Inner Circle Card (nested inside Outer Circle Card) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnPlayPause"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_85sdp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/white">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_manual_circle_gradient" />
+
+                <!-- Inside Text showing progress -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/tv_device_label"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:src="@drawable/img_sound"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardVolume"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/layout_circle_wrapper_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volume boost (Test)"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#222"/>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderVolume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:value="50"
+                android:valueFrom="0"
+                android:valueTo="100"
+                app:trackHeight="20dp"
+                app:thumbColor="@color/primary_blue_selected"
+                app:thumbRadius="10dp"
+                app:haloColor="@android:color/transparent"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0%"
+                    android:textColor="#8A8A8A"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100%"
+                    android:textColor="#8A8A8A"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

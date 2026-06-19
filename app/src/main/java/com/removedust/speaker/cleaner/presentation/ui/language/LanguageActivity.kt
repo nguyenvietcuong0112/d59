@@ -87,7 +87,6 @@ class LanguageActivity : BaseActivity() {
         setupRecyclerView()
         setupListeners()
         loadAds()
-        nativeIntro1()
     }
 
     private fun setupRecyclerView() {
@@ -149,12 +148,6 @@ class LanguageActivity : BaseActivity() {
     }
 
     private fun loadAds() {
-        val isVIP = false
-        if (isVIP) {
-            binding.frAds.visibility = View.GONE
-            checkNextButtonStatus(true)
-            return
-        }
         checkNextButtonStatus(false)
         val adId = try {
             RemoteConfigManager.getInstance()
@@ -188,46 +181,13 @@ class LanguageActivity : BaseActivity() {
         }
     }
 
-    private fun nativeIntro1() {
-        val isVIP = false
-        if (isVIP) {
-            AdsConfig.nativeIntro1 = null
-            return
-        }
-        val adId = try {
-            RemoteConfigManager.getInstance()
-                .getAdId("native_onboarding_1", getString(R.string.native_onboarding_1))
-        } catch (e: Exception) {
-            getString(R.string.native_onboarding_1)
-        }
-        Admob.getInstance().loadNativeAd(
-            this,
-            adId,
-            object : NativeCallback() {
-                override fun onNativeAdLoaded(nativeAd: NativeAd?) {
-                    AdsConfig.nativeIntro1 = nativeAd
-                }
-
-                override fun onAdFailedToLoad() {
-                    AdsConfig.nativeIntro1 = null
-                }
-            }
-        )
-    }
-
     private fun loadAdsNativeLanguageSelect() {
-        val isVIP = false
-        if (isVIP) {
-            binding.frAds.visibility = View.GONE
-            checkNextButtonStatus(true)
-            return
-        }
         checkNextButtonStatus(false)
         val adId = try {
             RemoteConfigManager.getInstance()
-                .getAdId("native_language_click", getString(R.string.native_language_click))
+                .getAdId("native_language_alt", getString(R.string.native_language_alt))
         } catch (e: Exception) {
-            getString(R.string.native_language_click)
+            getString(R.string.native_language_alt)
         }
         if (adId.isNotEmpty()) {
             Admob.getInstance().loadNativeAds(this, adId, 1, object : NativeCallback() {

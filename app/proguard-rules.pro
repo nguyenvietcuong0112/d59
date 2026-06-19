@@ -1,21 +1,154 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+-keepattributes SourceFile,LineNumberTable
+-keepattributes Signature
+-keepattributes *Annotation*
+-keepattributes EnclosingMethod,InnerClasses
+-keepattributes Exceptions
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+-keepattributes Signature
+-keepattributes RuntimeVisibleAnnotations,RuntimeVisibleParameterAnnotations
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Keep Gson internals for TypeToken and generic type resolution
+-keep class com.google.gson.** { *; }
+-keep class com.google.gson.reflect.TypeToken { *; }
+-keep class * extends com.google.gson.reflect.TypeToken
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# For Gson with R8, keep fields with @SerializedName
+-keepclassmembers,allowobfuscation class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
+
+# Keep all classes that Gson might need to deserialize via reflection
+# This is essential for data classes without @SerializedName annotations
+-keepclassmembers class * {
+    <init>(...);
+}
+
+# Prevent R8 from stripping generic signatures needed by Gson
+-keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
+-keep,allowobfuscation,allowshrinking class * extends com.google.gson.reflect.TypeToken
+
+# ==============================================================================
+# RETROFIT & OKHTTP
+# ==============================================================================
+
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
+
+# Keep Retrofit service interfaces so their generic return types aren't stripped
+-keep,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
+# OkHttp
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-keep class okhttp3.** { *; }
+-keep class okio.** { *; }
+
+# ==============================================================================
+# MALLEGAN ADS SDK (CUSTOM AD WRAPPER LIBRARY)
+# ==============================================================================
+-keep class com.mallegan.ads.** { *; }
+-keepclassmembers class com.mallegan.ads.** { *; }
+
+# ==============================================================================
+# FACEBOOK SDK
+# ==============================================================================
+-keep class com.facebook.** { *; }
+-dontwarn com.facebook.infer.annotation.Nullsafe
+-dontwarn com.facebook.infer.annotation.Nullsafe$Mode
+-dontwarn com.facebook.infer.annotation.Nullsafe**
+-dontwarn com.facebook.infer.annotation.**
+-dontwarn com.facebook.common.connectionclass.**
+
+# ==============================================================================
+# ADJUST SDK
+# ==============================================================================
+-keep class com.adjust.sdk.** { *; }
+-dontwarn com.adjust.sdk.**
+
+# ==============================================================================
+# APPSFLYER SDK
+# ==============================================================================
+-dontwarn com.appsflyer.**
+-keep class com.appsflyer.** { *; }
+
+# ==============================================================================
+# LOTTIE
+# ==============================================================================
+-keep class com.airbnb.lottie.** { *; }
+
+# ==============================================================================
+-keep class com.android.billingclient.api.** { *; }
+-dontwarn com.android.billingclient.api.**
+
+# ==============================================================================
+# HILT & GLIDE & COROUTINES
+# ==============================================================================
+-keep class com.bumptech.glide.** { *; }
+-dontwarn com.bumptech.glide.**
+-dontwarn kotlinx.coroutines.**
+-keep class kotlinx.coroutines.** { *; }
+
+# ==============================================================================
+# FIREBASE
+# ==============================================================================
+-keep class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**
+
+# ==============================================================================
+# KOTLIN SPECIFIC
+# ==============================================================================
+-dontwarn kotlin.**
+-keep class kotlin.Metadata { *; }
+-keepclassmembers class kotlin.Metadata {
+    public <methods>;
+}
+
+# Keep Kotlin data class component functions and copy
+-keepclassmembers class * {
+    public ** component*();
+    public ** copy(...);
+}
+
+# ==============================================================================
+# ADMOB MEDIATION ADAPTERS (Keep adapters from being obfuscated)
+# ==============================================================================
+-keep class com.google.ads.mediation.** { *; }
+
+# ==============================================================================
+# INMOBI SDK
+# ==============================================================================
+-keep class com.inmobi.** { *; }
+-dontwarn com.inmobi.**
+-keep public class com.google.android.gms.**
+-dontwarn com.google.android.gms.**
+-dontwarn com.squareup.picasso.**
+
+# ==============================================================================
+# PANGLE SDK
+# ==============================================================================
+-keep class com.bytedance.sdk.** { *; }
+-dontwarn com.bytedance.sdk.**
+
+# ==============================================================================
+# MINTEGRAL SDK
+# ==============================================================================
+-keep class com.mbridge.** { *; }
+-dontwarn com.mbridge.**
+-keep interface com.mbridge.** { *; }
+
+# ==============================================================================
+# UNITY ADS SDK
+# ==============================================================================
+-keep class com.unity3d.ads.** { *; }
+-dontwarn com.unity3d.ads.**
+
+# ==============================================================================
+# LIFTOFF / VUNGLE SDK
+# ==============================================================================
+-keep class com.vungle.ads.** { *; }
+-dontwarn com.vungle.ads.**

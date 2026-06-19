@@ -5,7 +5,7 @@ import android.media.AudioManager
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import com.removedust.speaker.cleaner.base.BaseActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -19,16 +19,23 @@ import com.removedust.speaker.cleaner.util.showVolumeWarningDialog
 import kotlinx.coroutines.launch
 import dagger.hilt.android.AndroidEntryPoint
 
+import android.view.LayoutInflater
 import android.view.View
+import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdView
+import com.mallegan.ads.callback.NativeCallback
+import com.mallegan.ads.util.Admob
+import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
+
+import com.removedust.speaker.cleaner.util.AdsConfig
 
 @AndroidEntryPoint
-class ManualCleanActivity : AppCompatActivity() {
+class ManualCleanActivity : BaseActivity() {
 
     private lateinit var binding: ActivityManualCleanBinding
     private val viewModel: MainViewModel by viewModels { MainViewModel.Factory }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun bind() {
         binding = ActivityManualCleanBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.lifecycleOwner = this
@@ -36,6 +43,7 @@ class ManualCleanActivity : AppCompatActivity() {
 
         setupListeners()
         observeViewModel()
+        loadAdsNative()
     }
 
     private fun setupListeners() {
@@ -50,8 +58,10 @@ class ManualCleanActivity : AppCompatActivity() {
                 viewModel.stopCleaning()
             } else {
                 checkVolumeAndRun {
-                    val freq = binding.frequencySlider.getFrequency()
-                    viewModel.startManualCleaning(freq)
+                    AdsConfig.showInterClickAd(this) {
+                        val freq = binding.frequencySlider.getFrequency()
+                        viewModel.startManualCleaning(freq)
+                    }
                 }
             }
         }
@@ -125,6 +135,35 @@ class ManualCleanActivity : AppCompatActivity() {
             }
         } else {
             action()
+        }
+    }
+
+    private fun loadAdsNative() {
+        val adId = try {
+            RemoteConfigManager.getInstance()
+                .getAdId("native_all", getString(R.string.native_all))
+        } catch (e: Exception) {
+            getString(R.string.native_all)
+        }
+        if (adId.isNotEmpty()) {
+            Admob.getInstance().loadNativeAds(this, adId, 1, object : NativeCallback() {
+                override fun onNativeAdLoaded(nativeAd: NativeAd?) {
+                    super.onNativeAdLoaded(nativeAd)
+                    val adView = LayoutInflater.from(this@ManualCleanActivity)
+                        .inflate(R.layout.layout_native_media, null) as NativeAdView
+                    binding.frAds.removeAllViews()
+                    binding.frAds.addView(adView)
+                    Admob.getInstance().pushAdsToViewCustom(nativeAd, adView)
+                }
+
+                override fun onAdFailedToLoad() {
+                    super.onAdFailedToLoad()
+                    binding.frAds.removeAllViews()
+                    binding.frAds.visibility = View.GONE
+                }
+            })
+        } else {
+            binding.frAds.visibility = View.GONE
         }
     }
 

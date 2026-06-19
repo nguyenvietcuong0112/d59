@@ -7,7 +7,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_gradient"
-        android:paddingHorizontal="@dimen/_10sdp"
         tools:context=".presentation.ui.airblow.AirBlowActivity">
 
         <!-- Top Navigation Bar -->
@@ -16,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_22sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -48,251 +48,247 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Center Fan Card -->
-        <!-- Center Fan Card with Concentric Circles -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/layout_circle_wrapper_outer"
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_150sdp"
-            android:layout_marginTop="32dp"
-            app:cardCornerRadius="@dimen/_100sdp"
-            app:cardElevation="6dp"
-            app:strokeWidth="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <View
-                android:id="@+id/view_idle_gradient"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_manual_circle_gradient" />
-
-            <View
-                android:id="@+id/view_active_blue_ring"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/primary_blue_selected"
-                android:visibility="invisible" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/layout_circle_wrapper"
-                android:layout_width="@dimen/_130sdp"
-                android:layout_height="@dimen/_130sdp"
-                android:layout_gravity="center"
-                app:cardCornerRadius="@dimen/_90sdp"
-                app:cardElevation="6dp"
-                app:strokeWidth="0dp"
-                app:cardBackgroundColor="@color/white">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_manual_circle_gradient" />
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/iv_propeller"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:lottie_rawRes="@raw/anim_airblow"
-                    app:lottie_autoPlay="false"
-                    app:lottie_loop="true"
-                    android:scaleType="fitCenter" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </com.google.android.material.card.MaterialCardView>
-        <!-- Speed scale visual box -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/layout_scale_box"
+        <FrameLayout
+            android:id="@+id/fr_ads"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="24dp"
-            app:strokeWidth="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/layout_circle_wrapper_outer">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp">
-
-                <!-- Ruler Scale -->
-                <ImageView
-                    android:id="@+id/iv_ruler_scale"
-                    android:layout_width="match_parent"
-                    android:layout_height="28dp"
-                    android:src="@drawable/ic_ruler_scale"
-                    app:tint="#D9D9D9"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <!-- Scale range labels -->
-                <TextView
-                    android:id="@+id/tv_low_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Low"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="#1A202C"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
-                    app:layout_constraintStart_toStartOf="@id/iv_ruler_scale" />
-
-                <TextView
-                    android:id="@+id/tv_medium_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Medium"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="#1A202C"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_high_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="High"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="#1A202C"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
-                    app:layout_constraintEnd_toEndOf="@id/iv_ruler_scale" />
-
-                <!-- Arrow indicator -->
-                <ImageView
-                    android:id="@+id/iv_scale_arrow"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_green_arrow"
-                    android:layout_marginTop="16dp"
-                    app:tint="#2F80ED"
-                    app:layout_constraintTop_toBottomOf="@id/tv_medium_label"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Speed selectors buttons -->
-        <LinearLayout
-            android:id="@+id/layout_speed_selectors"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@id/layout_scale_box">
-
-            <!-- Decrease button -->
-            <LinearLayout
-                android:id="@+id/btn_speed_decrease"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginEnd="6dp"
-                android:background="@drawable/bg_air_blow_btn_selector"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingHorizontal="12dp">
-
-                <TextView
-                    android:id="@+id/tv_decrease"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Decrease"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:duplicateParentState="true"
-                    android:textColor="@color/color_air_blow_text_selector" />
-            </LinearLayout>
-
-            <!-- Medium button -->
-            <LinearLayout
-                android:id="@+id/btn_speed_medium"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:background="@drawable/bg_air_blow_btn_selector"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingHorizontal="12dp">
-
-                <TextView
-                    android:id="@+id/tv_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Medium"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:duplicateParentState="true"
-                    android:textColor="@color/color_air_blow_text_selector" />
-            </LinearLayout>
-
-            <!-- Increase button -->
-            <LinearLayout
-                android:id="@+id/btn_speed_increase"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginStart="6dp"
-                android:background="@drawable/bg_air_blow_btn_selector"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingHorizontal="12dp">
-
-                <TextView
-                    android:id="@+id/tv_increase"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Increase"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:duplicateParentState="true"
-                    android:textColor="@color/color_air_blow_text_selector" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Start/Stop Button at the bottom -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btn_power_start_stop"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="24dp"
-            app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:cardBackgroundColor="@color/primary_blue_selected"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent">
 
-            <TextView
-                android:id="@+id/tv_start_stop"
-                android:layout_width="wrap_content"
+            <include layout="@layout/ads_shimmer_native_full" />
+        </FrameLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:paddingHorizontal="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+            app:layout_constraintBottom_toTopOf="@id/fr_ads">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Start"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-        </com.google.android.material.card.MaterialCardView>
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:paddingBottom="16dp">
+
+                <!-- Center Fan Card -->
+                <!-- Center Fan Card with Concentric Circles -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layout_circle_wrapper_outer"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="@dimen/_100sdp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white">
+
+                    <View
+                        android:id="@+id/view_idle_gradient"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_manual_circle_gradient" />
+
+                    <View
+                        android:id="@+id/view_active_blue_ring"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/primary_blue_selected"
+                        android:visibility="invisible" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_circle_wrapper"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="@dimen/_130sdp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="@dimen/_90sdp"
+                        app:cardElevation="6dp"
+                        app:strokeWidth="0dp"
+                        app:cardBackgroundColor="@color/white">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_manual_circle_gradient" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/iv_propeller"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:lottie_rawRes="@raw/anim_airblow"
+                            app:lottie_autoPlay="false"
+                            app:lottie_loop="true"
+                            android:scaleType="fitCenter" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </com.google.android.material.card.MaterialCardView>
+                <!-- Speed scale visual box -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layout_scale_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="24dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <!-- Ruler Scale -->
+                        <ImageView
+                            android:id="@+id/iv_ruler_scale"
+                            android:layout_width="match_parent"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_ruler_scale"
+                            app:tint="#D9D9D9"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <!-- Scale range labels -->
+                        <TextView
+                            android:id="@+id/tv_low_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Low"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A202C"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
+                            app:layout_constraintStart_toStartOf="@id/iv_ruler_scale" />
+
+                        <TextView
+                            android:id="@+id/tv_medium_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medium"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A202C"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_high_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="High"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A202C"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/iv_ruler_scale"
+                            app:layout_constraintEnd_toEndOf="@id/iv_ruler_scale" />
+
+                        <!-- Arrow indicator -->
+                        <ImageView
+                            android:id="@+id/iv_scale_arrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_green_arrow"
+                            android:layout_marginTop="16dp"
+                            app:tint="#2F80ED"
+                            app:layout_constraintTop_toBottomOf="@id/tv_medium_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Speed selectors buttons -->
+                <LinearLayout
+                    android:id="@+id/layout_speed_selectors"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <!-- Decrease button -->
+                    <LinearLayout
+                        android:id="@+id/btn_speed_decrease"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_air_blow_btn_selector"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="12dp">
+
+                        <TextView
+                            android:id="@+id/tv_decrease"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Decrease"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:duplicateParentState="true"
+                            android:textColor="@color/color_air_blow_text_selector" />
+                    </LinearLayout>
+
+                    <!-- Increase button -->
+                    <LinearLayout
+                        android:id="@+id/btn_speed_increase"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_air_blow_btn_selector"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="12dp">
+
+                        <TextView
+                            android:id="@+id/tv_increase"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Increase"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:duplicateParentState="true"
+                            android:textColor="@color/color_air_blow_text_selector" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Start/Stop Button pushed up inside scroll view -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_power_start_stop"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="16dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/primary_blue_selected"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/tv_start_stop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Start"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

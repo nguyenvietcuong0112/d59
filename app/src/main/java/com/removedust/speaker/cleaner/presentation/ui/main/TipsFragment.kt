@@ -35,24 +35,49 @@ class TipsFragment : AbsBaseFragment<FragmentTipsBinding>() {
         }
 
         binding.cardTip1.setOnClickListener {
-            startDetailActivity()
+            startDetailActivity(
+                title = getString(R.string.tip1_title),
+                date = "19 Jun, 2026",
+                content = getString(R.string.tip1_desc),
+                imageResId = R.drawable.img_tip1
+            )
         }
 
         binding.cardTip2.setOnClickListener {
-            startDetailActivity()
+            startDetailActivity(
+                title = getString(R.string.tip2_title),
+                date = "19 Jun, 2026",
+                content = getString(R.string.tip2_desc),
+                imageResId = R.drawable.img_tip2
+            )
         }
 
         binding.cardTip3.setOnClickListener {
-            startDetailActivity()
+            startDetailActivity(
+                title = getString(R.string.tip3_title),
+                date = "19 Jun, 2026",
+                content = getString(R.string.tip3_desc),
+                imageResId = R.drawable.img_tip3
+            )
         }
 
         binding.cardTip4.setOnClickListener {
-            startDetailActivity()
+            startDetailActivity(
+                title = getString(R.string.tip4_title),
+                date = "19 Jun, 2026",
+                content = getString(R.string.tip4_desc),
+                imageResId = R.drawable.img_tip4
+            )
         }
     }
 
-    private fun startDetailActivity() {
-        val intent = Intent(requireContext(), TipDetailActivity::class.java)
+    private fun startDetailActivity(title: String, date: String, content: String, imageResId: Int) {
+        val intent = Intent(requireContext(), TipDetailActivity::class.java).apply {
+            putExtra("extra_title", title)
+            putExtra("extra_date", date)
+            putExtra("extra_content", content)
+            putExtra("extra_image", imageResId)
+        }
         startActivity(intent)
     }
 

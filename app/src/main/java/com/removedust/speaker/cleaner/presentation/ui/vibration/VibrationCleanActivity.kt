@@ -1,6 +1,7 @@
 package com.removedust.speaker.cleaner.presentation.ui.vibration
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.media.AudioManager
 import android.os.Build
@@ -9,7 +10,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import com.removedust.speaker.cleaner.base.BaseActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -26,8 +27,19 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import dagger.hilt.android.AndroidEntryPoint
 
+import android.view.LayoutInflater
+import android.view.View
+import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdView
+import com.mallegan.ads.callback.NativeCallback
+import com.mallegan.ads.util.Admob
+import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
+import com.removedust.speaker.cleaner.presentation.ui.testspeaker.TestSpeakerActivity
+
+import com.removedust.speaker.cleaner.util.AdsConfig
+
 @AndroidEntryPoint
-class VibrationCleanActivity : AppCompatActivity() {
+class VibrationCleanActivity : BaseActivity() {
 
     private lateinit var binding: ActivityVibrationCleanBinding
     private val viewModel: MainViewModel by viewModels { MainViewModel.Factory }
@@ -36,8 +48,7 @@ class VibrationCleanActivity : AppCompatActivity() {
     private var isVibrating = false
     private var progressJob: Job? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun bind() {
         binding = ActivityVibrationCleanBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.lifecycleOwner = this
@@ -46,6 +57,7 @@ class VibrationCleanActivity : AppCompatActivity() {
         updateSelectorUI()
         setupListeners()
         observeViewModel()
+        loadAdsNative()
     }
 
     private fun setupListeners() {
@@ -73,7 +85,9 @@ class VibrationCleanActivity : AppCompatActivity() {
                 stopVibrationCleaning()
             } else {
                 checkVolumeAndRun {
-                    startVibrationCleaning()
+                    AdsConfig.showInterClickAd(this) {
+                        startVibrationCleaning()
+                    }
                 }
             }
         }
@@ -116,7 +130,7 @@ class VibrationCleanActivity : AppCompatActivity() {
             }
             // Finished cycle
             stopVibrationCleaning()
-            showSuccessDialog()
+            showSuccess()
         }
     }
 
@@ -215,12 +229,38 @@ class VibrationCleanActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSuccessDialog() {
-        MaterialAlertDialogBuilder(this)
-            .setTitle("Completed")
-            .setMessage("Successfully cleaned the speaker membrane using the physical vibration mechanism!")
-            .setPositiveButton(R.string.btn_ok, null)
-            .show()
+    private fun showSuccess() {
+        val intent = Intent(this, TestSpeakerActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun loadAdsNative() {
+        val adId = try {
+            RemoteConfigManager.getInstance()
+                .getAdId("native_all", getString(R.string.native_all))
+        } catch (e: Exception) {
+            getString(R.string.native_all)
+        }
+        if (adId.isNotEmpty()) {
+            Admob.getInstance().loadNativeAds(this, adId, 1, object : NativeCallback() {
+                override fun onNativeAdLoaded(nativeAd: NativeAd?) {
+                    super.onNativeAdLoaded(nativeAd)
+                    val adView = LayoutInflater.from(this@VibrationCleanActivity)
+                        .inflate(R.layout.layout_native_media, null) as NativeAdView
+                    binding.frAds.removeAllViews()
+                    binding.frAds.addView(adView)
+                    Admob.getInstance().pushAdsToViewCustom(nativeAd, adView)
+                }
+
+                override fun onAdFailedToLoad() {
+                    super.onAdFailedToLoad()
+                    binding.frAds.removeAllViews()
+                    binding.frAds.visibility = View.GONE
+                }
+            })
+        } else {
+            binding.frAds.visibility = View.GONE
+        }
     }
 
     override fun onDestroy() {

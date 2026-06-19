@@ -1,6 +1,6 @@
 [versions]
 agp = "9.2.1"
-adsMalleganLibNvc = "1.0.7"
+adsMalleganLibNvc = "1.0.9"
 coreKtx = "1.19.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"

@@ -7,15 +7,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_gradient"
-        android:paddingHorizontal="@dimen/_10sdp"
         tools:context=".presentation.ui.manual.ManualCleanActivity">
 
-        <!-- Top Navigation Bar -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_22sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -48,132 +47,154 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Center Stack Area for Lottie Glow and Circle Card -->
         <FrameLayout
-            android:id="@+id/layout_circle_wrapper_parent"
-            android:layout_width="@dimen/_210sdp"
-            android:layout_height="@dimen/_210sdp"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <!-- 1. Lottie Animation for Glow (bottom layer) -->
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/lottie_glow"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                app:lottie_rawRes="@raw/glowing"
-                app:lottie_autoPlay="false"
-                app:lottie_speed="1.2"
-                app:lottie_loop="true"
-                android:visibility="invisible" />
-
-            <!-- 2. Outer Circle Card (middle layer, on top of Lottie) -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/layout_circle_wrapper_outer"
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="@dimen/_150sdp"
-                android:layout_gravity="center"
-                app:cardCornerRadius="@dimen/_100sdp"
-                app:cardElevation="6dp"
-                app:strokeWidth="0dp"
-                app:cardBackgroundColor="@color/white">
-
-                <View
-                    android:id="@+id/view_idle_gradient"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_manual_circle_gradient" />
-
-                <!-- Active state blue ring (drawn on top of gradient, but below inner card) -->
-                <View
-                    android:id="@+id/view_active_blue_ring"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/primary_blue_selected"
-                    android:visibility="invisible" />
-
-                <!-- 3. Inner Circle Card (nested inside Outer Circle Card) -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/layout_circle_wrapper"
-                    android:layout_width="@dimen/_130sdp"
-                    android:layout_height="@dimen/_130sdp"
-                    android:layout_gravity="center"
-                    app:cardCornerRadius="@dimen/_90sdp"
-                    app:cardElevation="6dp"
-                    app:strokeWidth="0dp"
-                    app:cardBackgroundColor="@color/white">
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_manual_circle_gradient" />
-
-                    <!-- Text View for Frequency (inside inner card, top layer) -->
-                    <TextView
-                        android:id="@+id/tv_manual_frequency"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="1000 Hz"
-                        android:textSize="28sp"
-                        android:textColor="@color/primary_blue_selected"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/sora_bold" />
-
-                </com.google.android.material.card.MaterialCardView>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:id="@+id/tv_manual_state"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
-
-        </FrameLayout>
-
-        <!-- Custom Frequency Slider Card -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_slider"
+            android:id="@+id/fr_ads"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="24dp"
-            app:strokeWidth="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/layout_circle_wrapper_parent">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include layout="@layout/ads_shimmer_native_full" />
+        </FrameLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:paddingHorizontal="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+            app:layout_constraintBottom_toTopOf="@id/fr_ads">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:gravity="center_horizontal"
+                android:paddingBottom="16dp">
 
-                <com.removedust.speaker.cleaner.presentation.component.FrequencySlider
-                    android:id="@+id/frequency_slider"
+                <FrameLayout
+                    android:id="@+id/layout_circle_wrapper_parent"
+                    android:layout_width="@dimen/_210sdp"
+                    android:layout_height="@dimen/_210sdp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:layout_marginTop="8dp">
+
+                    <!-- 1. Lottie Animation for Glow (bottom layer) -->
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottie_glow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:lottie_rawRes="@raw/glowing"
+                        app:lottie_autoPlay="false"
+                        app:lottie_speed="1.2"
+                        app:lottie_loop="true"
+                        android:visibility="invisible" />
+
+                    <!-- 2. Outer Circle Card (middle layer, on top of Lottie) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_circle_wrapper_outer"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="@dimen/_100sdp"
+                        app:cardElevation="6dp"
+                        app:strokeWidth="0dp"
+                        app:cardBackgroundColor="@color/white">
+
+                        <View
+                            android:id="@+id/view_idle_gradient"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_manual_circle_gradient" />
+
+                        <!-- Active state blue ring (drawn on top of gradient, but below inner card) -->
+                        <View
+                            android:id="@+id/view_active_blue_ring"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/primary_blue_selected"
+                            android:visibility="invisible" />
+
+                        <!-- 3. Inner Circle Card (nested inside Outer Circle Card) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/layout_circle_wrapper"
+                            android:layout_width="@dimen/_130sdp"
+                            android:layout_height="@dimen/_130sdp"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="@dimen/_90sdp"
+                            app:cardElevation="6dp"
+                            app:strokeWidth="0dp"
+                            app:cardBackgroundColor="@color/white">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_manual_circle_gradient" />
+
+                            <!-- Text View for Frequency (inside inner card, top layer) -->
+                            <TextView
+                                android:id="@+id/tv_manual_frequency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="1000 Hz"
+                                android:textSize="28sp"
+                                android:textColor="@color/primary_blue_selected"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/sora_bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_manual_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_slider"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <com.removedust.speaker.cleaner.presentation.component.FrequencySlider
+                            android:id="@+id/frequency_slider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_manual_start_stop"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Start"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/primary_blue_selected"
+                    app:cornerRadius="16dp"
+                    app:elevation="4dp" />
 
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Start/Stop Button at the bottom -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_manual_start_stop"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="24dp"
-            android:text="Start"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/primary_blue_selected"
-            app:cornerRadius="16dp"
-            app:elevation="4dp"
-            app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

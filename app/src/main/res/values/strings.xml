@@ -24,5 +24,25 @@
     <string name="intro_slide_3_title">Air Blow</string>
     <string name="intro_next">Next</string>
     <string name="intro_slide_4_title">Finished!</string>
-    <string name="lore_ipsum_tip">Trong thế giới lập trình đầy rẫy những cao thủ code thần tốc, có một nhân vật đặc biệt mang tên Cường Dev. Anh không nổi tiếng vì code sạch, cũng không được biết đến bởi khả năng tối ưu hệ thống. Điều khiến Cường trở nên khác biệt chính là khả năng tạo ra bug ở những nơi mà người ta nghĩ là không thể có bug.\n\nNgười ta thường nói:\n\"Code chạy được là tốt.\"\nNhưng với Cường:\n\"Code chạy được mới là vấn đề.\"\n\nMỗi lần nhận task, Cường luôn tự tin tuyên bố:\n\"Việc này đơn giản thôi, để em xử lý trong 30 phút.\"\n\nVà đúng như lời hứa, sau 30 phút, task vẫn chưa xong nhưng đã phát sinh thêm 12 bug mới, 3 lỗi UI và 1 lỗi không ai hiểu tại sao xuất hiện.\n\nĐồng nghiệp thường có một thói quen đặc biệt. Mỗi khi thấy commit của Cường được merge vào branch develop, mọi người sẽ:\n• Kiểm tra lại code.\n• Chạy lại app.</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <!-- Tip 1 -->
+    <string name="tip1_title">Turn the Volume to Maximum</string>
+    <string name="tip1_desc">Set your phone’s volume to the highest level before starting the cleaning process. The cleaning sound creates strong audio vibrations that help push trapped water droplets, dust, and debris out of the speaker chamber. Higher volume levels generate stronger vibrations, making the cleaning process more effective.\n\nMake sure any Bluetooth devices, headphones, or external speakers are disconnected so the sound plays directly through your phone’s built-in speaker. During cleaning, you may notice water droplets emerging from the speaker opening or slight changes in sound quality. This is normal and indicates that the cleaning sound is working as intended.\n\nIf your speaker has been exposed to a significant amount of water, running multiple cleaning cycles may help remove remaining moisture and restore clearer audio performance.</string>
+    <string name="tip1_preview">Set your phone’s volume to the highest level before starting the cleaning process...</string>
+
+    <!-- Tip 2 -->
+    <string name="tip2_title">Keep the Speaker Facing Downward</string>
+    <string name="tip2_desc">For the best results, always position your phone so the speaker opening faces downward during the cleaning process. Gravity works together with the sound vibrations to help water droplets move out of the speaker chamber more easily.\n\nPlace the device on a stable surface and avoid changing its position while cleaning is active. Keeping the speaker pointed downward helps prevent moisture from settling deeper inside the speaker cavity and improves the effectiveness of each cleaning cycle.\n\nIf your phone has recently been exposed to rain, splashes, or accidental water contact, combining maximum volume with the correct orientation can significantly improve moisture removal and audio recovery.</string>
+    <string name="tip2_preview">For the best results, always position your phone so the speaker opening faces downward...</string>
+
+    <!-- Tip 3 -->
+    <string name="tip3_title">Clean the Microphone Carefully</string>
+    <string name="tip3_desc">The microphone plays a critical role in phone calls, voice recordings, video chats, and voice assistant functions. Over time, dust, lint, and small particles can collect around the microphone opening, reducing voice clarity and affecting overall audio performance.\n\nRegular cleaning helps maintain microphone sensitivity and ensures your voice remains clear during conversations and recordings. If people frequently report that your voice sounds muffled or distant, accumulated debris may be blocking the microphone opening.\n\nAlways clean gently and avoid using excessive force. Sharp tools or aggressive cleaning methods can damage the microphone mesh and internal components. Taking a careful approach helps preserve long-term microphone performance and audio quality.</string>
+    <string name="tip3_preview">The microphone plays a critical role in phone calls, voice recordings, video chats...</string>
+
+    <!-- Tip 4 -->
+    <string name="tip4_title">Use a Toothpick to Remove Dust or Dirt Carefully</string>
+    <string name="tip4_desc">A wooden toothpick can be used to remove visible dust and debris from around the microphone opening. Work slowly and only use the tip near the surface area. The objective is to loosen dirt around the protective mesh without reaching internal components.\n\nUse light, controlled movements and inspect the area under good lighting. Never insert the toothpick deeply into the microphone hole or apply pressure directly inward, as this can damage sensitive parts inside the device.\n\nRemoving small amounts of debris gradually is safer and often more effective than attempting to clean everything at once. With proper care, routine microphone maintenance can improve call quality, enhance voice recordings, and help keep your phone’s audio system performing at its best.</string>
+    <string name="tip4_preview">A wooden toothpick can be used to remove visible dust and debris from around the microphone...</string>
 </resources>

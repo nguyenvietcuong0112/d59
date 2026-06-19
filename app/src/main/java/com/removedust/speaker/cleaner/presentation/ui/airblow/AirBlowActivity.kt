@@ -1,16 +1,10 @@
 package com.removedust.speaker.cleaner.presentation.ui.airblow
 
-import android.animation.ObjectAnimator
 import android.content.Context
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.media.AudioManager
-import android.os.Bundle
-import android.view.View
-import android.view.animation.LinearInterpolator
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import com.removedust.speaker.cleaner.base.BaseActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -20,13 +14,22 @@ import com.removedust.speaker.cleaner.databinding.ActivityAirBlowBinding
 import com.removedust.speaker.cleaner.presentation.state.CleaningState
 import com.removedust.speaker.cleaner.presentation.state.CleanupUIState
 import com.removedust.speaker.cleaner.presentation.ui.main.MainViewModel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.removedust.speaker.cleaner.util.showVolumeWarningDialog
 import kotlinx.coroutines.launch
 import dagger.hilt.android.AndroidEntryPoint
 
+import android.view.LayoutInflater
+import android.view.View
+import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdView
+import com.mallegan.ads.callback.NativeCallback
+import com.mallegan.ads.util.Admob
+import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
+
+import com.removedust.speaker.cleaner.util.AdsConfig
+
 @AndroidEntryPoint
-class AirBlowActivity : AppCompatActivity() {
+class AirBlowActivity : BaseActivity() {
 
     private lateinit var binding: ActivityAirBlowBinding
     private val viewModel: MainViewModel by viewModels { MainViewModel.Factory }
@@ -38,8 +41,7 @@ class AirBlowActivity : AppCompatActivity() {
         LOW, MEDIUM, BOOST
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun bind() {
         binding = ActivityAirBlowBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.lifecycleOwner = this
@@ -48,6 +50,7 @@ class AirBlowActivity : AppCompatActivity() {
         updateSpeedButtonsUI()
         setupListeners()
         observeViewModel()
+        loadAdsNative()
     }
 
     private fun setupListeners() {
@@ -57,34 +60,43 @@ class AirBlowActivity : AppCompatActivity() {
         }
 
         binding.btnSpeedDecrease.setOnClickListener {
-            if (selectedSpeed != AirBlowSpeed.LOW) {
-                selectedSpeed = AirBlowSpeed.LOW
-                updateSpeedButtonsUI()
-                if (isPlaying) {
-                    viewModel.updateManualFrequency(70)
-                    startFanRotation(AirBlowSpeed.LOW)
-                }
+            val newSpeed = when (selectedSpeed) {
+                AirBlowSpeed.BOOST -> AirBlowSpeed.MEDIUM
+                AirBlowSpeed.MEDIUM -> AirBlowSpeed.LOW
+                AirBlowSpeed.LOW -> AirBlowSpeed.LOW
             }
-        }
-
-        binding.btnSpeedMedium.setOnClickListener {
-            if (selectedSpeed != AirBlowSpeed.MEDIUM) {
-                selectedSpeed = AirBlowSpeed.MEDIUM
+            if (selectedSpeed != newSpeed) {
+                selectedSpeed = newSpeed
                 updateSpeedButtonsUI()
                 if (isPlaying) {
-                    viewModel.updateManualFrequency(60)
-                    startFanRotation(AirBlowSpeed.MEDIUM)
+                    val frequency = when (selectedSpeed) {
+                        AirBlowSpeed.LOW -> 70
+                        AirBlowSpeed.MEDIUM -> 60
+                        AirBlowSpeed.BOOST -> 50
+                    }
+                    viewModel.updateManualFrequency(frequency)
+                    startFanRotation(selectedSpeed)
                 }
             }
         }
 
         binding.btnSpeedIncrease.setOnClickListener {
-            if (selectedSpeed != AirBlowSpeed.BOOST) {
-                selectedSpeed = AirBlowSpeed.BOOST
+            val newSpeed = when (selectedSpeed) {
+                AirBlowSpeed.LOW -> AirBlowSpeed.MEDIUM
+                AirBlowSpeed.MEDIUM -> AirBlowSpeed.BOOST
+                AirBlowSpeed.BOOST -> AirBlowSpeed.BOOST
+            }
+            if (selectedSpeed != newSpeed) {
+                selectedSpeed = newSpeed
                 updateSpeedButtonsUI()
                 if (isPlaying) {
-                    viewModel.updateManualFrequency(50)
-                    startFanRotation(AirBlowSpeed.BOOST)
+                    val frequency = when (selectedSpeed) {
+                        AirBlowSpeed.LOW -> 70
+                        AirBlowSpeed.MEDIUM -> 60
+                        AirBlowSpeed.BOOST -> 50
+                    }
+                    viewModel.updateManualFrequency(frequency)
+                    startFanRotation(selectedSpeed)
                 }
             }
         }
@@ -94,21 +106,26 @@ class AirBlowActivity : AppCompatActivity() {
                 viewModel.stopCleaning()
             } else {
                 checkVolumeAndRun {
-                    val frequency = when (selectedSpeed) {
-                        AirBlowSpeed.LOW -> 70
-                        AirBlowSpeed.MEDIUM -> 60
-                        AirBlowSpeed.BOOST -> 50
+                    AdsConfig.showInterClickAd(this) {
+                        val frequency = when (selectedSpeed) {
+                            AirBlowSpeed.LOW -> 70
+                            AirBlowSpeed.MEDIUM -> 60
+                            AirBlowSpeed.BOOST -> 50
+                        }
+                        viewModel.startManualCleaning(frequency)
                     }
-                    viewModel.startManualCleaning(frequency)
                 }
             }
         }
     }
 
     private fun updateSpeedButtonsUI() {
-        binding.btnSpeedDecrease.isSelected = (selectedSpeed == AirBlowSpeed.LOW)
-        binding.btnSpeedMedium.isSelected = (selectedSpeed == AirBlowSpeed.MEDIUM)
-        binding.btnSpeedIncrease.isSelected = (selectedSpeed == AirBlowSpeed.BOOST)
+        binding.btnSpeedDecrease.isEnabled = (selectedSpeed != AirBlowSpeed.LOW)
+        binding.btnSpeedDecrease.alpha = if (selectedSpeed == AirBlowSpeed.LOW) 0.5f else 1.0f
+
+        binding.btnSpeedIncrease.isEnabled = (selectedSpeed != AirBlowSpeed.BOOST)
+        binding.btnSpeedIncrease.alpha = if (selectedSpeed == AirBlowSpeed.BOOST) 0.5f else 1.0f
+
         moveArrowToSpeed(selectedSpeed)
     }
 
@@ -195,6 +212,35 @@ class AirBlowActivity : AppCompatActivity() {
             }
         } else {
             action()
+        }
+    }
+
+    private fun loadAdsNative() {
+        val adId = try {
+            RemoteConfigManager.getInstance()
+                .getAdId("native_all", getString(R.string.native_all))
+        } catch (e: Exception) {
+            getString(R.string.native_all)
+        }
+        if (adId.isNotEmpty()) {
+            Admob.getInstance().loadNativeAds(this, adId, 1, object : NativeCallback() {
+                override fun onNativeAdLoaded(nativeAd: NativeAd?) {
+                    super.onNativeAdLoaded(nativeAd)
+                    val adView = LayoutInflater.from(this@AirBlowActivity)
+                        .inflate(R.layout.layout_native_media, null) as NativeAdView
+                    binding.frAds.removeAllViews()
+                    binding.frAds.addView(adView)
+                    Admob.getInstance().pushAdsToViewCustom(nativeAd, adView)
+                }
+
+                override fun onAdFailedToLoad() {
+                    super.onAdFailedToLoad()
+                    binding.frAds.removeAllViews()
+                    binding.frAds.visibility = View.GONE
+                }
+            })
+        } else {
+            binding.frAds.visibility = View.GONE
         }
     }
 

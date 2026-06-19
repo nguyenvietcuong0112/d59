@@ -55,7 +55,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/bg_vibration_card_unselected"
+                android:background="@drawable/bg_btn_outline"
                 android:gravity="center"
                 android:text="Cancel"
                 android:textColor="@color/primary_blue_selected"

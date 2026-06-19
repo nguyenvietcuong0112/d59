@@ -20,6 +20,9 @@ import com.removedust.speaker.cleaner.presentation.ui.vibration.VibrationCleanAc
 import com.removedust.speaker.cleaner.presentation.ui.airblow.AirBlowActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.removedust.speaker.cleaner.util.showVolumeWarningDialog
+import androidx.appcompat.app.AppCompatActivity
+import com.removedust.speaker.cleaner.presentation.ui.testspeaker.TestSpeakerActivity
+import com.removedust.speaker.cleaner.util.AdsConfig
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -44,7 +47,9 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
                 viewModel.stopCleaning()
             } else {
                 checkVolumeAndRun {
-                    viewModel.startAutoCleaning()
+                    AdsConfig.showInterClickAd(requireActivity() as AppCompatActivity) {
+                        viewModel.startAutoCleaning()
+                    }
                 }
             }
         }
@@ -53,19 +58,38 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
             viewModel.stopCleaning()
         }
 
+        binding?.tvTapBanner?.setOnClickListener {
+            val state = viewModel.uiState.value.state
+            if (state is CleaningState.Cleaning) {
+                viewModel.stopCleaning()
+            } else {
+                checkVolumeAndRun {
+                    AdsConfig.showInterClickAd(requireActivity() as AppCompatActivity) {
+                        viewModel.startAutoCleaning()
+                    }
+                }
+            }
+        }
+
         binding?.cardManualClean?.setOnClickListener {
-            val intent = Intent(requireContext(), ManualCleanActivity::class.java)
-            startActivity(intent)
+            AdsConfig.showInterClickAd(requireActivity() as AppCompatActivity) {
+                val intent = Intent(requireContext(), ManualCleanActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding?.cardVibrationClean?.setOnClickListener {
-            val intent = Intent(requireContext(), VibrationCleanActivity::class.java)
-            startActivity(intent)
+            AdsConfig.showInterClickAd(requireActivity() as AppCompatActivity) {
+                val intent = Intent(requireContext(), VibrationCleanActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding?.cardAirBlow?.setOnClickListener {
-            val intent = Intent(requireContext(), AirBlowActivity::class.java)
-            startActivity(intent)
+            AdsConfig.showInterClickAd(requireActivity() as AppCompatActivity) {
+                val intent = Intent(requireContext(), AirBlowActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
@@ -115,7 +139,7 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
             }
             is CleaningState.Complete -> {
                 viewModel.stopCleaning()
-                showSuccessDialog()
+                showSuccess()
             }
             is CleaningState.Error -> {
                 viewModel.stopCleaning()
@@ -144,11 +168,8 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
         }
     }
 
-    private fun showSuccessDialog() {
-        MaterialAlertDialogBuilder(requireContext())
-            .setTitle(R.string.state_complete)
-            .setMessage(R.string.success_alert_desc)
-            .setPositiveButton(R.string.btn_ok, null)
-            .show()
+    private fun showSuccess() {
+        val intent = Intent(requireContext(), TestSpeakerActivity::class.java)
+        startActivity(intent)
     }
 }

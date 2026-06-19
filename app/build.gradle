@@ -16,14 +16,14 @@ android {
         minSdk 24
         targetSdk 37
         versionCode 1
-        versionName "1.0"
-
+        versionName "0.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+//            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -38,6 +38,31 @@ android {
         viewBinding true
         buildConfig true
         dataBinding true
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def formattedDate = new java.text.SimpleDateFormat("ddMMyyyy").format(new java.util.Date())
+            outputFileName = "D57_LiveScore_v${variant.versionName}_c${variant.versionCode}_${formattedDate}.apk"
+        }
+
+        // Rename AAB
+        def variantName = variant.name
+        def capitalizedVariantName = variantName.substring(0, 1).toUpperCase() + variantName.substring(1)
+        def bundleTaskName = "bundle${capitalizedVariantName}"
+        
+        tasks.matching { it.name == bundleTaskName }.configureEach { task ->
+            task.doLast {
+                def formattedDate = new java.text.SimpleDateFormat("ddMMyyyy").format(new java.util.Date())
+                def bundleOutputDir = layout.buildDirectory.dir("outputs/bundle/${variantName}").get().asFile
+                def aabFile = bundleOutputDir.listFiles()?.find { it.name.endsWith(".aab") }
+                if (aabFile != null) {
+                    def newName = "D57_LiveScore_v${variant.versionName}_c${variant.versionCode}_${formattedDate}.aab"
+                    aabFile.renameTo(new File(aabFile.parent, newName))
+                    println("Renamed bundle to: $newName")
+                }
+            }
+        }
     }
 }
 
@@ -79,10 +104,16 @@ dependencies {
     implementation libs.hilt.android
     kapt libs.hilt.compiler
 
-    //fb sdk
+    // sdk mediation
     implementation libs.facebook.android.sdk
     implementation libs.facebook
-
+    implementation("com.google.ads.mediation:applovin:13.6.2.0")
+    implementation("com.google.ads.mediation:inmobi:11.3.0.0")
+    implementation("com.google.ads.mediation:pangle:8.0.0.5.0")
+    implementation("com.google.ads.mediation:mintegral:17.1.61.0")
+    implementation("com.unity3d.ads:unity-ads:4.18.0")
+    implementation("com.google.ads.mediation:unity:4.18.0.0")
+    implementation("com.google.ads.mediation:vungle:7.7.4.0")
 
 
     // Lifecycle

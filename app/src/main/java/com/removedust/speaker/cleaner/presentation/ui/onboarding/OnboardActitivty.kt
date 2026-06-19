@@ -1,12 +1,12 @@
 package com.removedust.speaker.cleaner.presentation.ui.onboarding
 
 import android.view.MotionEvent
-import androidx.recyclerview.widget.RecyclerView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 
 import com.removedust.speaker.cleaner.R
-import com.removedust.speaker.cleaner.base.AbsBaseActivity
+import com.removedust.speaker.cleaner.base.BaseActivity
 import com.removedust.speaker.cleaner.databinding.ActivityIntroSlideshowBinding
 
 import com.removedust.speaker.cleaner.presentation.ui.onboarding.fragment.FragmentIntro1
@@ -21,7 +21,7 @@ import com.removedust.speaker.cleaner.util.SystemUtil
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OnboardActitivty : AbsBaseActivity() {
+class OnboardActitivty : BaseActivity() {
 
     private lateinit var binding: ActivityIntroSlideshowBinding
 

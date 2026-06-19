@@ -3,6 +3,7 @@ package com.removedust.speaker.cleaner.presentation.ui.settings
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
+import com.removedust.speaker.cleaner.BuildConfig
 import com.removedust.speaker.cleaner.base.BaseActivity
 import com.removedust.speaker.cleaner.databinding.ActivitySettingsBinding
 import com.removedust.speaker.cleaner.presentation.ui.language.LanguageActivity
@@ -58,8 +59,8 @@ class SettingsActivity : BaseActivity() {
             startActivity(intent)
         }
 
-        binding.btnSettingsVersion.setOnClickListener {
-            Toast.makeText(this, "App Version: 0.0.1", Toast.LENGTH_SHORT).show()
-        }
+        binding.tvSettingsVersionValue.text = "v${BuildConfig.VERSION_NAME}"
     }
+
+
 }

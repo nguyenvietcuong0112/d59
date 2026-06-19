@@ -107,18 +107,12 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun loadAdsInter() {
-        val isVIP = false
-
         lifecycleScope.launch {
             for (progress in 0..100) {
                 binding.tvProgressPercent.text = "$progress%"
-                delay(if (isVIP) 10L else 80L)
+                delay(80L)
             }
             startLanguage()
-        }
-
-        if (isVIP) {
-            return
         }
 
         val consentHelper = ConsentHelper.getInstance(this)
@@ -153,7 +147,7 @@ class SplashActivity : BaseActivity() {
         if (isTransitioning) return
         isTransitioning = true
 
-        val nextIntent = Intent(this, MainActivity::class.java)
+        val nextIntent = Intent(this, LanguageActivity::class.java)
         startActivity(nextIntent)
         finish()
     }

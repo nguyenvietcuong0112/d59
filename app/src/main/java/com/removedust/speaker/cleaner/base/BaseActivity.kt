@@ -35,6 +35,29 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         SystemUtil.setLocale(this)
         bind()
+
+    }
+
+    private fun hideNavigationBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            val window = getWindow()
+            window.setDecorFitsSystemWindows(false)
+            val insetsController = window.getInsetsController()
+            if (insetsController != null) {
+                insetsController.hide(WindowInsets.Type.navigationBars())
+                insetsController.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE)
+            }
+        } else {
+            val decorView = getWindow().getDecorView()
+            decorView.setSystemUiVisibility(
+                (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+            )
+        }
+
     }
 
     abstract fun bind()
@@ -128,24 +151,24 @@ abstract class BaseActivity : AppCompatActivity() {
         noInternetDialog = null
     }
 
-    private fun hideNavigationBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            val window = getWindow()
-            window.setDecorFitsSystemWindows(false)
-            val insetsController = window.getInsetsController()
-            if (insetsController != null) {
-                insetsController.hide(WindowInsets.Type.navigationBars())
-                insetsController.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE)
-            }
-        } else {
-            val decorView = getWindow().getDecorView()
-            decorView.setSystemUiVisibility(
-                (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                        or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
-            )
-        }
-    }
+//    private fun hideNavigationBar() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            val window = getWindow()
+//            window.setDecorFitsSystemWindows(false)
+//            val insetsController = window.getInsetsController()
+//            if (insetsController != null) {
+//                insetsController.hide(WindowInsets.Type.navigationBars())
+//                insetsController.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE)
+//            }
+//        } else {
+//            val decorView = getWindow().getDecorView()
+//            decorView.setSystemUiVisibility(
+//                (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//                        or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+//            )
+//        }
+//    }
 }

@@ -47,5 +47,6 @@ abstract class AbsBaseActivity : AppCompatActivity() {
                         or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
             )
         }
+
     }
 }

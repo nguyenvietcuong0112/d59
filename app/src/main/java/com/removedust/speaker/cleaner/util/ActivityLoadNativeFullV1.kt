@@ -9,7 +9,7 @@ import android.widget.ImageView
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
 import com.removedust.speaker.cleaner.R
-import com.removedust.speaker.cleaner.base.AbsBaseActivity
+import com.removedust.speaker.cleaner.base.BaseActivity
 import com.removedust.speaker.cleaner.databinding.ActivityNativeFullBinding
 import com.removedust.speaker.cleaner.util.ActivityFullCallback
 import com.mallegan.ads.callback.NativeCallback
@@ -17,7 +17,7 @@ import com.mallegan.ads.util.Admob
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ActivityLoadNativeFullV1 : AbsBaseActivity() {
+class ActivityLoadNativeFullV1 : BaseActivity() {
     var binding: ActivityNativeFullBinding? = null
      override fun bind() {
         SystemConfiguration.setStatusBarColor(

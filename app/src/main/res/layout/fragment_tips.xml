@@ -111,15 +111,24 @@
                             android:paddingVertical="12dp"
                             android:paddingHorizontal="12dp">
 
-                            <View
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="160dp"
-                                android:background="@drawable/bg_tip_placeholder" />
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="@android:color/transparent">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_tip1"
+                                    android:scaleType="centerCrop" />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔ..."
+                                android:text="@string/tip1_title"
                                 android:textColor="#1A202C"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -129,7 +138,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Trong thế giới lập trình đầy rẫy những cao thủ code thầ..."
+                                android:text="@string/tip1_preview"
                                 android:textColor="#71717A"
                                 android:textSize="13sp"
                                 android:fontFamily="@font/sora_regular"
@@ -155,15 +164,24 @@
                             android:paddingVertical="12dp"
                             android:paddingHorizontal="12dp">
 
-                            <View
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="160dp"
-                                android:background="@drawable/bg_tip_placeholder" />
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="@android:color/transparent">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_tip2"
+                                    android:scaleType="centerCrop" />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔ..."
+                                android:text="@string/tip2_title"
                                 android:textColor="#1A202C"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -173,7 +191,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Trong thế giới lập trình đầy rẫy những cao thủ code thầ..."
+                                android:text="@string/tip2_preview"
                                 android:textColor="#71717A"
                                 android:textSize="13sp"
                                 android:fontFamily="@font/sora_regular"
@@ -209,15 +227,24 @@
                             android:paddingVertical="12dp"
                             android:paddingHorizontal="12dp">
 
-                            <View
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="160dp"
-                                android:background="@drawable/bg_tip_placeholder" />
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="@android:color/transparent">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_tip3"
+                                    android:scaleType="centerCrop" />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔ..."
+                                android:text="@string/tip3_title"
                                 android:textColor="#1A202C"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -227,7 +254,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Trong thế giới lập trình đầy rẫy những cao thủ code thầ..."
+                                android:text="@string/tip3_preview"
                                 android:textColor="#71717A"
                                 android:textSize="13sp"
                                 android:fontFamily="@font/sora_regular"
@@ -253,15 +280,24 @@
                             android:paddingVertical="12dp"
                             android:paddingHorizontal="12dp">
 
-                            <View
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="160dp"
-                                android:background="@drawable/bg_tip_placeholder" />
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="@android:color/transparent">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_tip4"
+                                    android:scaleType="centerCrop" />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="CƯỜNG DEV – HUYỀN THOẠI BUG KHÔ..."
+                                android:text="@string/tip4_title"
                                 android:textColor="#1A202C"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -271,7 +307,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Trong thế giới lập trình đầy rẫy những cao thủ code thầ..."
+                                android:text="@string/tip4_preview"
                                 android:textColor="#71717A"
                                 android:textSize="13sp"
                                 android:fontFamily="@font/sora_regular"
