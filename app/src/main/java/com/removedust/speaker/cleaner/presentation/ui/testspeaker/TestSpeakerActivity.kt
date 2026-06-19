@@ -1,6 +1,7 @@
 package com.removedust.speaker.cleaner.presentation.ui.testspeaker
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.database.ContentObserver
 import android.graphics.Color
@@ -15,6 +16,7 @@ import com.removedust.speaker.cleaner.R
 import com.removedust.speaker.cleaner.base.BaseActivity
 import com.removedust.speaker.cleaner.databinding.ActivityTestSpeakerBinding
 import com.removedust.speaker.cleaner.databinding.ActivityVibrationCleanBinding
+import com.removedust.speaker.cleaner.presentation.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -76,6 +78,14 @@ class TestSpeakerActivity : BaseActivity() {
             setVolume(value.toInt())
         }
 
+        binding.btnBacktohome.setOnClickListener {
+            startActivity(
+                Intent(this, MainActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+            )
+            finish()
+        }
 
     }
 
@@ -96,6 +106,7 @@ class TestSpeakerActivity : BaseActivity() {
         mediaPlayer?.start()
         isPlaying = true
 
+        binding.btnPlayPause.setImageResource(R.drawable.ic_pause)
         binding.lottieGlow.visibility = View.VISIBLE
         binding.lottieGlow.playAnimation()
     }
@@ -103,7 +114,7 @@ class TestSpeakerActivity : BaseActivity() {
 
         mediaPlayer?.pause()
         isPlaying = false
-
+        binding.btnPlayPause.setImageResource(R.drawable.ic_play)
         binding.lottieGlow.cancelAnimation()
         binding.lottieGlow.visibility = View.INVISIBLE
     }
