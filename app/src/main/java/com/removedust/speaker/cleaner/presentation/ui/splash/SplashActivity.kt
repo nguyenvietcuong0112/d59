@@ -23,6 +23,8 @@ import com.removedust.speaker.cleaner.presentation.ui.main.MainActivity
 import com.removedust.speaker.cleaner.util.ActivityFullCallback
 import com.removedust.speaker.cleaner.util.ActivityLoadNativeFullV1
 import com.removedust.speaker.cleaner.util.SharePreferenceUtils
+import com.removedust.speaker.cleaner.util.LogEvent
+import com.removedust.speaker.cleaner.util.SystemUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -67,8 +69,14 @@ class SplashActivity : BaseActivity() {
         binding.frAdsBanner.visibility = View.VISIBLE
         Admob.getInstance()
             .loadBanner(this, getRemoteAdId("banner_splash", R.string.banner_splash))
+        LogEvent.log(this, "banner_splash_view")
 
         interCallback = object : InterCallback() {
+            override fun onAdOpened() {
+                super.onAdOpened()
+                LogEvent.log(this@SplashActivity, "inter_splash_view")
+            }
+
             override fun onAdClosedByUser() {
                 super.onAdClosedByUser()
                 if (!SharePreferenceUtils.isOrganic(applicationContext)) {

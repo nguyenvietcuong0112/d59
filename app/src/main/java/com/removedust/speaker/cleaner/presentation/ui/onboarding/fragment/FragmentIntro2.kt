@@ -13,6 +13,7 @@ import com.removedust.speaker.cleaner.base.AbsBaseFragment
 import com.removedust.speaker.cleaner.databinding.FragmentIntro2Binding
 import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
 import com.removedust.speaker.cleaner.util.SharePreferenceUtils
+import com.removedust.speaker.cleaner.util.LogEvent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -55,6 +56,7 @@ class FragmentIntro2 : AbsBaseFragment<FragmentIntro2Binding?>() {
                     override fun onNativeAdLoaded(nativeAd: NativeAd?) {
                         super.onNativeAdLoaded(nativeAd)
                         if (!isAdded) return
+                        LogEvent.log(requireActivity(), "native_banner_ob")
                         val adView = LayoutInflater.from(requireActivity())
                             .inflate(R.layout.layout_native_no_media, null) as NativeAdView
 

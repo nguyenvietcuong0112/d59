@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">Entfernen Sie eingeschlossenes Wasser und Staub aus dem Lautsprecher Ihres Telefons mit Schallfrequenzen.</string>
+    <string name="volume_warning_title">Lautstärkewarnung</string>
+    <string name="volume_warning_desc">Bitte stellen Sie die Lautstärke auf MAXIMAL und legen Sie Ihr Telefon mit dem Display nach unten für die besten Ergebnisse.</string>
+    <string name="btn_auto_clean">Automatische Reinigung (80s)</string>
+    <string name="btn_manual_clean">Manuelle Reinigung</string>
+    <string name="btn_headphone_clean">Kopfhörer-Reinigung (45s)</string>
+    <string name="btn_sound_fix">Tonreparatur (1000Hz)</string>
+    <string name="btn_stop">Stopp</string>
+    <string name="text_remaining">Verbleibende Zeit: %1$ds</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">Bereit zur Reinigung</string>
+    <string name="state_cleaning">Reinigung aktiv</string>
+    <string name="state_complete">Reinigung abgeschlossen!</string>
+    <string name="state_error">Fehler: %1$s</string>
+    <string name="success_alert_desc">Ihr Lautsprecher wurde erfolgreich gereinigt. Falls der Ton weiterhin gedämpft klingt, führen Sie die Tonreparatur aus oder versuchen Sie es erneut.</string>
+    <string name="btn_ok">Verstanden</string>
+    <string name="toast_select_language_continue">Bitte wählen Sie eine Sprache aus, um fortzufahren</string>
+    <string name="language">Sprache</string>
+    <string name="splash_ads_warning">Anzeigen werden möglicherweise in Kürze geladen, bitte warten…</string>
+    <string name="intro_slide_1_title">Klaren Lautsprecherklang wiederherstellen</string>
+    <string name="intro_slide_2_title">Volle manuelle Kontrolle</string>
+    <string name="intro_slide_3_title">Leistungsstarker Vibrationsmodus</string>
+    <string name="intro_slide_4_title">Luftblas-Technologie</string>
+    <string name="intro_next">Weiter</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">Lautstärke auf Maximum stellen</string>
+    <string name="tip1_preview">Stellen Sie die Lautstärke Ihres Telefons vor Beginn der Reinigung auf die höchste Stufe...</string>
+
+    <string name="tip2_title">Lautsprecher nach unten ausrichten</string>
+    <string name="tip2_preview">Für beste Ergebnisse sollte die Lautsprecheröffnung immer nach unten zeigen...</string>
+
+    <string name="tip3_title">Mikrofon vorsichtig reinigen</string>
+    <string name="tip3_preview">Das Mikrofon spielt eine wichtige Rolle bei Anrufen, Sprachaufnahmen und Videochats...</string>
+
+    <string name="tip4_title">Zahnstocher vorsichtig zum Entfernen von Staub oder Schmutz verwenden</string>
+    <string name="tip4_preview">Ein hölzerner Zahnstocher kann verwendet werden, um sichtbaren Staub und Schmutz zu entfernen...</string>
+
+    <string name="title_air_blow">Luftstoß</string>
+    <string name="label_custom_frequency">Benutzerdefinierte Frequenz</string>
+    <string name="state_ready">Bereit</string>
+    <string name="btn_start">Starten</string>
+    <string name="tab_home">Startseite</string>
+    <string name="tab_tips">Tipps</string>
+    <string name="title_manual_cleaning">Manuelle Reinigung</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="menu_rate_app">App bewerten</string>
+    <string name="menu_share_app">App teilen</string>
+    <string name="menu_policy">Datenschutzrichtlinie</string>
+    <string name="menu_version">Version</string>
+    <string name="title_test_speaker">Lautsprecher testen</string>
+    <string name="test_speaker_desc">Wenn der Lautsprecher noch nicht sauber ist, versuchen Sie eine andere Reinigungsmethode.</string>
+    <string name="volume_boost_test">Lautstärkeverstärkung (Test)</string>
+    <string name="btn_back_to_home">Zurück zur Startseite</string>
+    <string name="title_vibration_cleaning">Vibrationsreinigung</string>
+    <string name="label_speaker">Lautsprecher</string>
+    <string name="select_type">Typ auswählen:</string>
+    <string name="type_normal">Normal</string>
+    <string name="type_strong">Stark</string>
+    <string name="exit_confirm_title">App beenden</string>
+    <string name="exit_confirm_desc">Möchten Sie die App wirklich beenden?</string>
+    <string name="exit_confirm_cancel">Abbrechen</string>
+    <string name="exit_confirm_exit">Beenden</string>
+    <string name="no_internet_title">Keine Internetverbindung</string>
+    <string name="no_internet_desc">Bitte überprüfen Sie Ihre Internetverbindung</string>
+    <string name="btn_cancel">Abbrechen</string>
+    <string name="tap_to_stop">Zum Stoppen tippen</string>
+    <string name="tap_to_remove_water">Zum Entfernen von Wasser tippen</string>
+    <string name="label_micro">Mikrofon</string>
+    <string name="level_low">Niedrig</string>
+    <string name="level_medium">Mittel</string>
+    <string name="level_high">Hoch</string>
+    <string name="btn_decrease">Verringern</string>
+    <string name="btn_increase">Erhöhen</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

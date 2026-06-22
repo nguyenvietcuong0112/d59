@@ -33,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sora_regular"
-                    android:text="Time Remaining: 0s"
+                    android:text=""
                     android:textColor="#94A3B8"
                     android:textSize="14sp" />
 
@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/sora_bold"
-                    android:text="0 Hz"
+                    android:text=""
                     android:textColor="@color/primary_blue_selected"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sora_bold"
-                    android:text="Ready to clean"
+                    android:text="@string/state_idle"
                     android:textColor="#1A202C"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -114,7 +114,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:fontFamily="@font/sora_bold"
-                    android:text="Tap to stop"
+                    android:text="@string/tap_to_stop"
                     android:textColor="#FF3B30"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -129,7 +129,7 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:fontFamily="@font/sora_regular"
                 android:letterSpacing="0.08"
-                android:text="Tap to remove water"
+                android:text="@string/tap_to_remove_water"
                 android:textColor="@color/primary_blue_selected"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -172,7 +172,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:fontFamily="@font/sora_bold"
-                            android:text="Manual Cleaning"
+                            android:text="@string/title_manual_cleaning"
                             android:textColor="#1A202C"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -207,7 +207,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:fontFamily="@font/sora_bold"
-                            android:text="Vibration Cleaning"
+                            android:text="@string/title_vibration_cleaning"
                             android:textColor="#1A202C"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -241,7 +241,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:fontFamily="@font/sora_bold"
-                            android:text="Air Blow"
+                            android:text="@string/title_air_blow"
                             android:textColor="#1A202C"
                             android:textSize="16sp"
                             android:textStyle="bold" />

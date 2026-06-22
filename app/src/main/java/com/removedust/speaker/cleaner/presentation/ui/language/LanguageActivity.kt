@@ -28,6 +28,7 @@ import com.removedust.speaker.cleaner.presentation.ui.onboarding.OnboardActitivt
 import com.removedust.speaker.cleaner.util.AdsConfig
 import com.removedust.speaker.cleaner.util.SharePreferenceUtils
 import com.removedust.speaker.cleaner.util.SystemUtil
+import com.removedust.speaker.cleaner.util.LogEvent
 import dagger.hilt.android.AndroidEntryPoint
 
 class LanguageActivity : BaseActivity() {
@@ -84,6 +85,8 @@ class LanguageActivity : BaseActivity() {
             binding.ivSelect.alpha = 1.0f
         }
 
+        binding.tvLanguageWarning.visibility = if (isLanguageSelected) View.GONE else View.VISIBLE
+
         setupRecyclerView()
         setupListeners()
         loadAds()
@@ -105,6 +108,7 @@ class LanguageActivity : BaseActivity() {
                 // 2. Make button active visually and load select ad
                 binding.ivSelect.alpha = 1.0f
                 isLanguageSelected = true
+                binding.tvLanguageWarning.visibility = View.GONE
                 loadAdsNativeLanguageSelect()
             },
             isSelectedPredicate = { lang ->
@@ -120,7 +124,7 @@ class LanguageActivity : BaseActivity() {
     private fun setupListeners() {
         binding.frNext.setOnClickListener {
             if (!isLanguageSelected) {
-                Toast.makeText(this, getString(R.string.toast_select_language_continue), Toast.LENGTH_SHORT).show()
+                binding.tvLanguageWarning.visibility = View.VISIBLE
                 return@setOnClickListener
             }
             
@@ -159,6 +163,7 @@ class LanguageActivity : BaseActivity() {
             Admob.getInstance().loadNativeAds(this, adId, 1, object : NativeCallback() {
                 override fun onNativeAdLoaded(nativeAd: NativeAd?) {
                     super.onNativeAdLoaded(nativeAd)
+                    LogEvent.log(this@LanguageActivity, "native_language_view")
                     val adView = LayoutInflater.from(this@LanguageActivity)
                         .inflate(R.layout.layout_native_media, null) as NativeAdView
                     binding.frAds.removeAllViews()
@@ -193,6 +198,7 @@ class LanguageActivity : BaseActivity() {
             Admob.getInstance().loadNativeAds(this, adId, 1, object : NativeCallback() {
                 override fun onNativeAdLoaded(nativeAd: NativeAd?) {
                     super.onNativeAdLoaded(nativeAd)
+                    LogEvent.log(this@LanguageActivity, "native_language_alt_view")
                     val adView = LayoutInflater.from(this@LanguageActivity)
                         .inflate(R.layout.layout_native_media, null) as NativeAdView
                     binding.frAds.removeAllViews()

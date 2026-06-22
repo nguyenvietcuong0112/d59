@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">Ses frekanslarını kullanarak telefonunuzun hoparlöründe sıkışan suyu ve tozu temizleyin.</string>
+    <string name="volume_warning_title">Ses Seviyesi Uyarısı</string>
+    <string name="volume_warning_desc">En iyi sonuçlar için lütfen ses seviyesini MAKSİMUMA getirin ve telefonunuzu ekranı aşağı bakacak şekilde yerleştirin.</string>
+    <string name="btn_auto_clean">Otomatik Temizleme (80 sn)</string>
+    <string name="btn_manual_clean">Manuel Temizleme</string>
+    <string name="btn_headphone_clean">Kulaklık Temizleme (45 sn)</string>
+    <string name="btn_sound_fix">Ses Düzeltme (1000Hz)</string>
+    <string name="btn_stop">Durdur</string>
+    <string name="text_remaining">Kalan Süre: %1$d sn</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">Temizlemeye Hazır</string>
+    <string name="state_cleaning">Temizleme Devam Ediyor</string>
+    <string name="state_complete">Temizleme Tamamlandı!</string>
+    <string name="state_error">Hata: %1$s</string>
+    <string name="success_alert_desc">Hoparlörünüz başarıyla temizlendi. Ses hâlâ boğuk geliyorsa Ses Düzeltme özelliğini çalıştırın veya tekrar deneyin.</string>
+    <string name="btn_ok">Anladım</string>
+    <string name="toast_select_language_continue">Devam etmek için lütfen bir dil seçin</string>
+    <string name="language">Dil</string>
+    <string name="splash_ads_warning">Reklamlar kısa süre içinde yüklenebilir, lütfen bekleyin…</string>
+    <string name="intro_slide_1_title">Net Hoparlör Sesini Geri Getirin</string>
+    <string name="intro_slide_2_title">Tam Manuel Kontrol</string>
+    <string name="intro_slide_3_title">Güçlü Titreşim Modu</string>
+    <string name="intro_slide_4_title">Hava Üfleme Teknolojisi</string>
+    <string name="intro_next">İleri</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">Ses Seviyesini Maksimuma Ayarlayın</string>
+    <string name="tip1_preview">Temizleme işlemine başlamadan önce telefonunuzun ses seviyesini en yüksek seviyeye getirin...</string>
+
+    <string name="tip2_title">Hoparlörü Aşağı Bakacak Şekilde Tutun</string>
+    <string name="tip2_preview">En iyi sonuçlar için temizleme sırasında hoparlör açıklığını her zaman aşağıya doğru konumlandırın...</string>
+
+    <string name="tip3_title">Mikrofonu Dikkatlice Temizleyin</string>
+    <string name="tip3_preview">Mikrofon; telefon görüşmeleri, ses kayıtları ve görüntülü konuşmalarda önemli bir rol oynar...</string>
+
+    <string name="tip4_title">Toz veya Kirleri Dikkatlice Temizlemek İçin Kürdan Kullanın</string>
+    <string name="tip4_preview">Mikrofon çevresindeki görünür toz ve kirleri temizlemek için ahşap bir kürdan kullanılabilir...</string>
+
+    <string name="title_air_blow">Hava Üfleme</string>
+    <string name="label_custom_frequency">Özel Frekans</string>
+    <string name="state_ready">Hazır</string>
+    <string name="btn_start">Başlat</string>
+    <string name="tab_home">Ana Sayfa</string>
+    <string name="tab_tips">İpuçları</string>
+    <string name="title_manual_cleaning">Manuel Temizleme</string>
+    <string name="title_settings">Ayarlar</string>
+    <string name="menu_rate_app">Uygulamayı Değerlendir</string>
+    <string name="menu_share_app">Uygulamayı Paylaş</string>
+    <string name="menu_policy">Gizlilik Politikası</string>
+    <string name="menu_version">Sürüm</string>
+    <string name="title_test_speaker">Hoparlörü Test Et</string>
+    <string name="test_speaker_desc">Hoparlör hâlâ temiz değilse farklı bir temizleme yöntemi deneyin.</string>
+    <string name="volume_boost_test">Ses Güçlendirme (Test)</string>
+    <string name="btn_back_to_home">Ana Sayfaya Dön</string>
+    <string name="title_vibration_cleaning">Titreşimle Temizleme</string>
+    <string name="label_speaker">Hoparlör</string>
+    <string name="select_type">Tür seçin:</string>
+    <string name="type_normal">Normal</string>
+    <string name="type_strong">Güçlü</string>
+    <string name="exit_confirm_title">Uygulamadan Çık</string>
+    <string name="exit_confirm_desc">Uygulamadan çıkmak istediğinizden emin misiniz?</string>
+    <string name="exit_confirm_cancel">İptal</string>
+    <string name="exit_confirm_exit">Çık</string>
+    <string name="no_internet_title">İnternet Bağlantısı Yok</string>
+    <string name="no_internet_desc">Lütfen internet bağlantınızı kontrol edin</string>
+    <string name="btn_cancel">İptal</string>
+    <string name="tap_to_stop">Durdurmak için dokunun</string>
+    <string name="tap_to_remove_water">Suyu çıkarmak için dokunun</string>
+    <string name="label_micro">Mikrofon</string>
+    <string name="level_low">Düşük</string>
+    <string name="level_medium">Orta</string>
+    <string name="level_high">Yüksek</string>
+    <string name="btn_decrease">Azalt</string>
+    <string name="btn_increase">Artır</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

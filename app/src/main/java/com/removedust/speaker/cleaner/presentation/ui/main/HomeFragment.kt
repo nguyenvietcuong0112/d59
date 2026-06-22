@@ -107,7 +107,7 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
         val binding = binding ?: return
         when (val state = uiState.state) {
             is CleaningState.Idle -> {
-                binding.tvCurrentState.text = "Ready to clean"
+                binding.tvCurrentState.text = getString(R.string.state_idle)
                 binding.progressIndicator.progress = 0
                 if (binding.btnMainAutoClean.isAnimating) {
                     binding.btnMainAutoClean.cancelAnimation()
@@ -122,7 +122,7 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
                 setCardsEnabled(true)
             }
             is CleaningState.Cleaning -> {
-                binding.tvCurrentState.text = "Cleaning Active"
+                binding.tvCurrentState.text = getString(R.string.state_cleaning)
                 binding.progressIndicator.progress = uiState.progress
                 if (!binding.btnMainAutoClean.isAnimating) {
                     binding.btnMainAutoClean.playAnimation()
@@ -132,8 +132,8 @@ class HomeFragment : AbsBaseFragment<FragmentHomeBinding>() {
                 binding.btnStopCleaning.visibility = View.VISIBLE
                 binding.tvTapBanner.visibility = View.GONE
 
-                binding.tvTimeRemaining.text = "Time Remaining: ${uiState.timeRemaining}s"
-                binding.tvLiveFrequency.text = "${uiState.currentFrequency} Hz"
+                binding.tvTimeRemaining.text = getString(R.string.text_remaining, uiState.timeRemaining)
+                binding.tvLiveFrequency.text = getString(R.string.text_frequency, uiState.currentFrequency)
 
                 setCardsEnabled(false)
             }

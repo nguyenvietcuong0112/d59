@@ -90,6 +90,18 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <TextView
+            android:id="@+id/tv_language_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/toast_select_language_continue"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:fontFamily="@font/sora_medium"
+            android:layout_marginBottom="4dp"
+            android:visibility="visible" />
+
     </LinearLayout>
 
     <!-- Language Recycler View (scroll above the native ad) -->

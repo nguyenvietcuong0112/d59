@@ -1,8 +1,8 @@
 package com.removedust.speaker.cleaner.domain.adjust
 
 object AppAdjustTokens {
-    const val ADJUST_APP_TOKEN = ""
-    const val EVENT_IAP_COMMON = ""
+    const val ADJUST_APP_TOKEN = "rofd28xg5fy8"
+    const val EVENT_IAP_COMMON = "2edw2g"
     
     const val EVENT_BUY_WEEKLY = "weekly_package_success_token"
     const val EVENT_BUY_MONTHLY = "monthly_package_success_token"

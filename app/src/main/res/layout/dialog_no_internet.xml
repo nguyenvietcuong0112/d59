@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="No Internet"
+                android:text="@string/no_internet_title"
                 android:textColor="@color/textPrimary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -48,7 +48,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
-                android:text="Please check your internet connection"
+                android:text="@string/no_internet_desc"
                 android:textColor="@color/textSecondary"
                 android:textSize="14sp" />
 

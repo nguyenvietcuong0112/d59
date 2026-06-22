@@ -43,6 +43,11 @@ object AdsConfig {
                 0,
                 30000,
                 object : InterCallback() {
+                    override fun onAdOpened() {
+                        super.onAdOpened()
+                        LogEvent.log(activity, "inter_ad_view")
+                    }
+
                     override fun onAdClosed() {
                         super.onAdClosed()
                         lastInterAdShowTime = System.currentTimeMillis()

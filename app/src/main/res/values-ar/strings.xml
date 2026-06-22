@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">أزل الماء والغبار العالقين من سماعة هاتفك باستخدام الترددات الصوتية.</string>
+    <string name="volume_warning_title">تحذير مستوى الصوت</string>
+    <string name="volume_warning_desc">يرجى رفع مستوى الصوت إلى الحد الأقصى ووضع الهاتف بحيث تكون الشاشة للأسفل للحصول على أفضل النتائج.</string>
+    <string name="btn_auto_clean">تنظيف تلقائي (80 ثانية)</string>
+    <string name="btn_manual_clean">تنظيف يدوي</string>
+    <string name="btn_headphone_clean">تنظيف سماعة الرأس (45 ثانية)</string>
+    <string name="btn_sound_fix">إصلاح الصوت (1000 هرتز)</string>
+    <string name="btn_stop">إيقاف</string>
+    <string name="text_remaining">الوقت المتبقي: %1$d ثانية</string>
+    <string name="text_frequency">%1$d هرتز</string>
+    <string name="state_idle">جاهز للتنظيف</string>
+    <string name="state_cleaning">التنظيف قيد التشغيل</string>
+    <string name="state_complete">اكتمل التنظيف!</string>
+    <string name="state_error">خطأ: %1$s</string>
+    <string name="success_alert_desc">تم تنظيف السماعة بنجاح. إذا كان الصوت لا يزال مكتومًا، شغّل إصلاح الصوت أو أعد المحاولة.</string>
+    <string name="btn_ok">حسنًا</string>
+    <string name="toast_select_language_continue">يرجى اختيار لغة للمتابعة</string>
+    <string name="language">اللغة</string>
+    <string name="splash_ads_warning">قد يتم تحميل الإعلانات قريبًا، يرجى الانتظار…</string>
+    <string name="intro_slide_1_title">استعادة نقاء صوت السماعة</string>
+    <string name="intro_slide_2_title">تحكم يدوي كامل</string>
+    <string name="intro_slide_3_title">وضع اهتزاز قوي</string>
+    <string name="intro_slide_4_title">تقنية نفخ الهواء</string>
+    <string name="intro_next">التالي</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">ارفع مستوى الصوت إلى الحد الأقصى</string>
+    <string name="tip1_desc">اضبط مستوى صوت هاتفك على أعلى درجة قبل بدء عملية التنظيف. يُنشئ صوت التنظيف اهتزازات صوتية قوية تساعد على دفع قطرات الماء والغبار والشوائب العالقة خارج حجرة السماعة. كلما ارتفع مستوى الصوت زادت قوة الاهتزازات وأصبحت عملية التنظيف أكثر فعالية.\n\nتأكد من فصل أي أجهزة بلوتوث أو سماعات رأس أو مكبرات صوت خارجية حتى يخرج الصوت مباشرة من سماعة الهاتف المدمجة. أثناء التنظيف قد تلاحظ خروج قطرات ماء من فتحة السماعة أو تغيرًا طفيفًا في جودة الصوت، وهذا أمر طبيعي ويدل على أن عملية التنظيف تعمل كما ينبغي.\n\nإذا تعرضت السماعة لكمية كبيرة من الماء، فقد يساعد تشغيل عدة دورات تنظيف في إزالة الرطوبة المتبقية واستعادة وضوح الصوت.</string>
+    <string name="tip1_preview">اضبط مستوى صوت هاتفك على أعلى درجة قبل بدء عملية التنظيف...</string>
+
+    <string name="tip2_title">اجعل السماعة متجهة إلى الأسفل</string>
+    <string name="tip2_desc">للحصول على أفضل النتائج، ضع الهاتف بحيث تكون فتحة السماعة متجهة إلى الأسفل أثناء عملية التنظيف. تعمل الجاذبية مع الاهتزازات الصوتية لمساعدة قطرات الماء على الخروج من حجرة السماعة بسهولة أكبر.\n\nضع الجهاز على سطح ثابت وتجنب تغيير موضعه أثناء التنظيف. يساعد توجيه السماعة إلى الأسفل على منع استقرار الرطوبة في الداخل ويزيد من فعالية كل دورة تنظيف.\n\nإذا تعرض هاتفك مؤخرًا للمطر أو الرذاذ أو ملامسة الماء عن طريق الخطأ، فإن الجمع بين أقصى مستوى للصوت والوضعية الصحيحة يمكن أن يحسن بشكل كبير إزالة الرطوبة واستعادة الأداء الصوتي.</string>
+    <string name="tip2_preview">للحصول على أفضل النتائج، ضع الهاتف بحيث تكون فتحة السماعة متجهة إلى الأسفل...</string>
+
+    <string name="tip3_title">نظف الميكروفون بعناية</string>
+    <string name="tip3_desc">يلعب الميكروفون دورًا مهمًا في المكالمات الهاتفية والتسجيلات الصوتية ومكالمات الفيديو والمساعدات الصوتية. مع مرور الوقت، قد يتجمع الغبار والوبر والجزيئات الصغيرة حول فتحة الميكروفون، مما يقلل من وضوح الصوت ويؤثر على الأداء الصوتي بشكل عام.\n\nيساعد التنظيف المنتظم في الحفاظ على حساسية الميكروفون وضمان بقاء صوتك واضحًا أثناء المكالمات والتسجيلات. إذا كان الآخرون يلاحظون أن صوتك مكتوم أو بعيد، فقد يكون السبب تراكم الأوساخ حول فتحة الميكروفون.\n\nاحرص دائمًا على التنظيف بلطف وتجنب استخدام القوة المفرطة. قد تؤدي الأدوات الحادة أو طرق التنظيف العنيفة إلى إتلاف الشبكة الواقية والمكونات الداخلية. يساعد التنظيف الحذر على الحفاظ على أداء الميكروفون وجودة الصوت على المدى الطويل.</string>
+    <string name="tip3_preview">يلعب الميكروفون دورًا مهمًا في المكالمات الهاتفية والتسجيلات الصوتية ومكالمات الفيديو...</string>
+
+    <string name="tip4_title">استخدم عود أسنان لإزالة الغبار أو الأوساخ بحذر</string>
+    <string name="tip4_desc">يمكن استخدام عود أسنان خشبي لإزالة الغبار والشوائب الظاهرة حول فتحة الميكروفون. اعمل ببطء واستخدم الطرف فقط بالقرب من السطح. الهدف هو تفكيك الأوساخ حول الشبكة الواقية دون الوصول إلى المكونات الداخلية.\n\nاستخدم حركات خفيفة ومتحكمًا بها وافحص المنطقة تحت إضاءة جيدة. لا تُدخل عود الأسنان بعمق داخل فتحة الميكروفون ولا تضغط إلى الداخل مباشرة، لأن ذلك قد يتسبب في تلف الأجزاء الحساسة داخل الجهاز.\n\nإزالة كميات صغيرة من الشوائب تدريجيًا أكثر أمانًا وغالبًا أكثر فعالية من محاولة تنظيف كل شيء دفعة واحدة. مع العناية المناسبة، يمكن أن تساعد الصيانة الدورية للميكروفون في تحسين جودة المكالمات والتسجيلات الصوتية والحفاظ على أفضل أداء للنظام الصوتي في هاتفك.</string>
+    <string name="tip4_preview">يمكن استخدام عود أسنان خشبي لإزالة الغبار والشوائب الظاهرة حول الميكروفون...</string>
+
+    <string name="title_air_blow">نفخ الهواء</string>
+    <string name="label_custom_frequency">تردد مخصص</string>
+    <string name="state_ready">جاهز</string>
+    <string name="btn_start">ابدأ</string>
+    <string name="tab_home">الرئيسية</string>
+    <string name="tab_tips">نصائح</string>
+    <string name="title_manual_cleaning">التنظيف اليدوي</string>
+    <string name="title_settings">الإعدادات</string>
+    <string name="menu_rate_app">قيّم التطبيق</string>
+    <string name="menu_share_app">مشاركة التطبيق</string>
+    <string name="menu_policy">سياسة الخصوصية</string>
+    <string name="menu_version">الإصدار</string>
+    <string name="title_test_speaker">اختبار السماعة</string>
+    <string name="test_speaker_desc">إذا لم تصبح السماعة نظيفة بعد، جرّب طريقة تنظيف مختلفة.</string>
+    <string name="volume_boost_test">تعزيز مستوى الصوت (اختبار)</string>
+    <string name="btn_back_to_home">العودة إلى الرئيسية</string>
+    <string name="title_vibration_cleaning">تنظيف بالاهتزاز</string>
+    <string name="label_speaker">السماعة</string>
+    <string name="select_type">اختر النوع:</string>
+    <string name="type_normal">عادي</string>
+    <string name="type_strong">قوي</string>
+    <string name="exit_confirm_title">الخروج من التطبيق</string>
+    <string name="exit_confirm_desc">هل أنت متأكد أنك تريد الخروج من التطبيق؟</string>
+    <string name="exit_confirm_cancel">إلغاء</string>
+    <string name="exit_confirm_exit">خروج</string>
+    <string name="no_internet_title">لا يوجد اتصال بالإنترنت</string>
+    <string name="no_internet_desc">يرجى التحقق من اتصالك بالإنترنت</string>
+    <string name="btn_cancel">إلغاء</string>
+    <string name="tap_to_stop">اضغط للإيقاف</string>
+    <string name="tap_to_remove_water">اضغط لإزالة الماء</string>
+    <string name="label_micro">الميكروفون</string>
+    <string name="level_low">منخفض</string>
+    <string name="level_medium">متوسط</string>
+    <string name="level_high">مرتفع</string>
+    <string name="btn_decrease">تقليل</string>
+    <string name="btn_increase">زيادة</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">Loại bỏ nước và bụi bị mắc kẹt trong loa điện thoại bằng tần số âm thanh.</string>
+    <string name="volume_warning_title">Cảnh Báo Âm Lượng</string>
+    <string name="volume_warning_desc">Vui lòng tăng âm lượng lên MỨC TỐI ĐA và đặt điện thoại úp màn hình xuống để đạt hiệu quả tốt nhất.</string>
+    <string name="btn_auto_clean">Làm Sạch Tự Động (80 giây)</string>
+    <string name="btn_manual_clean">Làm Sạch Thủ Công</string>
+    <string name="btn_headphone_clean">Làm Sạch Tai Nghe (45 giây)</string>
+    <string name="btn_sound_fix">Khắc Phục Âm Thanh (1000Hz)</string>
+    <string name="btn_stop">Dừng</string>
+    <string name="text_remaining">Thời Gian Còn Lại: %1$d giây</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">Sẵn Sàng Làm Sạch</string>
+    <string name="state_cleaning">Đang Làm Sạch</string>
+    <string name="state_complete">Đã Hoàn Thành!</string>
+    <string name="state_error">Lỗi: %1$s</string>
+    <string name="success_alert_desc">Loa của bạn đã được làm sạch thành công. Nếu âm thanh vẫn bị nghẹt hoặc rè, hãy chạy Khắc Phục Âm Thanh hoặc thử lại.</string>
+    <string name="btn_ok">Đã Hiểu</string>
+    <string name="toast_select_language_continue">Vui lòng chọn ngôn ngữ để tiếp tục</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="splash_ads_warning">Quảng cáo có thể được tải trong giây lát, vui lòng chờ…</string>
+    <string name="intro_slide_1_title">Khôi Phục Âm Thanh Loa Trong Trẻo</string>
+    <string name="intro_slide_2_title">Điều Khiển Thủ Công Hoàn Toàn</string>
+    <string name="intro_slide_3_title">Chế Độ Rung Mạnh Mẽ</string>
+    <string name="intro_slide_4_title">Công Nghệ Thổi Khí</string>
+    <string name="intro_next">Tiếp Theo</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">Tăng Âm Lượng Lên Mức Tối Đa</string>
+    <string name="tip1_preview">Hãy tăng âm lượng điện thoại lên mức cao nhất trước khi bắt đầu quá trình làm sạch...</string>
+
+    <string name="tip2_title">Giữ Loa Hướng Xuống Dưới</string>
+    <string name="tip2_preview">Để đạt hiệu quả tốt nhất, hãy luôn đặt điện thoại sao cho lỗ loa hướng xuống dưới...</string>
+
+    <string name="tip3_title">Vệ Sinh Micro Cẩn Thận</string>
+    <string name="tip3_preview">Micro đóng vai trò quan trọng trong cuộc gọi, ghi âm và trò chuyện video...</string>
+
+    <string name="tip4_title">Dùng Tăm Để Loại Bỏ Bụi Bẩn Một Cách Cẩn Thận</string>
+    <string name="tip4_preview">Có thể sử dụng tăm gỗ để loại bỏ bụi và các mảnh vụn nhìn thấy được quanh micro...</string>
+
+    <string name="title_air_blow">Thổi Khí</string>
+    <string name="label_custom_frequency">Tần Số Tùy Chỉnh</string>
+    <string name="state_ready">Sẵn Sàng</string>
+    <string name="btn_start">Bắt Đầu</string>
+    <string name="tab_home">Trang Chủ</string>
+    <string name="tab_tips">Mẹo</string>
+    <string name="title_manual_cleaning">Làm Sạch Thủ Công</string>
+    <string name="title_settings">Cài Đặt</string>
+    <string name="menu_rate_app">Đánh Giá Ứng Dụng</string>
+    <string name="menu_share_app">Chia Sẻ Ứng Dụng</string>
+    <string name="menu_policy">Chính Sách Quyền Riêng Tư</string>
+    <string name="menu_version">Phiên Bản</string>
+    <string name="title_test_speaker">Kiểm Tra Loa</string>
+    <string name="test_speaker_desc">Nếu loa vẫn chưa sạch, hãy thử một phương pháp làm sạch khác.</string>
+    <string name="volume_boost_test">Tăng Âm Lượng (Kiểm Tra)</string>
+    <string name="btn_back_to_home">Quay Về Trang Chủ</string>
+    <string name="title_vibration_cleaning">Làm Sạch Bằng Rung</string>
+    <string name="label_speaker">Loa</string>
+    <string name="select_type">Chọn chế độ:</string>
+    <string name="type_normal">Thường</string>
+    <string name="type_strong">Mạnh</string>
+    <string name="exit_confirm_title">Thoát Ứng Dụng</string>
+    <string name="exit_confirm_desc">Bạn có chắc chắn muốn thoát ứng dụng không?</string>
+    <string name="exit_confirm_cancel">Hủy</string>
+    <string name="exit_confirm_exit">Thoát</string>
+    <string name="no_internet_title">Không Có Kết Nối Internet</string>
+    <string name="no_internet_desc">Vui lòng kiểm tra kết nối Internet của bạn</string>
+    <string name="btn_cancel">Hủy</string>
+    <string name="tap_to_stop">Nhấn để dừng</string>
+    <string name="tap_to_remove_water">Nhấn để đẩy nước ra ngoài</string>
+    <string name="label_micro">Micro</string>
+    <string name="level_low">Thấp</string>
+    <string name="level_medium">Trung Bình</string>
+    <string name="level_high">Cao</string>
+    <string name="btn_decrease">Giảm</string>
+    <string name="btn_increase">Tăng</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

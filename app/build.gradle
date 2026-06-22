@@ -20,10 +20,33 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+//    signingConfigs {
+//        release {
+//            storeFile rootProject.file("keystore/raptorstudio.jks")
+//            storePassword "raptorstudio"
+//            keyAlias "raptorstudio"
+//            keyPassword "raptorstudio"
+//        }
+//    }
+//
+//    buildTypes {
+//        release {
+//            signingConfig signingConfigs.release
+//            minifyEnabled true
+//            shrinkResources true
+//
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+//                    'proguard-rules.pro'
+//            installation {
+//                enableBaselineProfile = false
+//            }
+//        }
+//    }
+
     buildTypes {
         release {
             minifyEnabled true
-//            shrinkResources true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -50,7 +73,7 @@ android {
         def variantName = variant.name
         def capitalizedVariantName = variantName.substring(0, 1).toUpperCase() + variantName.substring(1)
         def bundleTaskName = "bundle${capitalizedVariantName}"
-        
+
         tasks.matching { it.name == bundleTaskName }.configureEach { task ->
             task.doLast {
                 def formattedDate = new java.text.SimpleDateFormat("ddMMyyyy").format(new java.util.Date())

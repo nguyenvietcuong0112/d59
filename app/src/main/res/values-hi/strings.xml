@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">ध्वनि आवृत्तियों की सहायता से अपने फ़ोन के स्पीकर में फंसा पानी और धूल हटाएँ।</string>
+    <string name="volume_warning_title">वॉल्यूम चेतावनी</string>
+    <string name="volume_warning_desc">कृपया सर्वोत्तम परिणामों के लिए वॉल्यूम को अधिकतम करें और फ़ोन को स्क्रीन नीचे की ओर रखें।</string>
+    <string name="btn_auto_clean">स्वचालित सफाई (80 सेकंड)</string>
+    <string name="btn_manual_clean">मैनुअल सफाई</string>
+    <string name="btn_headphone_clean">हेडफ़ोन सफाई (45 सेकंड)</string>
+    <string name="btn_sound_fix">ध्वनि सुधार (1000Hz)</string>
+    <string name="btn_stop">रोकें</string>
+    <string name="text_remaining">शेष समय: %1$d सेकंड</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">सफाई के लिए तैयार</string>
+    <string name="state_cleaning">सफाई जारी है</string>
+    <string name="state_complete">सफाई पूरी हुई!</string>
+    <string name="state_error">त्रुटि: %1$s</string>
+    <string name="success_alert_desc">आपका स्पीकर सफलतापूर्वक साफ़ हो गया है। यदि ध्वनि अभी भी दबी हुई लगती है, तो ध्वनि सुधार चलाएँ या पुनः प्रयास करें।</string>
+    <string name="btn_ok">समझ गया</string>
+    <string name="toast_select_language_continue">जारी रखने के लिए कृपया एक भाषा चुनें</string>
+    <string name="language">भाषा</string>
+    <string name="splash_ads_warning">विज्ञापन शीघ्र लोड हो सकते हैं, कृपया प्रतीक्षा करें…</string>
+    <string name="intro_slide_1_title">स्पष्ट स्पीकर ध्वनि पुनर्स्थापित करें</string>
+    <string name="intro_slide_2_title">पूर्ण मैनुअल नियंत्रण</string>
+    <string name="intro_slide_3_title">शक्तिशाली वाइब्रेशन मोड</string>
+    <string name="intro_slide_4_title">एयर ब्लो तकनीक</string>
+    <string name="intro_next">अगला</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">वॉल्यूम को अधिकतम करें</string>
+    <string name="tip1_preview">सफाई प्रक्रिया शुरू करने से पहले अपने फ़ोन का वॉल्यूम उच्चतम स्तर पर सेट करें...</string>
+
+    <string name="tip2_title">स्पीकर को नीचे की ओर रखें</string>
+    <string name="tip2_preview">सर्वोत्तम परिणामों के लिए सफाई के दौरान स्पीकर का मुख हमेशा नीचे की ओर रखें...</string>
+
+    <string name="tip3_title">माइक्रोफ़ोन को सावधानीपूर्वक साफ़ करें</string>
+    <string name="tip3_preview">माइक्रोफ़ोन कॉल, वॉइस रिकॉर्डिंग और वीडियो चैट में महत्वपूर्ण भूमिका निभाता है...</string>
+
+    <string name="tip4_title">धूल या गंदगी हटाने के लिए टूथपिक का सावधानी से उपयोग करें</string>
+    <string name="tip4_preview">माइक्रोफ़ोन के आसपास दिखाई देने वाली धूल और गंदगी हटाने के लिए लकड़ी की टूथपिक का उपयोग किया जा सकता है...</string>
+
+    <string name="title_air_blow">एयर ब्लो</string>
+    <string name="label_custom_frequency">कस्टम आवृत्ति</string>
+    <string name="state_ready">तैयार</string>
+    <string name="btn_start">प्रारंभ करें</string>
+    <string name="tab_home">होम</string>
+    <string name="tab_tips">सुझाव</string>
+    <string name="title_manual_cleaning">मैनुअल सफाई</string>
+    <string name="title_settings">सेटिंग्स</string>
+    <string name="menu_rate_app">ऐप को रेट करें</string>
+    <string name="menu_share_app">ऐप साझा करें</string>
+    <string name="menu_policy">गोपनीयता नीति</string>
+    <string name="menu_version">संस्करण</string>
+    <string name="title_test_speaker">स्पीकर परीक्षण</string>
+    <string name="test_speaker_desc">यदि स्पीकर अभी भी साफ़ नहीं हुआ है, तो कोई अन्य सफाई विधि आज़माएँ।</string>
+    <string name="volume_boost_test">वॉल्यूम बूस्ट (परीक्षण)</string>
+    <string name="btn_back_to_home">होम पर वापस जाएँ</string>
+    <string name="title_vibration_cleaning">वाइब्रेशन सफाई</string>
+    <string name="label_speaker">स्पीकर</string>
+    <string name="select_type">प्रकार चुनें:</string>
+    <string name="type_normal">सामान्य</string>
+    <string name="type_strong">मज़बूत</string>
+    <string name="exit_confirm_title">ऐप से बाहर निकलें</string>
+    <string name="exit_confirm_desc">क्या आप वाकई ऐप से बाहर निकलना चाहते हैं?</string>
+    <string name="exit_confirm_cancel">रद्द करें</string>
+    <string name="exit_confirm_exit">बाहर निकलें</string>
+    <string name="no_internet_title">इंटरनेट उपलब्ध नहीं है</string>
+    <string name="no_internet_desc">कृपया अपना इंटरनेट कनेक्शन जाँचें</string>
+    <string name="btn_cancel">रद्द करें</string>
+    <string name="tap_to_stop">रोकने के लिए टैप करें</string>
+    <string name="tap_to_remove_water">पानी हटाने के लिए टैप करें</string>
+    <string name="label_micro">माइक्रोफ़ोन</string>
+    <string name="level_low">कम</string>
+    <string name="level_medium">मध्यम</string>
+    <string name="level_high">उच्च</string>
+    <string name="btn_decrease">कम करें</string>
+    <string name="btn_increase">बढ़ाएँ</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

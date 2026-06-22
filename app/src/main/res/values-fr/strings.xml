@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">Retirez l’eau et la poussière piégées dans le haut-parleur de votre téléphone grâce aux fréquences sonores.</string>
+    <string name="volume_warning_title">Avertissement de volume</string>
+    <string name="volume_warning_desc">Veuillez régler le volume au MAXIMUM et placer votre téléphone écran vers le bas pour obtenir les meilleurs résultats.</string>
+    <string name="btn_auto_clean">Nettoyage automatique (80 s)</string>
+    <string name="btn_manual_clean">Nettoyage manuel</string>
+    <string name="btn_headphone_clean">Nettoyage des écouteurs (45 s)</string>
+    <string name="btn_sound_fix">Correction du son (1000 Hz)</string>
+    <string name="btn_stop">Arrêter</string>
+    <string name="text_remaining">Temps restant : %1$ds</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">Prêt à nettoyer</string>
+    <string name="state_cleaning">Nettoyage en cours</string>
+    <string name="state_complete">Nettoyage terminé !</string>
+    <string name="state_error">Erreur : %1$s</string>
+    <string name="success_alert_desc">Votre haut-parleur a été nettoyé avec succès. Si le son reste étouffé, lancez la correction du son ou réessayez.</string>
+    <string name="btn_ok">Compris</string>
+    <string name="toast_select_language_continue">Veuillez sélectionner une langue pour continuer</string>
+    <string name="language">Langue</string>
+    <string name="splash_ads_warning">Les publicités peuvent se charger sous peu, veuillez patienter…</string>
+    <string name="intro_slide_1_title">Retrouvez un son clair</string>
+    <string name="intro_slide_2_title">Contrôle manuel complet</string>
+    <string name="intro_slide_3_title">Mode vibration puissant</string>
+    <string name="intro_slide_4_title">Technologie de soufflage d’air</string>
+    <string name="intro_next">Suivant</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">Régler le volume au maximum</string>
+    <string name="tip1_preview">Réglez le volume de votre téléphone au niveau le plus élevé avant de commencer le nettoyage...</string>
+
+    <string name="tip2_title">Maintenir le haut-parleur orienté vers le bas</string>
+    <string name="tip2_preview">Pour obtenir les meilleurs résultats, placez toujours votre téléphone avec l’ouverture du haut-parleur vers le bas...</string>
+
+    <string name="tip3_title">Nettoyer le microphone avec précaution</string>
+    <string name="tip3_preview">Le microphone joue un rôle essentiel dans les appels, les enregistrements vocaux et les appels vidéo...</string>
+
+    <string name="tip4_title">Utiliser un cure-dent pour retirer soigneusement la poussière ou la saleté</string>
+    <string name="tip4_preview">Un cure-dent en bois peut être utilisé pour retirer la poussière et les débris visibles autour du microphone...</string>
+
+    <string name="title_air_blow">Soufflage d’air</string>
+    <string name="label_custom_frequency">Fréquence personnalisée</string>
+    <string name="state_ready">Prêt</string>
+    <string name="btn_start">Démarrer</string>
+    <string name="tab_home">Accueil</string>
+    <string name="tab_tips">Conseils</string>
+    <string name="title_manual_cleaning">Nettoyage manuel</string>
+    <string name="title_settings">Paramètres</string>
+    <string name="menu_rate_app">Évaluer l’application</string>
+    <string name="menu_share_app">Partager l’application</string>
+    <string name="menu_policy">Politique de confidentialité</string>
+    <string name="menu_version">Version</string>
+    <string name="title_test_speaker">Tester le haut-parleur</string>
+    <string name="test_speaker_desc">Si le haut-parleur n’est toujours pas propre, essayez une autre méthode de nettoyage.</string>
+    <string name="volume_boost_test">Amplification du volume (Test)</string>
+    <string name="btn_back_to_home">Retour à l’accueil</string>
+    <string name="title_vibration_cleaning">Nettoyage par vibration</string>
+    <string name="label_speaker">Haut-parleur</string>
+    <string name="select_type">Sélectionnez le type :</string>
+    <string name="type_normal">Normal</string>
+    <string name="type_strong">Puissant</string>
+    <string name="exit_confirm_title">Quitter l’application</string>
+    <string name="exit_confirm_desc">Êtes-vous sûr de vouloir quitter l’application ?</string>
+    <string name="exit_confirm_cancel">Annuler</string>
+    <string name="exit_confirm_exit">Quitter</string>
+    <string name="no_internet_title">Pas de connexion Internet</string>
+    <string name="no_internet_desc">Veuillez vérifier votre connexion Internet</string>
+    <string name="btn_cancel">Annuler</string>
+    <string name="tap_to_stop">Appuyez pour arrêter</string>
+    <string name="tap_to_remove_water">Appuyez pour éliminer l’eau</string>
+    <string name="label_micro">Micro</string>
+    <string name="level_low">Faible</string>
+    <string name="level_medium">Moyen</string>
+    <string name="level_high">Élevé</string>
+    <string name="btn_decrease">Diminuer</string>
+    <string name="btn_increase">Augmenter</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

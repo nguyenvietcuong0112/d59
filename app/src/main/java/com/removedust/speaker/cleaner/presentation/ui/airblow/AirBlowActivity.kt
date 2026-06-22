@@ -163,14 +163,14 @@ class AirBlowActivity : BaseActivity() {
                 stopFanRotation()
                 binding.viewActiveBlueRing.visibility = View.INVISIBLE
                 binding.btnPowerStartStop.setCardBackgroundColor(ContextCompat.getColor(this, R.color.primary_blue_selected))
-                binding.tvStartStop.text = "Start"
+                binding.tvStartStop.text = getString(R.string.btn_start)
             }
             is CleaningState.Cleaning -> {
                 isPlaying = true
                 startFanRotation(selectedSpeed)
                 binding.viewActiveBlueRing.visibility = View.VISIBLE
                 binding.btnPowerStartStop.setCardBackgroundColor(ContextCompat.getColor(this, R.color.error))
-                binding.tvStartStop.text = "Stop"
+                binding.tvStartStop.text = getString(R.string.btn_stop)
             }
             is CleaningState.Complete -> {
                 viewModel.stopCleaning()

@@ -12,6 +12,7 @@ import com.removedust.speaker.cleaner.base.AbsBaseFragment
 import com.removedust.speaker.cleaner.databinding.FragmentIntro1Binding
 import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
 import com.removedust.speaker.cleaner.util.AdsConfig
+import com.removedust.speaker.cleaner.util.LogEvent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,6 +31,7 @@ class FragmentIntro1 : AbsBaseFragment<FragmentIntro1Binding?>() {
     private fun loadAdsIntro1() {
         if (AdsConfig.nativeIntro1 != null) {
             val activity = requireActivity()
+            LogEvent.log(activity, "native_onboarding_1_view")
             val adView = LayoutInflater.from(activity)
                 .inflate(R.layout.layout_native_media, null) as NativeAdView
 
@@ -74,6 +76,7 @@ class FragmentIntro1 : AbsBaseFragment<FragmentIntro1Binding?>() {
                 override fun onNativeAdLoaded(nativeAd: NativeAd?) {
                     super.onNativeAdLoaded(nativeAd)
                     if (!isAdded) return
+                    LogEvent.log(activity, "native_onboarding_1_view")
                     AdsConfig.nativeIntro1 = nativeAd
 
                     val adView = LayoutInflater.from(activity)

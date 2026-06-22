@@ -34,6 +34,7 @@ import com.google.android.gms.ads.nativead.NativeAdView
 import com.mallegan.ads.callback.NativeCallback
 import com.mallegan.ads.util.Admob
 import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
+import com.removedust.speaker.cleaner.util.LogEvent
 import com.removedust.speaker.cleaner.presentation.ui.testspeaker.TestSpeakerActivity
 
 import com.removedust.speaker.cleaner.util.AdsConfig
@@ -103,7 +104,7 @@ class VibrationCleanActivity : BaseActivity() {
         binding.viewActiveBlueRing.visibility = android.view.View.VISIBLE
         binding.lottieGlow.visibility = android.view.View.VISIBLE
         binding.lottieGlow.playAnimation()
-        binding.btnVibrationStartStop.text = "Stop"
+        binding.btnVibrationStartStop.text = getString(R.string.btn_stop)
         binding.btnVibrationStartStop.backgroundTintList = ColorStateList.valueOf(
             ContextCompat.getColor(this, R.color.error)
         )
@@ -125,7 +126,7 @@ class VibrationCleanActivity : BaseActivity() {
             val totalTicks = totalSeconds * 10
             for (tick in 0..totalTicks) {
                 val percent = (tick * 100) / totalTicks
-                binding.tvVibrationPercent.text = "$percent %"
+                binding.tvVibrationPercent.text = getString(R.string.text_percent, percent)
                 delay(100L)
             }
             // Finished cycle
@@ -145,11 +146,11 @@ class VibrationCleanActivity : BaseActivity() {
         binding.viewActiveBlueRing.visibility = android.view.View.INVISIBLE
         binding.lottieGlow.visibility = android.view.View.INVISIBLE
         binding.lottieGlow.cancelAnimation()
-        binding.btnVibrationStartStop.text = "Start"
+        binding.btnVibrationStartStop.text = getString(R.string.btn_start)
         binding.btnVibrationStartStop.backgroundTintList = ColorStateList.valueOf(
             ContextCompat.getColor(this, R.color.primary_blue_selected)
         )
-        binding.tvVibrationPercent.text = "0 %"
+        binding.tvVibrationPercent.text = getString(R.string.text_percent, 0)
 
         // Re-enable mode selectors
         binding.cardModeNormal.isEnabled = true
@@ -245,6 +246,7 @@ class VibrationCleanActivity : BaseActivity() {
             Admob.getInstance().loadNativeAds(this, adId, 1, object : NativeCallback() {
                 override fun onNativeAdLoaded(nativeAd: NativeAd?) {
                     super.onNativeAdLoaded(nativeAd)
+                    LogEvent.log(this@VibrationCleanActivity, "native_question_view")
                     val adView = LayoutInflater.from(this@VibrationCleanActivity)
                         .inflate(R.layout.layout_native_media, null) as NativeAdView
                     binding.frAds.removeAllViews()

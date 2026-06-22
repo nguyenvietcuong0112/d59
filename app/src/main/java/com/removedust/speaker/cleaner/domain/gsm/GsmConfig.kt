@@ -9,5 +9,5 @@ object GsmConfig {
     val CURRENT_BASE_URL: String
         get() = if (BuildConfig.DEBUG) DEV_BASE_URL else PROD_BASE_URL
     
-    const val GSM_APP_ID = ""
+    const val GSM_APP_ID = "6a38b509f5187eb3ff7d3901"
 }

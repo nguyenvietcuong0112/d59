@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">Удаляйте воду и пыль из динамика телефона с помощью звуковых частот.</string>
+    <string name="volume_warning_title">Предупреждение о громкости</string>
+    <string name="volume_warning_desc">Для наилучшего результата установите максимальную громкость и положите телефон экраном вниз.</string>
+    <string name="btn_auto_clean">Автоочистка (80 с)</string>
+    <string name="btn_manual_clean">Ручная очистка</string>
+    <string name="btn_headphone_clean">Очистка наушников (45 с)</string>
+    <string name="btn_sound_fix">Исправление звука (1000 Гц)</string>
+    <string name="btn_stop">Остановить</string>
+    <string name="text_remaining">Осталось времени: %1$d с</string>
+    <string name="text_frequency">%1$d Гц</string>
+    <string name="state_idle">Готово к очистке</string>
+    <string name="state_cleaning">Очистка выполняется</string>
+    <string name="state_complete">Очистка завершена!</string>
+    <string name="state_error">Ошибка: %1$s</string>
+    <string name="success_alert_desc">Динамик успешно очищен. Если звук всё ещё приглушён, запустите исправление звука или повторите попытку.</string>
+    <string name="btn_ok">Понятно</string>
+    <string name="toast_select_language_continue">Пожалуйста, выберите язык для продолжения</string>
+    <string name="language">Язык</string>
+    <string name="splash_ads_warning">Реклама может загрузиться через несколько секунд, пожалуйста, подождите…</string>
+    <string name="intro_slide_1_title">Восстановите чистое звучание динамика</string>
+    <string name="intro_slide_2_title">Полное ручное управление</string>
+    <string name="intro_slide_3_title">Мощный режим вибрации</string>
+    <string name="intro_slide_4_title">Технология воздушной продувки</string>
+    <string name="intro_next">Далее</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">Установите максимальную громкость</string>
+    <string name="tip1_preview">Перед началом очистки установите громкость телефона на максимальный уровень...</string>
+
+    <string name="tip2_title">Держите динамик направленным вниз</string>
+    <string name="tip2_preview">Для достижения наилучших результатов располагайте телефон так, чтобы отверстие динамика было направлено вниз...</string>
+
+    <string name="tip3_title">Очищайте микрофон осторожно</string>
+    <string name="tip3_preview">Микрофон играет важную роль в звонках, голосовых записях и видеочатах...</string>
+
+    <string name="tip4_title">Используйте зубочистку для аккуратного удаления пыли и грязи</string>
+    <string name="tip4_preview">Деревянную зубочистку можно использовать для удаления видимой пыли и загрязнений вокруг микрофона...</string>
+
+    <string name="title_air_blow">Воздушная продувка</string>
+    <string name="label_custom_frequency">Пользовательская частота</string>
+    <string name="state_ready">Готово</string>
+    <string name="btn_start">Запустить</string>
+    <string name="tab_home">Главная</string>
+    <string name="tab_tips">Советы</string>
+    <string name="title_manual_cleaning">Ручная очистка</string>
+    <string name="title_settings">Настройки</string>
+    <string name="menu_rate_app">Оценить приложение</string>
+    <string name="menu_share_app">Поделиться приложением</string>
+    <string name="menu_policy">Политика конфиденциальности</string>
+    <string name="menu_version">Версия</string>
+    <string name="title_test_speaker">Проверка динамика</string>
+    <string name="test_speaker_desc">Если динамик всё ещё не очищен, попробуйте другой способ очистки.</string>
+    <string name="volume_boost_test">Усиление громкости (Тест)</string>
+    <string name="btn_back_to_home">Вернуться на главную</string>
+    <string name="title_vibration_cleaning">Вибрационная очистка</string>
+    <string name="label_speaker">Динамик</string>
+    <string name="select_type">Выберите тип:</string>
+    <string name="type_normal">Обычный</string>
+    <string name="type_strong">Сильный</string>
+    <string name="exit_confirm_title">Выход из приложения</string>
+    <string name="exit_confirm_desc">Вы уверены, что хотите выйти из приложения?</string>
+    <string name="exit_confirm_cancel">Отмена</string>
+    <string name="exit_confirm_exit">Выйти</string>
+    <string name="no_internet_title">Нет подключения к Интернету</string>
+    <string name="no_internet_desc">Пожалуйста, проверьте подключение к Интернету</string>
+    <string name="btn_cancel">Отмена</string>
+    <string name="tap_to_stop">Нажмите, чтобы остановить</string>
+    <string name="tap_to_remove_water">Нажмите, чтобы удалить воду</string>
+    <string name="label_micro">Микрофон</string>
+    <string name="level_low">Низкий</string>
+    <string name="level_medium">Средний</string>
+    <string name="level_high">Высокий</string>
+    <string name="btn_decrease">Уменьшить</string>
+    <string name="btn_increase">Увеличить</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

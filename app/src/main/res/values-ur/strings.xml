@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">آواز کی فریکوئنسیز کی مدد سے اپنے فون کے اسپیکر میں پھنسا ہوا پانی اور گرد و غبار صاف کریں۔</string>
+    <string name="volume_warning_title">آواز کی سطح کی وارننگ</string>
+    <string name="volume_warning_desc">بہترین نتائج کے لیے براہِ کرم آواز کو زیادہ سے زیادہ کریں اور فون کو اسکرین نیچے کی طرف رکھیں۔</string>
+    <string name="btn_auto_clean">خودکار صفائی (80 سیکنڈ)</string>
+    <string name="btn_manual_clean">دستی صفائی</string>
+    <string name="btn_headphone_clean">ہیڈفون صفائی (45 سیکنڈ)</string>
+    <string name="btn_sound_fix">آواز درست کریں (1000Hz)</string>
+    <string name="btn_stop">روکیں</string>
+    <string name="text_remaining">باقی وقت: %1$d سیکنڈ</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">صفائی کے لیے تیار</string>
+    <string name="state_cleaning">صفائی جاری ہے</string>
+    <string name="state_complete">صفائی مکمل ہو گئی!</string>
+    <string name="state_error">خرابی: %1$s</string>
+    <string name="success_alert_desc">آپ کا اسپیکر کامیابی سے صاف ہو گیا ہے۔ اگر آواز اب بھی مدھم لگتی ہے تو آواز درست کریں چلائیں یا دوبارہ کوشش کریں۔</string>
+    <string name="btn_ok">سمجھ گیا</string>
+    <string name="toast_select_language_continue">جاری رکھنے کے لیے براہِ کرم ایک زبان منتخب کریں</string>
+    <string name="language">زبان</string>
+    <string name="splash_ads_warning">اشتہارات جلد لوڈ ہو سکتے ہیں، براہِ کرم انتظار کریں…</string>
+    <string name="intro_slide_1_title">صاف اور واضح اسپیکر آواز بحال کریں</string>
+    <string name="intro_slide_2_title">مکمل دستی کنٹرول</string>
+    <string name="intro_slide_3_title">طاقتور وائبریشن موڈ</string>
+    <string name="intro_slide_4_title">ہوا پھونکنے کی ٹیکنالوجی</string>
+    <string name="intro_next">اگلا</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">آواز کو زیادہ سے زیادہ کریں</string>
+    <string name="tip1_preview">صفائی شروع کرنے سے پہلے اپنے فون کی آواز کو سب سے زیادہ سطح پر سیٹ کریں...</string>
+
+    <string name="tip2_title">اسپیکر کو نیچے کی طرف رکھیں</string>
+    <string name="tip2_preview">بہترین نتائج کے لیے صفائی کے دوران اسپیکر کے سوراخ کو ہمیشہ نیچے کی طرف رکھیں...</string>
+
+    <string name="tip3_title">مائیکروفون کو احتیاط سے صاف کریں</string>
+    <string name="tip3_preview">مائیکروفون کالز، وائس ریکارڈنگز اور ویڈیو چیٹس میں اہم کردار ادا کرتا ہے...</string>
+
+    <string name="tip4_title">گرد یا میل صاف کرنے کے لیے احتیاط سے ٹوتھ پک استعمال کریں</string>
+    <string name="tip4_preview">لکڑی کی ٹوتھ پک مائیکروفون کے ارد گرد موجود نظر آنے والی گرد اور میل صاف کرنے کے لیے استعمال کی جا سکتی ہے...</string>
+
+    <string name="title_air_blow">ہوا پھونکنا</string>
+    <string name="label_custom_frequency">حسبِ ضرورت فریکوئنسی</string>
+    <string name="state_ready">تیار</string>
+    <string name="btn_start">شروع کریں</string>
+    <string name="tab_home">ہوم</string>
+    <string name="tab_tips">تجاویز</string>
+    <string name="title_manual_cleaning">دستی صفائی</string>
+    <string name="title_settings">ترتیبات</string>
+    <string name="menu_rate_app">ایپ کی درجہ بندی کریں</string>
+    <string name="menu_share_app">ایپ شیئر کریں</string>
+    <string name="menu_policy">رازداری کی پالیسی</string>
+    <string name="menu_version">ورژن</string>
+    <string name="title_test_speaker">اسپیکر ٹیسٹ</string>
+    <string name="test_speaker_desc">اگر اسپیکر اب بھی صاف نہیں ہوا تو صفائی کا کوئی دوسرا طریقہ آزمائیں۔</string>
+    <string name="volume_boost_test">آواز بڑھائیں (ٹیسٹ)</string>
+    <string name="btn_back_to_home">ہوم پر واپس جائیں</string>
+    <string name="title_vibration_cleaning">وائبریشن کے ذریعے صفائی</string>
+    <string name="label_speaker">اسپیکر</string>
+    <string name="select_type">قسم منتخب کریں:</string>
+    <string name="type_normal">عام</string>
+    <string name="type_strong">طاقتور</string>
+    <string name="exit_confirm_title">ایپ سے باہر نکلیں</string>
+    <string name="exit_confirm_desc">کیا آپ واقعی ایپ سے باہر نکلنا چاہتے ہیں؟</string>
+    <string name="exit_confirm_cancel">منسوخ کریں</string>
+    <string name="exit_confirm_exit">باہر نکلیں</string>
+    <string name="no_internet_title">انٹرنیٹ دستیاب نہیں</string>
+    <string name="no_internet_desc">براہِ کرم اپنا انٹرنیٹ کنکشن چیک کریں</string>
+    <string name="btn_cancel">منسوخ کریں</string>
+    <string name="tap_to_stop">روکنے کے لیے ٹیپ کریں</string>
+    <string name="tap_to_remove_water">پانی نکالنے کے لیے ٹیپ کریں</string>
+    <string name="label_micro">مائیکروفون</string>
+    <string name="level_low">کم</string>
+    <string name="level_medium">درمیانہ</string>
+    <string name="level_high">زیادہ</string>
+    <string name="btn_decrease">کم کریں</string>
+    <string name="btn_increase">بڑھائیں</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

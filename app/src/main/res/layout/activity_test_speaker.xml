@@ -31,7 +31,7 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Test Speaker"
+                android:text="@string/title_test_speaker"
                 android:textColor="#222222"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -140,7 +140,7 @@
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/_16sdp"
                     android:paddingBottom="@dimen/_20sdp"
-                    android:text="If the speaker is still not clean, try a different cleaning technique."
+                    android:text="@string/test_speaker_desc"
                     android:textSize="14sp" />
 
                 <ImageView
@@ -173,7 +173,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Volume boost (Test)"
+                        android:text="@string/volume_boost_test"
                         android:textColor="#222"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -232,7 +232,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Back to home"
+                    android:text="@string/btn_back_to_home"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />

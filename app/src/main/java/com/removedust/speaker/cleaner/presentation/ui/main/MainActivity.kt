@@ -22,6 +22,7 @@ import com.mallegan.ads.callback.NativeCallback
 import com.mallegan.ads.util.Admob
 import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
 import com.removedust.speaker.cleaner.util.SharePreferenceUtils
+import com.removedust.speaker.cleaner.util.LogEvent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -46,6 +47,7 @@ class MainActivity : BaseActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.lifecycleOwner = this
+        LogEvent.log(this, "main_view")
 
         binding.frAdsBanner.bringToFront()
         binding.frAdsCollap.bringToFront()

@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">กำจัดน้ำและฝุ่นที่ติดอยู่ในลำโพงโทรศัพท์ของคุณด้วยความถี่เสียง</string>
+    <string name="volume_warning_title">คำเตือนระดับเสียง</string>
+    <string name="volume_warning_desc">โปรดปรับระดับเสียงให้สูงสุดและวางโทรศัพท์โดยคว่ำหน้าจอลงเพื่อให้ได้ผลลัพธ์ที่ดีที่สุด</string>
+    <string name="btn_auto_clean">ทำความสะอาดอัตโนมัติ (80 วินาที)</string>
+    <string name="btn_manual_clean">ทำความสะอาดด้วยตนเอง</string>
+    <string name="btn_headphone_clean">ทำความสะอาดหูฟัง (45 วินาที)</string>
+    <string name="btn_sound_fix">แก้ไขเสียง (1000Hz)</string>
+    <string name="btn_stop">หยุด</string>
+    <string name="text_remaining">เวลาที่เหลือ: %1$d วินาที</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">พร้อมทำความสะอาด</string>
+    <string name="state_cleaning">กำลังทำความสะอาด</string>
+    <string name="state_complete">ทำความสะอาดเสร็จสิ้น!</string>
+    <string name="state_error">ข้อผิดพลาด: %1$s</string>
+    <string name="success_alert_desc">ลำโพงของคุณได้รับการทำความสะอาดเรียบร้อยแล้ว หากเสียงยังคงอู้อี้ ให้ใช้ฟังก์ชันแก้ไขเสียงหรือลองอีกครั้ง</string>
+    <string name="btn_ok">เข้าใจแล้ว</string>
+    <string name="toast_select_language_continue">โปรดเลือกภาษาเพื่อดำเนินการต่อ</string>
+    <string name="language">ภาษา</string>
+    <string name="splash_ads_warning">โฆษณาอาจกำลังโหลด โปรดรอสักครู่…</string>
+    <string name="intro_slide_1_title">กู้คืนเสียงลำโพงให้ชัดเจน</string>
+    <string name="intro_slide_2_title">ควบคุมด้วยตนเองได้อย่างเต็มรูปแบบ</string>
+    <string name="intro_slide_3_title">โหมดการสั่นสะเทือนทรงพลัง</string>
+    <string name="intro_slide_4_title">เทคโนโลยีเป่าลม</string>
+    <string name="intro_next">ถัดไป</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">ปรับระดับเสียงให้สูงสุด</string>
+    <string name="tip1_preview">ปรับระดับเสียงของโทรศัพท์ให้สูงที่สุดก่อนเริ่มกระบวนการทำความสะอาด...</string>
+
+    <string name="tip2_title">หันลำโพงลงด้านล่าง</string>
+    <string name="tip2_preview">เพื่อผลลัพธ์ที่ดีที่สุด ควรวางโทรศัพท์ให้ช่องลำโพงหันลงด้านล่างเสมอ...</string>
+
+    <string name="tip3_title">ทำความสะอาดไมโครโฟนอย่างระมัดระวัง</string>
+    <string name="tip3_preview">ไมโครโฟนมีบทบาทสำคัญในการโทร การบันทึกเสียง และการสนทนาผ่านวิดีโอ...</string>
+
+    <string name="tip4_title">ใช้ไม้จิ้มฟันกำจัดฝุ่นหรือสิ่งสกปรกอย่างระมัดระวัง</string>
+    <string name="tip4_preview">สามารถใช้ไม้จิ้มฟันไม้ในการกำจัดฝุ่นและสิ่งสกปรกที่มองเห็นได้รอบไมโครโฟน...</string>
+
+    <string name="title_air_blow">เป่าลม</string>
+    <string name="label_custom_frequency">ความถี่กำหนดเอง</string>
+    <string name="state_ready">พร้อม</string>
+    <string name="btn_start">เริ่ม</string>
+    <string name="tab_home">หน้าแรก</string>
+    <string name="tab_tips">เคล็ดลับ</string>
+    <string name="title_manual_cleaning">ทำความสะอาดด้วยตนเอง</string>
+    <string name="title_settings">การตั้งค่า</string>
+    <string name="menu_rate_app">ให้คะแนนแอป</string>
+    <string name="menu_share_app">แชร์แอป</string>
+    <string name="menu_policy">นโยบายความเป็นส่วนตัว</string>
+    <string name="menu_version">เวอร์ชัน</string>
+    <string name="title_test_speaker">ทดสอบลำโพง</string>
+    <string name="test_speaker_desc">หากลำโพงยังไม่สะอาด ลองใช้วิธีทำความสะอาดแบบอื่น</string>
+    <string name="volume_boost_test">เพิ่มระดับเสียง (ทดสอบ)</string>
+    <string name="btn_back_to_home">กลับสู่หน้าแรก</string>
+    <string name="title_vibration_cleaning">ทำความสะอาดด้วยการสั่นสะเทือน</string>
+    <string name="label_speaker">ลำโพง</string>
+    <string name="select_type">เลือกประเภท:</string>
+    <string name="type_normal">ปกติ</string>
+    <string name="type_strong">แรง</string>
+    <string name="exit_confirm_title">ออกจากแอป</string>
+    <string name="exit_confirm_desc">คุณแน่ใจหรือไม่ว่าต้องการออกจากแอป?</string>
+    <string name="exit_confirm_cancel">ยกเลิก</string>
+    <string name="exit_confirm_exit">ออก</string>
+    <string name="no_internet_title">ไม่มีการเชื่อมต่ออินเทอร์เน็ต</string>
+    <string name="no_internet_desc">โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ</string>
+    <string name="btn_cancel">ยกเลิก</string>
+    <string name="tap_to_stop">แตะเพื่อหยุด</string>
+    <string name="tap_to_remove_water">แตะเพื่อไล่น้ำออก</string>
+    <string name="label_micro">ไมโครโฟน</string>
+    <string name="level_low">ต่ำ</string>
+    <string name="level_medium">ปานกลาง</string>
+    <string name="level_high">สูง</string>
+    <string name="btn_decrease">ลด</string>
+    <string name="btn_increase">เพิ่ม</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_description">音波周波数を使用して、スマートフォンのスピーカーに溜まった水やほこりを除去します。</string>
+    <string name="volume_warning_title">音量に関する注意</string>
+    <string name="volume_warning_desc">最良の結果を得るため、音量を最大に設定し、画面を下向きにしてスマートフォンを置いてください。</string>
+    <string name="btn_auto_clean">自動クリーニング（80秒）</string>
+    <string name="btn_manual_clean">手動クリーニング</string>
+    <string name="btn_headphone_clean">ヘッドホンクリーニング（45秒）</string>
+    <string name="btn_sound_fix">サウンド修復（1000Hz）</string>
+    <string name="btn_stop">停止</string>
+    <string name="text_remaining">残り時間: %1$d秒</string>
+    <string name="text_frequency">%1$d Hz</string>
+    <string name="state_idle">クリーニング準備完了</string>
+    <string name="state_cleaning">クリーニング中</string>
+    <string name="state_complete">クリーニング完了！</string>
+    <string name="state_error">エラー: %1$s</string>
+    <string name="success_alert_desc">スピーカーのクリーニングが完了しました。音がまだこもっている場合は、サウンド修復を実行するか再度お試しください。</string>
+    <string name="btn_ok">了解</string>
+    <string name="toast_select_language_continue">続行するには言語を選択してください</string>
+    <string name="language">言語</string>
+    <string name="splash_ads_warning">広告を読み込んでいます。しばらくお待ちください…</string>
+    <string name="intro_slide_1_title">クリアなスピーカー音を復元</string>
+    <string name="intro_slide_2_title">完全な手動コントロール</string>
+    <string name="intro_slide_3_title">強力な振動モード</string>
+    <string name="intro_slide_4_title">エアブロー技術</string>
+    <string name="intro_next">次へ</string>
+    <string name="lore_ipsum_tip"></string>
+
+    <string name="tip1_title">音量を最大に設定する</string>
+    <string name="tip1_preview">クリーニングを開始する前に、スマートフォンの音量を最大に設定してください...</string>
+
+    <string name="tip2_title">スピーカーを下向きにする</string>
+    <string name="tip2_preview">最良の結果を得るため、クリーニング中はスピーカー開口部を下向きにしてください...</string>
+
+    <string name="tip3_title">マイクを丁寧に清掃する</string>
+    <string name="tip3_preview">マイクは通話、音声録音、ビデオチャットで重要な役割を果たします...</string>
+
+    <string name="tip4_title">つまようじを使って慎重にほこりや汚れを取り除く</string>
+    <string name="tip4_preview">木製のつまようじを使用して、マイク周辺のほこりや汚れを取り除くことができます...</string>
+
+    <string name="title_air_blow">エアブロー</string>
+    <string name="label_custom_frequency">カスタム周波数</string>
+    <string name="state_ready">準備完了</string>
+    <string name="btn_start">開始</string>
+    <string name="tab_home">ホーム</string>
+    <string name="tab_tips">ヒント</string>
+    <string name="title_manual_cleaning">手動クリーニング</string>
+    <string name="title_settings">設定</string>
+    <string name="menu_rate_app">アプリを評価</string>
+    <string name="menu_share_app">アプリを共有</string>
+    <string name="menu_policy">プライバシーポリシー</string>
+    <string name="menu_version">バージョン</string>
+    <string name="title_test_speaker">スピーカーテスト</string>
+    <string name="test_speaker_desc">スピーカーがまだきれいにならない場合は、別のクリーニング方法をお試しください。</string>
+    <string name="volume_boost_test">音量ブースト（テスト）</string>
+    <string name="btn_back_to_home">ホームに戻る</string>
+    <string name="title_vibration_cleaning">振動クリーニング</string>
+    <string name="label_speaker">スピーカー</string>
+    <string name="select_type">タイプを選択:</string>
+    <string name="type_normal">標準</string>
+    <string name="type_strong">強力</string>
+    <string name="exit_confirm_title">アプリを終了</string>
+    <string name="exit_confirm_desc">アプリを終了してもよろしいですか？</string>
+    <string name="exit_confirm_cancel">キャンセル</string>
+    <string name="exit_confirm_exit">終了</string>
+    <string name="no_internet_title">インターネット接続なし</string>
+    <string name="no_internet_desc">インターネット接続を確認してください</string>
+    <string name="btn_cancel">キャンセル</string>
+    <string name="tap_to_stop">タップして停止</string>
+    <string name="tap_to_remove_water">タップして水を除去</string>
+    <string name="label_micro">マイク</string>
+    <string name="level_low">低</string>
+    <string name="level_medium">中</string>
+    <string name="level_high">高</string>
+    <string name="btn_decrease">下げる</string>
+    <string name="btn_increase">上げる</string>
+    <string name="text_percent">%1$d %%</string>
+    <string name="text_percent_no_space">%1$d%%</string>
+</resources>

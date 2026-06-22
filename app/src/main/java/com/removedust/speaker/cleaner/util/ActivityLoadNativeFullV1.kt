@@ -14,6 +14,7 @@ import com.removedust.speaker.cleaner.databinding.ActivityNativeFullBinding
 import com.removedust.speaker.cleaner.util.ActivityFullCallback
 import com.mallegan.ads.callback.NativeCallback
 import com.mallegan.ads.util.Admob
+import com.removedust.speaker.cleaner.util.LogEvent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -60,6 +61,7 @@ class ActivityLoadNativeFullV1 : BaseActivity() {
 
                         override fun onNativeAdLoaded(nativeAd: NativeAd?) {
                             super.onNativeAdLoaded(nativeAd)
+                            LogEvent.log(this@ActivityLoadNativeFullV1, "native_splash_full_view")
                             val adView = LayoutInflater.from(this@ActivityLoadNativeFullV1)
                                 .inflate(R.layout.native_full_language, null) as NativeAdView
                             val closeButton = adView.findViewById<ImageView>(R.id.close)
@@ -83,6 +85,7 @@ class ActivityLoadNativeFullV1 : BaseActivity() {
 
             override fun onNativeAdLoaded(nativeAd: NativeAd?) {
                 super.onNativeAdLoaded(nativeAd)
+                LogEvent.log(this@ActivityLoadNativeFullV1, "native_splash_full_view")
 //                if (nativeAd != null) {
 //                    nativeAd.setOnPaidEventListener { adValue ->
 //                        AdjustHelper.adjustTrackAdRevenue(

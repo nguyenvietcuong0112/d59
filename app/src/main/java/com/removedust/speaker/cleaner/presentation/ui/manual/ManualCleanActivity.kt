@@ -91,25 +91,25 @@ class ManualCleanActivity : BaseActivity() {
 
         when (val state = uiState.state) {
             is CleaningState.Idle -> {
-                binding.tvManualState.text = "Ready"
+                binding.tvManualState.text = getString(R.string.state_ready)
 
                 binding.lottieGlow.visibility = View.INVISIBLE
                 binding.lottieGlow.cancelAnimation()
                 binding.viewActiveBlueRing.visibility = View.INVISIBLE
-                binding.btnManualStartStop.text = "Start"
+                binding.btnManualStartStop.text = getString(R.string.btn_start)
                 binding.btnManualStartStop.backgroundTintList = android.content.res.ColorStateList.valueOf(
                     androidx.core.content.ContextCompat.getColor(this, R.color.primary_blue_selected)
                 )
                 binding.frequencySlider.setEnabled(true)
             }
             is CleaningState.Cleaning -> {
-                binding.tvManualState.text = "Cleaning Active"
+                binding.tvManualState.text = getString(R.string.state_cleaning)
                 binding.tvManualFrequency.text = getString(R.string.text_frequency, uiState.currentFrequency)
                 binding.frequencySlider.setFrequency(uiState.currentFrequency)
                 binding.lottieGlow.visibility = View.VISIBLE
                 binding.lottieGlow.playAnimation()
                 binding.viewActiveBlueRing.visibility = View.VISIBLE
-                binding.btnManualStartStop.text = "Stop"
+                binding.btnManualStartStop.text = getString(R.string.btn_stop)
                 binding.btnManualStartStop.backgroundTintList = android.content.res.ColorStateList.valueOf(
                     androidx.core.content.ContextCompat.getColor(this, R.color.error)
                 )
