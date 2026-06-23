@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_name">Lautsprecher-Reiniger</string>
     <string name="app_description">Entfernen Sie eingeschlossenes Wasser und Staub aus dem Lautsprecher Ihres Telefons mit Schallfrequenzen.</string>
     <string name="volume_warning_title">Lautstärkewarnung</string>
     <string name="volume_warning_desc">Bitte stellen Sie die Lautstärke auf MAXIMAL und legen Sie Ihr Telefon mit dem Display nach unten für die besten Ergebnisse.</string>
@@ -27,15 +27,19 @@
     <string name="lore_ipsum_tip"></string>
 
     <string name="tip1_title">Lautstärke auf Maximum stellen</string>
+    <string name="tip1_desc">Stellen Sie die Lautstärke Ihres Telefons vor Beginn des Reinigungsvorgangs auf die höchste Stufe. Der Reinigungston erzeugt starke Schallvibrationen, die dazu beitragen, eingeschlossene Wassertropfen, Staub und Schmutz aus der Lautsprecherkammer zu drücken. Höhere Lautstärken erzeugen stärkere Vibrationen, was den Reinigungsprozess effektiver macht.\n\nStellen Sie sicher, dass alle Bluetooth-Geräte, Kopfhörer oder externen Lautsprecher getrennt sind, damit der Ton direkt über den integrierten Lautsprecher Ihres Telefons wiedergegeben wird. Während der Reinigung bemerken Sie möglicherweise Wassertropfen, die aus der Lautsprecheröffnung austreten, oder leichte Veränderungen der Tonqualität. Dies ist normal und zeigt an, dass der Reinigungston wie vorgesehen funktioniert.\n\nWenn Ihr Lautsprecher einer erheblichen Menge Wasser ausgesetzt war, kann das Durchführen mehrerer Reinigungszyklen helfen, verbleibende Feuchtigkeit zu entfernen und eine klarere Audioleistung wiederherzustellen.</string>
     <string name="tip1_preview">Stellen Sie die Lautstärke Ihres Telefons vor Beginn der Reinigung auf die höchste Stufe...</string>
 
     <string name="tip2_title">Lautsprecher nach unten ausrichten</string>
+    <string name="tip2_desc">Für die besten Ergebnisse positionieren Sie Ihr Telefon während des Reinigungsvorgangs immer so, dass die Lautsprecheröffnung nach unten zeigt. Die Schwerkraft arbeitet mit den Schallvibrationen zusammen, um Wassertropfen leichter aus der Lautsprecherkammer zu befördern.\n\nLegen Sie das Gerät auf eine stabile Oberfläche und vermeiden Sie es, seine Position zu ändern, während die Reinigung aktiv ist. Wenn der Lautsprecher nach unten zeigt, wird verhindert, dass sich Feuchtigkeit tiefer im Lautsprecherhohlraum absetzt, und die Wirksamkeit jedes Reinigungszyklus wird verbessert.\n\nWenn Ihr Telefon kürzlich Regen, Spritzern oder versehentlichem Wasserkontakt ausgesetzt war, kann die Kombination aus maximaler Lautstärke und der richtigen Ausrichtung die Feuchtigkeitsentfernung und die Wiederherstellung des Tons erheblich verbessern.</string>
     <string name="tip2_preview">Für beste Ergebnisse sollte die Lautsprecheröffnung immer nach unten zeigen...</string>
 
     <string name="tip3_title">Mikrofon vorsichtig reinigen</string>
+    <string name="tip3_desc">Das Mikrofon spielt eine entscheidende Rolle bei Telefonanrufen, Sprachaufnahmen, Video-Chats und Sprachassistentenfunktionen. Im Laufe der Zeit können sich Staub, Flusen und kleine Partikel um die Mikrofonöffnung herum ansammeln, was die Sprachverständlichkeit verringert und die gesamte Audioleistung beeinträchtigt.\n\nEine regelmäßige Reinigung hilft, die Mikrofonempfindlichkeit zu erhalten und stellt sicher, dass Ihre Stimme bei Gesprächen und Aufnahmen klar bleibt. Wenn andere Personen häufig berichten, dass Ihre Stimme gedämpft oder weit entfernt klingt, blockiert möglicherweise angesammelter Schmutz die Mikrofonöffnung.\n\nReinigen Sie immer vorsichtig und vermeiden Sie übermäßige Kraftanwendung. Scharfe Werkzeuge oder aggressive Reinigungsmethoden können das Mikrofongitter und interne Komponenten beschädigen. Ein vorsichtiges Vorgehen hilft, die langfristige Leistung und Audioqualität des Mikrofons zu erhalten.</string>
     <string name="tip3_preview">Das Mikrofon spielt eine wichtige Rolle bei Anrufen, Sprachaufnahmen und Videochats...</string>
 
     <string name="tip4_title">Zahnstocher vorsichtig zum Entfernen von Staub oder Schmutz verwenden</string>
+    <string name="tip4_desc">Ein hölzerner Zahnstocher kann verwendet werden, um sichtbaren Staub und Schmutz um die Mikrofonöffnung herum zu entfernen. Gehen Sie langsam vor und verwenden Sie die Spitze nur im Oberflächenbereich. Ziel ist es, den Schmutz um das Schutzgitter herum zu lockern, ohne interne Komponenten zu erreichen.\n\nVerwenden Sie leichte, kontrollierte Bewegungen und untersuchen Sie den Bereich unter guter Beleuchtung. Führen Sie den Zahnstocher niemals tief in die Mikrofonöffnung ein und üben Sie keinen direkten Druck nach innen aus, da dies empfindliche Teile im Inneren des Geräts beschädigen kann.\n\nDas schrittweise Entfernen kleiner Schmutzmengen ist sicherer und oft effektiver, als zu versuchen, alles auf einmal zu reinigen. Bei der richtigen Pflege kann eine routinemäßige Mikrofonwartung die Anrufqualität verbessern, Sprachaufnahmen optimieren und dazu beitragen, dass das Audiosystem Ihres Telefons stets die beste Leistung erbringt.</string>
     <string name="tip4_preview">Ein hölzerner Zahnstocher kann verwendet werden, um sichtbaren Staub und Schmutz zu entfernen...</string>
 
     <string name="title_air_blow">Luftstoß</string>

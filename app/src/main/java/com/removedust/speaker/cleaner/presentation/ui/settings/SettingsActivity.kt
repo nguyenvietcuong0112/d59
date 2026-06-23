@@ -55,8 +55,15 @@ class SettingsActivity : BaseActivity() {
         }
 
         binding.btnSettingsPolicy.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
-            startActivity(intent)
+            val url = "https://docs.google.com/document/d/1JUD-uBWf7Nd-aGjyydJVwrg4nJOwW5XT/edit"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            intent.selector = Intent(Intent.ACTION_VIEW, Uri.parse("https://"))
+            try {
+                startActivity(intent)
+            } catch (e: Exception) {
+                val fallbackIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(fallbackIntent)
+            }
         }
 
         binding.tvSettingsVersionValue.text = "v${BuildConfig.VERSION_NAME}"

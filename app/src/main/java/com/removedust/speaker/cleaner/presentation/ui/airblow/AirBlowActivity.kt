@@ -70,9 +70,9 @@ class AirBlowActivity : BaseActivity() {
                 updateSpeedButtonsUI()
                 if (isPlaying) {
                     val frequency = when (selectedSpeed) {
-                        AirBlowSpeed.LOW -> 70
-                        AirBlowSpeed.MEDIUM -> 60
-                        AirBlowSpeed.BOOST -> 50
+                        AirBlowSpeed.LOW -> 150
+                        AirBlowSpeed.MEDIUM -> 250
+                        AirBlowSpeed.BOOST -> 350
                     }
                     viewModel.updateManualFrequency(frequency)
                     startFanRotation(selectedSpeed)
@@ -91,9 +91,9 @@ class AirBlowActivity : BaseActivity() {
                 updateSpeedButtonsUI()
                 if (isPlaying) {
                     val frequency = when (selectedSpeed) {
-                        AirBlowSpeed.LOW -> 70
-                        AirBlowSpeed.MEDIUM -> 60
-                        AirBlowSpeed.BOOST -> 50
+                        AirBlowSpeed.LOW -> 150
+                        AirBlowSpeed.MEDIUM -> 250
+                        AirBlowSpeed.BOOST -> 350
                     }
                     viewModel.updateManualFrequency(frequency)
                     startFanRotation(selectedSpeed)
@@ -108,9 +108,9 @@ class AirBlowActivity : BaseActivity() {
                 checkVolumeAndRun {
                     AdsConfig.showInterClickAd(this) {
                         val frequency = when (selectedSpeed) {
-                            AirBlowSpeed.LOW -> 70
-                            AirBlowSpeed.MEDIUM -> 60
-                            AirBlowSpeed.BOOST -> 50
+                            AirBlowSpeed.LOW -> 150
+                            AirBlowSpeed.MEDIUM -> 250
+                            AirBlowSpeed.BOOST -> 350
                         }
                         viewModel.startManualCleaning(frequency)
                     }

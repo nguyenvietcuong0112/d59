@@ -64,9 +64,10 @@ android {
     }
 
     applicationVariants.all { variant ->
+        def type = variant.buildType.name
         variant.outputs.all { output ->
             def formattedDate = new java.text.SimpleDateFormat("ddMMyyyy").format(new java.util.Date())
-            outputFileName = "D57_LiveScore_v${variant.versionName}_c${variant.versionCode}_${formattedDate}.apk"
+            outputFileName = "D59_SpeakerCleaner_v${variant.versionName}_c${variant.versionCode}_${formattedDate}_${type}.apk"
         }
 
         // Rename AAB
@@ -80,7 +81,7 @@ android {
                 def bundleOutputDir = layout.buildDirectory.dir("outputs/bundle/${variantName}").get().asFile
                 def aabFile = bundleOutputDir.listFiles()?.find { it.name.endsWith(".aab") }
                 if (aabFile != null) {
-                    def newName = "D57_LiveScore_v${variant.versionName}_c${variant.versionCode}_${formattedDate}.aab"
+                    def newName = "D59_SpeakerCleaner_v${variant.versionName}_c${variant.versionCode}_${formattedDate}_${type}.aab"
                     aabFile.renameTo(new File(aabFile.parent, newName))
                     println("Renamed bundle to: $newName")
                 }

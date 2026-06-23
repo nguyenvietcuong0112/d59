@@ -72,10 +72,6 @@ class SplashActivity : BaseActivity() {
         LogEvent.log(this, "banner_splash_view")
 
         interCallback = object : InterCallback() {
-            override fun onAdOpened() {
-                super.onAdOpened()
-                LogEvent.log(this@SplashActivity, "inter_splash_view")
-            }
 
             override fun onAdClosedByUser() {
                 super.onAdClosedByUser()
@@ -120,7 +116,6 @@ class SplashActivity : BaseActivity() {
                 binding.tvProgressPercent.text = "$progress%"
                 delay(80L)
             }
-            startLanguage()
         }
 
         val consentHelper = ConsentHelper.getInstance(this)

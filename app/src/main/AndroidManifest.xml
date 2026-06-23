@@ -22,6 +22,7 @@
 
         <activity
             android:name=".presentation.ui.splash.SplashActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,56 +33,67 @@
         <activity
             android:name=".presentation.ui.manual.ManualCleanActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".presentation.ui.vibration.VibrationCleanActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".presentation.ui.airblow.AirBlowActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".presentation.ui.main.MainActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".presentation.ui.main.TipDetailActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".presentation.ui.language.LanguageActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".presentation.ui.settings.SettingsActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".presentation.ui.onboarding.OnboardActitivty"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".presentation.ui.testspeaker.TestSpeakerActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".util.ActivityLoadNativeFullV1"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <activity
             android:name=".util.ActivityLoadNativeFullV2"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SpeakerCleanerRemoveWater" />
 
         <meta-data
@@ -105,6 +117,9 @@
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.NATIVE_AD_DEBUGGER_ENABLED"
+            android:value="false" />
 
     </application>
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_name">Pulitore Altoparlante</string>
     <string name="app_description">Rimuovi acqua e polvere intrappolate nell\'altoparlante del tuo telefono tramite frequenze sonore.</string>
     <string name="volume_warning_title">Avviso Volume</string>
     <string name="volume_warning_desc">Imposta il volume al MASSIMO e posiziona il telefono con lo schermo rivolto verso il basso per ottenere i migliori risultati.</string>
@@ -27,13 +27,19 @@
     <string name="lore_ipsum_tip"></string>
 
     <string name="tip1_title">Imposta il Volume al Massimo</string>
+    <string name="tip1_desc">Imposta il volume del telefono al livello massimo prima di iniziare il processo di pulizia. Il suono di pulizia genera forti vibrazioni audio che aiutano a spingere le gocce d’acqua intrappolate, la polvere e i detriti fuori dalla camera dell’altoparlante. Livelli di volume più alti generano vibrazioni più intense, rendendo il processo di pulizia più efficace.\n\nAssicurati che tutti i dispositivi Bluetooth, le cuffie o gli altoparlanti esterni siano scollegati in modo che il suono venga riprodotto direttamente tramite l’altoparlante integrato del telefono. Durante la pulizia, potresti notare gocce d’acqua che fuoriescono dall’apertura dell’altoparlante o lievi cambiamenti nella qualità del suono. Questo è normale e indica che il suono di pulizia sta funzionando come previsto.\n\nSe l’altoparlante è stato esposto a una quantità significativa di acqua, l’esecuzione di più cicli di pulizia può aiutare a rimuovere l’umidità residua e a ripristinare prestazioni audio più chiare.</string>
     <string name="tip1_preview">Imposta il volume del telefono al livello più alto prima di iniziare il processo di pulizia…</string>
+
     <string name="tip2_title">Mantieni l\'Altoparlante Rivolto Verso il Basso</string>
-    <string name="tip2_preview">Per ottenere i migliori risultati, posiziona sempre il telefono con l\'apertura dell\'altoparlante rivolta verso il basso…
-</string>    <string name="tip3_title">Pulisci il Microfono con Cura</string>
+    <string name="tip2_desc">Per ottenere i migliori risultati, posiziona sempre il telefono in modo che l’apertura dell’altoparlante sia rivolta verso il basso durante il processo di pulizia. La gravità lavora insieme alle vibrazioni sonore per aiutare le gocce d’acqua a fuoriuscire più facilmente dalla camera dell’altoparlante.\n\nPosiziona il dispositivo su una superficie stabile ed evita di modificarne la posizione mentre la pulizia è attiva. Mantenere l’altoparlante rivolto verso il basso aiuta a evitare che l’umidità si depositi più in profondità all’interno della cavità dell’altoparlante e migliora l’efficacia di ciascun ciclo di pulizia.\n\nSe il telefono è stato recentemente esposto a pioggia, schizzi o contatti accidentali con l’acqua, la combinazione del volume massimo con il corretto orientamento può migliorare significativamente la rimozione dell’umidità e il ripristino dell’audio.</string>
+    <string name="tip2_preview">Per ottenere i migliori risultati, posiziona sempre il telefono con l\'apertura dell\'altoparlante rivolta verso il basso…</string>
+
+    <string name="tip3_title">Pulisci il Microfono con Cura</string>
+    <string name="tip3_desc">Il microfono svolge un ruolo fondamentale nelle chiamate telefoniche, nelle registrazioni vocali, nelle chat video e nelle funzioni dell’assistente vocale. Nel corso del tempo, polvere, pelucchi e piccole particelle possono accumularsi intorno all’apertura del microfono, riducendo la nitidezza della voce e compromettendo le prestazioni audio complessive.\n\nLa pulizia regolare aiuta a mantenere la sensibilità del microfono e garantisce che la voce rimanga chiara durante le conversazioni e le registrazioni. Se le persone segnalano spesso che la tua voce risulta ovattata o distante, i detriti accumulati potrebbero ostruire l’apertura del microfono.\n\nPulisci sempre delicatamente ed evita di applicare una forza eccessiva. Strumenti appuntiti o metodi di pulizia aggressivi possono danneggiare la griglia del microfono e i componenti interni. Un approccio attento aiuta a preservare le prestazioni a lungo termine e la qualità audio del microfono.</string>
     <string name="tip3_preview">Il microfono svolge un ruolo fondamentale nelle chiamate, nelle registrazioni vocali e nelle videochiamate...</string>
 
     <string name="tip4_title">Usa uno Stuzzicadenti per Rimuovere Polvere o Sporco con Attenzione</string>
+    <string name="tip4_desc">Uno stuzzicadenti di legno può essere utilizzato per rimuovere la polvere e i detriti visibili intorno all’apertura del microfono. Procedi lentamente e usa solo la punta vicino all’area superficiale. L’obiettivo è allentare lo sporco intorno alla griglia protettiva senza raggiungere i componenti interni.\n\nUsa movimenti leggeri e controllati ed esamina l’area sotto una buona illuminazione. Non inserire mai lo stuzzicadenti in profondità nel foro del microfono e non applicare pressione direttamente verso l’interno, poiché ciò potrebbe danneggiare le parti sensibili all’interno del dispositivo.\n\nRimuovere gradualmente piccole quantità di detriti è più sicuro e spesso più efficace rispetto al tentativo di pulire tutto in una volta. Con la cura adeguata, la manutenzione ordinaria del microfono può migliorare la qualità delle chiamate, ottimizzare le registrazioni vocali e aiutare a mantenere il sistema audio del telefono al massimo delle sue prestazioni.</string>
     <string name="tip4_preview">Uno stuzzicadenti di legno può essere utilizzato per rimuovere polvere e detriti visibili intorno al microfono...</string>
 
     <string name="title_air_blow">Soffio d\'Aria</string>

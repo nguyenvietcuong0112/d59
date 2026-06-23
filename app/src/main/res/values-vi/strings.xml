@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_name">Làm Sạch Loa</string>
     <string name="app_description">Loại bỏ nước và bụi bị mắc kẹt trong loa điện thoại bằng tần số âm thanh.</string>
     <string name="volume_warning_title">Cảnh Báo Âm Lượng</string>
     <string name="volume_warning_desc">Vui lòng tăng âm lượng lên MỨC TỐI ĐA và đặt điện thoại úp màn hình xuống để đạt hiệu quả tốt nhất.</string>
@@ -27,15 +27,19 @@
     <string name="lore_ipsum_tip"></string>
 
     <string name="tip1_title">Tăng Âm Lượng Lên Mức Tối Đa</string>
+    <string name="tip1_desc">Đặt âm lượng điện thoại của bạn ở mức cao nhất trước khi bắt đầu quá trình làm sạch. Âm thanh làm sạch tạo ra các rung động âm thanh mạnh mẽ giúp đẩy các giọt nước bám lại, bụi bẩn và mảnh vụn ra khỏi khoang loa. Mức âm lượng cao hơn sẽ tạo ra các rung động mạnh hơn, giúp quá trình làm sạch hiệu quả hơn.\n\nHãy đảm bảo ngắt kết nối mọi thiết bị Bluetooth, tai nghe hoặc loa ngoài để âm thanh phát trực tiếp qua loa tích hợp của điện thoại. Trong quá trình làm sạch, bạn có thể nhận thấy các giọt nước thoát ra từ khe loa hoặc có sự thay đổi nhẹ về chất lượng âm thanh. Điều này là bình thường và cho thấy âm thanh làm sạch đang hoạt động như mong đợi.\n\nNếu loa của bạn đã tiếp xúc với một lượng nước đáng kể, việc chạy nhiều chu kỳ làm sạch có thể giúp loại bỏ độ ẩm còn lại và khôi phục hiệu suất âm thanh rõ ràng hơn.</string>
     <string name="tip1_preview">Hãy tăng âm lượng điện thoại lên mức cao nhất trước khi bắt đầu quá trình làm sạch...</string>
 
     <string name="tip2_title">Giữ Loa Hướng Xuống Dưới</string>
+    <string name="tip2_desc">Để có kết quả tốt nhất, luôn đặt điện thoại sao cho khe loa hướng xuống dưới trong quá trình làm sạch. Trọng lực hoạt động cùng với các rung động âm thanh giúp các giọt nước di chuyển ra khỏi khoang loa dễ dàng hơn.\n\nĐặt thiết bị trên một bề mặt ổn định và tránh thay đổi vị trí của nó khi đang làm sạch. Giữ cho loa hướng xuống dưới giúp ngăn độ ẩm lắng sâu hơn vào bên trong khoang loa và nâng cao hiệu quả của mỗi chu kỳ làm sạch.\n\nNếu điện thoại của bạn vừa tiếp xúc với nước mưa, bị bắn nước hoặc vô tình tiếp xúc với nước, việc kết hợp âm lượng tối đa với hướng đặt chính xác có thể cải thiện đáng kể khả năng loại bỏ độ ẩm và khôi phục âm thanh.</string>
     <string name="tip2_preview">Để đạt hiệu quả tốt nhất, hãy luôn đặt điện thoại sao cho lỗ loa hướng xuống dưới...</string>
 
     <string name="tip3_title">Vệ Sinh Micro Cẩn Thận</string>
+    <string name="tip3_desc">Micrô đóng vai trò quan trọng trong các cuộc gọi điện thoại, ghi âm giọng nói, trò chuyện video và các chức năng của trợ lý giọng nói. Theo thời gian, bụi bẩn, xơ vải và các hạt nhỏ có thể tích tụ xung quanh khe micrô, làm giảm độ rõ của giọng nói và ảnh hưởng đến hiệu suất âm thanh tổng thể.\n\nLàm sạch thường xuyên giúp duy trì độ nhạy của micrô và đảm bảo giọng nói của bạn luôn rõ ràng trong các cuộc trò chuyện và ghi âm. Nếu mọi người thường xuyên phản hồi rằng giọng nói của bạn nghe có vẻ bị nghẹt hoặc xa xăm, các mảnh vụn tích tụ có thể đang chặn khe micrô.\n\nLuôn làm sạch nhẹ nhàng và tránh dùng lực quá mạnh. Các dụng cụ sắc nhọn hoặc phương pháp làm sạch thô bạo có thể làm hỏng màng lưới micrô và các thành phần bên trong. Tiếp cận một cách cẩn thận giúp duy trì hiệu suất micrô và chất lượng âm thanh lâu dài.</string>
     <string name="tip3_preview">Micro đóng vai trò quan trọng trong cuộc gọi, ghi âm và trò chuyện video...</string>
 
     <string name="tip4_title">Dùng Tăm Để Loại Bỏ Bụi Bẩn Một Cách Cẩn Thận</string>
+    <string name="tip4_desc">Một chiếc tăm gỗ có thể được sử dụng để loại bỏ bụi và mảnh vụn có thể nhìn thấy xung quanh khe micrô. Thực hiện chậm rãi và chỉ sử dụng đầu tăm gần vùng bề mặt. Mục tiêu là làm sạch bụi bẩn xung quanh màng lưới bảo vệ mà không chạm vào các thành phần bên trong.\n\nSử dụng các chuyển động nhẹ nhàng, có kiểm soát và kiểm tra khu vực dưới ánh sáng tốt. Không bao giờ chọc tăm sâu vào lỗ micrô hoặc ấn trực tiếp vào trong, vì điều này có thể làm hỏng các bộ phận nhạy cảm bên trong thiết bị.\n\nLoại bỏ dần các mảnh vụn nhỏ sẽ an toàn và thường hiệu quả hơn so với việc cố gắng làm sạch mọi thứ cùng một lúc. Với sự chăm sóc đúng cách, việc bảo dưỡng micrô định kỳ có thể cải thiện chất lượng cuộc gọi, nâng cao chất lượng ghi âm giọng nói và giúp hệ thống âm thanh của điện thoại hoạt động tốt nhất.</string>
     <string name="tip4_preview">Có thể sử dụng tăm gỗ để loại bỏ bụi và các mảnh vụn nhìn thấy được quanh micro...</string>
 
     <string name="title_air_blow">Thổi Khí</string>

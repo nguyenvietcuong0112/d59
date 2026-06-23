@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_name">Limpador de Alto-falante</string>
     <string name="app_description">Remova água e poeira presas no alto-falante do seu telefone usando frequências sonoras.</string>
     <string name="volume_warning_title">Aviso de Volume</string>
     <string name="volume_warning_desc">Por favor, ajuste o volume para o MÁXIMO e coloque o telefone com a tela voltada para baixo para obter os melhores resultados.</string>
@@ -27,15 +27,19 @@
     <string name="lore_ipsum_tip"></string>
 
     <string name="tip1_title">Ajuste o Volume para o Máximo</string>
+    <string name="tip1_desc">Ajuste o volume do seu telefone para o nível mais alto antes de iniciar o processo de limpeza. O som de limpeza gera fortes vibrações sonoras que ajudam a empurrar as gotas de água presas, poeira e detritos para fora da cavidade do alto-falante. Níveis de volume mais altos geram vibrações mais intensas, tornando o processo de limpeza mais eficaz.\n\nCertifique-se de que quaisquer dispositivos Bluetooth, fones de ouvido ou alto-falantes externos estejam desconectados para que o som seja reproduzido diretamente pelo alto-falante integrado do seu telefone. Durante a limpeza, você poderá notar gotas de água saindo da abertura do alto-falante ou pequenas alterações na qualidade do som. Isso é normal e indica que o som de limpeza está funcionando como esperado.\n\nSe o seu alto-falante tiver sido exposto a uma quantidade significativa de água, executar vários ciclos de limpeza poderá ajudar a remover a umidade restante e restaurar um desempenho de áudio mais claro.</string>
     <string name="tip1_preview">Ajuste o volume do telefone para o nível mais alto antes de iniciar o processo de limpeza...</string>
 
     <string name="tip2_title">Mantenha o Alto-falante Voltado para Baixo</string>
+    <string name="tip2_desc">Para obter os melhores resultados, sempre posicione seu telefone de modo que a abertura do alto-falante fique voltada para baixo durante o processo de limpeza. A gravidade trabalha em conjunto com as vibrações sonoras para ajudar as gotas de água a saírem da cavidade do alto-falante com mais facilidade.\n\nColoque o dispositivo em uma superfície estável e evite mudar sua posição enquanto a limpeza estiver ativa. Manter o alto-falante apontado para baixo ajuda a evitar que a umidade se deposite mais profundamente na cavidade do alto-falante e melhora a eficácia de cada ciclo de limpeza.\n\nSe o seu telefone foi exposto recentemente à chuva, respingos ou contato acidental com a água, combinar o volume máximo com a orientação correta pode melhorar significativamente a remoção da umidade e a recuperação do áudio.</string>
     <string name="tip2_preview">Para obter os melhores resultados, mantenha a abertura do alto-falante voltada para baixo...</string>
 
     <string name="tip3_title">Limpe o Microfone com Cuidado</string>
+    <string name="tip3_desc">O microfone desempenha um papel fundamental em chamadas telefônicas, gravações de voz, videochamadas e funções de assistente de voz. Com o tempo, poeira, fiapos e pequenas partículas podem se acumular ao redor da abertura do microfone, reduzindo a clareza da voz e afetando o desempenho geral do áudio.\n\nA limpeza regular ajuda a manter a sensibilidade del microfone e garante que sua voz permaneça clara durante conversas e gravações. Se as pessoas frequentemente relatarem que sua voz parece abafada ou distante, detritos acumulados podem estar bloqueando a abertura do microfone.\n\nLimpe sempre com cuidado e evite usar força excessiva. Ferramentas afiadas ou métodos de limpeza agressivos podem danificar a malha protetora do microfone e os componentes internos. Adotar uma abordagem cuidadosa ajuda a preservar o desempenho a longo prazo e a qualidade do áudio do microfone.</string>
     <string name="tip3_preview">O microfone desempenha um papel fundamental em chamadas, gravações de voz e videochamadas...</string>
 
     <string name="tip4_title">Use um Palito para Remover Poeira ou Sujeira com Cuidado</string>
+    <string name="tip4_desc">Um palito de dente de madeira pode ser usado para remover poeira e detritos visíveis ao redor da abertura do microfone. Trabalhe devagar e use apenas a ponta perto da área da superfície. O objetivo é soltar a sujeira ao redor da malha protetora sem atingir os componentes internos.\n\nUse movimentos leves e controlados e inspecione a área sob uma boa iluminação. Nunca insira o palito profundamente no orifício do microfone ou aplique pressão diretamente para dentro, pois isso pode danificar peças sensíveis dentro do dispositivo.\n\nRemover pequenas quantidades de detritos gradualmente é mais seguro e, frequentemente, mais eficaz do que tentar limpar tudo de uma vez. Com os cuidados adequados, a manutenção rotineira do microfone pode melhorar a qualidade das chamadas, otimizar as gravações de voz e ajudar a manter o sistema de áudio do seu telefone funcionando da melhor forma.</string>
     <string name="tip4_preview">Um palito de madeira pode ser usado para remover poeira e detritos visíveis ao redor do microfone...</string>
 
     <string name="title_air_blow">Sopro de Ar</string>

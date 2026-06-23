@@ -102,15 +102,9 @@ class Application : AdsApplication() {
         Timber.plant(Timber.DebugTree())
 
         AppOpenManager.getInstance().disableAppResumeWithActivity(SplashActivity::class.java)
-        AppOpenManager.getInstance().disableAppResumeWithActivity(MainActivity::class.java)
+//        AppOpenManager.getInstance().disableAppResumeWithActivity(MainActivity::class.java)
         AppOpenManager.getInstance().disableAppResumeWithActivity(LanguageActivity::class.java)
         AppOpenManager.getInstance().disableAppResumeWithActivity(OnboardActitivty::class.java)
-//        AppOpenManager.getInstance().disableAppResumeWithActivity(LanguageActivity::class.java)
-//        AppOpenManager.getInstance().disableAppResumeWithActivity(IntroActivity::class.java)
-//        AppOpenManager.getInstance()
-//            .disableAppResumeWithActivity(IntroActivity::class.java)
-//        AppOpenManager.getInstance().disableAppResumeWithActivity(PermissionActivity::class.java)
-//        AppOpenManager.getInstance().disableAppResumeWithActivity(MainActivity::class.java)
 
         CoroutineScope(Dispatchers.IO).launch {
             delay(5000)

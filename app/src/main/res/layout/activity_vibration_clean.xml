@@ -156,7 +156,7 @@
                                     android:id="@+id/tv_vibration_percent"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text=""
+                                    android:text="0"
                                     android:textSize="32sp"
                                     android:textColor="@color/primary_blue_selected"
                                     android:textStyle="bold"

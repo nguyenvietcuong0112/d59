@@ -57,7 +57,6 @@ abstract class BaseActivity : AppCompatActivity() {
                         or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
             )
         }
-
     }
 
     abstract fun bind()

@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.removedust.speaker.cleaner.base.BaseActivity
 import com.removedust.speaker.cleaner.R
 import com.removedust.speaker.cleaner.databinding.ActivityTipDetailBinding
+import com.removedust.speaker.cleaner.util.AdsConfig
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,6 +30,20 @@ class TipDetailActivity : BaseActivity() {
         binding.ivTipImage.setImageResource(imageResId)
 
         binding.btnBack.setOnClickListener {
+            navigateBack()
+        }
+
+        onBackPressedDispatcher.addCallback(
+            this,
+            object : androidx.activity.OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    navigateBack()
+                }
+            })
+    }
+
+    private fun navigateBack() {
+        AdsConfig.showInterClickAd(this) {
             finish()
         }
     }

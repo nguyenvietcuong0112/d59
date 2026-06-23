@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_name">Hoparlör Temizleyici</string>
     <string name="app_description">Ses frekanslarını kullanarak telefonunuzun hoparlöründe sıkışan suyu ve tozu temizleyin.</string>
     <string name="volume_warning_title">Ses Seviyesi Uyarısı</string>
     <string name="volume_warning_desc">En iyi sonuçlar için lütfen ses seviyesini MAKSİMUMA getirin ve telefonunuzu ekranı aşağı bakacak şekilde yerleştirin.</string>
@@ -27,15 +27,19 @@
     <string name="lore_ipsum_tip"></string>
 
     <string name="tip1_title">Ses Seviyesini Maksimuma Ayarlayın</string>
+    <string name="tip1_desc">Temizleme işlemine başlamadan önce telefonunuzun ses seviyesini en yüksek seviyeye getirin. Temizleme sesi, hoparlör odasındaki sıkışmış su damlacıklarını, tozu ve birikintileri dışarı itmeye yardımcı olan güçlü ses titreşimleri oluşturur. Daha yüksek ses seviyeleri daha güçlü titreşimler üreterek temizleme işlemini daha etkili hale getirir.\n\nSesin doğrudan telefonunuzun dahili hoparlöründen çalınması için tüm Bluetooth cihazlarının, kulaklıkların veya harici hoparlörlerin bağlantısının kesildiğinden emin olun. Temizleme sırasında hoparlör açıklığından su damlacıklarının çıktığını veya ses kalitesinde hafif değişiklikler olduğunu fark edebilirsiniz. Bu normaldir ve temizleme sesinin tasarlandığı gibi çalıştığını gösterir.\n\nHoparlörünüz önemli miktarda suya maruz kaldıysa, birden fazla temizleme döngüsü çalıştırmak kalan nemin giderilmesine ve daha net bir ses performansının geri kazanılmasına yardımcı olabilir.</string>
     <string name="tip1_preview">Temizleme işlemine başlamadan önce telefonunuzun ses seviyesini en yüksek seviyeye getirin...</string>
 
     <string name="tip2_title">Hoparlörü Aşağı Bakacak Şekilde Tutun</string>
+    <string name="tip2_desc">En iyi sonuçlar için, temizleme işlemi sırasında telefonunuzu her zaman hoparlör açıklığı aşağıya bakacak şekilde konumlandırın. Yerçekimi, ses titreşimleriyle birlikte çalışarak su damlacıklarının hoparlör odasından daha kolay çıkmasını sağlar.\n\nCihazı sabit bir yüzeye yerleştirin ve temizleme aktifken konumunu değiştirmekten kaçının. Hoparlörü aşağıya doğru tutmak, nemin hoparlör boşluğunun daha derinlerine yerleşmesini önlemeye yardımcı olur ve her temizleme döngüsünün etkinliğini artırır.\n\nTelefonunuz yakın zamanda yağmura, su sıçramasına veya kazara su temasına maruz kaldıysa, maksimum ses seviyesini doğru yönlendirmeyle birleştirmek nemin giderilmesini ve sesin geri kazanılmasını önemli ölçüde artırabilir.</string>
     <string name="tip2_preview">En iyi sonuçlar için temizleme sırasında hoparlör açıklığını her zaman aşağıya doğru konumlandırın...</string>
 
     <string name="tip3_title">Mikrofonu Dikkatlice Temizleyin</string>
+    <string name="tip3_desc">Mikrofon; telefon görüşmeleri, ses kayıtları, görüntülü sohbetler ve sesli asistan işlevlerinde kritik bir rol oynar. Zamanla mikrofon açıklığının etrafında toz, tüy ve küçük parçacıklar birikebilir; bu da ses netliğini azaltır ve genel ses performansını etkiler.\n\nDüzenli temizlik mikrofon hassasiyetinin korunmasına yardımcı olur ve konuşmalar ile kayıtlar sırasında sesinizin net kalmasını sağlar. İnsanlar sıklıkla sesinizin boğuk veya uzaktan geldiğini bildiriyorsa, biriken kalıntılar mikrofon açıklığını tıkıyor olabilir.\n\nHer zaman nazikçe temizleyin ve aşırı güç kullanmaktan kaçının. Keskin aletler veya agresif temizleme yöntemleri mikrofon ızgarasına ve dahili bileşenlere zarar verebilir. Dikkatli bir yaklaşım benimsemek, uzun vadeli mikrofon performansını ve ses kalitesini korumaya yardımcı olur.</string>
     <string name="tip3_preview">Mikrofon; telefon görüşmeleri, ses kayıtları ve görüntülü konuşmalarda önemli bir rol oynar...</string>
 
     <string name="tip4_title">Toz veya Kirleri Dikkatlice Temizlemek İçin Kürdan Kullanın</string>
+    <string name="tip4_desc">Mikrofon açıklığının etrafındaki görünür toz ve kalıntıları temizlemek için ahşap bir kürdan kullanılabilir. Yavaş çalışın ve ucu yalnızca yüzey alanına yakın yerlerde kullanın. Amaç, dahili bileşenlere ulaşmadan koruyucu ızgara etrafındaki kiri gevşetmektir.\n\nHafif, kontrollü hareketler kullanın ve alanı iyi bir aydınlatma altında inceleyin. Kürdanı asla mikrofon deliğine derinlemesine sokmayın veya doğrudan içeriye doğru basınç uygulamayın, çünkü bu cihazın içindeki hassas parçalara zarar verebilir.\n\nAz miktardaki kalıntıyı kademeli olarak temizlemek, her şeyi tek seferde temizlemeye çalışmaktan daha güvenli ve genellikle daha etkilidir. Uygun bakım ile rutin mikrofon temizliği arama kalitesini artırabilir, ses kayıtlarını iyileştirebilir ve telefonunuzun ses sisteminin en iyi performansı göstermesine yardımcı olabilir.</string>
     <string name="tip4_preview">Mikrofon çevresindeki görünür toz ve kirleri temizlemek için ahşap bir kürdan kullanılabilir...</string>
 
     <string name="title_air_blow">Hava Üfleme</string>

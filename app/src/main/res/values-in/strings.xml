@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_name">Pembersih Speaker</string>
     <string name="app_description">Hilangkan air dan debu yang terperangkap di speaker ponsel Anda dengan frekuensi suara.</string>
     <string name="volume_warning_title">Peringatan Volume</string>
     <string name="volume_warning_desc">Harap atur volume ke MAKSIMUM dan letakkan ponsel dengan layar menghadap ke bawah untuk hasil terbaik.</string>
@@ -27,16 +27,20 @@
     <string name="lore_ipsum_tip"></string>
 
     <string name="tip1_title">Atur Volume ke Maksimum</string>
+    <string name="tip1_desc">Atur volume ponsel Anda ke tingkat tertinggi sebelum memulai proses pembersihan. Suara pembersih menghasilkan getaran audio yang kuat yang membantu mengeluarkan tetesan air, debu, dan kotoran yang terperangkap dari dalam ruang speaker. Tingkat volume yang lebih tinggi menghasilkan getaran yang lebih kuat, membuat proses pembersihan menjadi lebih efektif.\n\nPastikan semua perangkat Bluetooth, headphone, atau speaker eksternal terputus agar suara diputar langsung melalui speaker internal ponsel Anda. Selama pembersihan, Anda mungkin melihat tetesan air keluar dari lubang speaker atau sedikit perubahan kualitas suara. Hal ini normal dan menunjukkan bahwa suara pembersih berfungsi sebagaimana mestinya.\n\nJika speaker Anda terkena air dalam jumlah banyak, menjalankan beberapa siklus pembersihan dapat membantu menghilangkan sisa kelembapan dan memulihkan performa audio yang lebih jernih.</string>
     <string name="tip1_preview">Atur volume ponsel Anda ke tingkat tertinggi sebelum memulai proses pembersihan...</string>
 
     <string name="tip2_title">Pastikan Speaker Menghadap ke Bawah</string>
+    <string name="tip2_desc">Untuk hasil terbaik, selalu posisikan ponsel Anda agar lubang speaker menghadap ke bawah selama proses pembersihan. Gravitasi bekerja sama dengan getaran suara untuk membantu tetesan air keluar dari ruang speaker dengan lebih mudah.\n\nLetakkan perangkat di permukaan yang stabil dan hindari mengubah posisinya saat pembersihan sedang aktif. Menjaga speaker tetap menghadap ke bawah membantu mencegah kelembapan mengendap lebih dalam di dalam rongga speaker dan meningkatkan efektivitas setiap siklus pembersihan.\n\nJika ponsel Anda baru-baru ini terkena hujan, percikan air, atau kontak air yang tidak disengaja, menggabungkan volume maksimum dengan orientasi yang benar dapat meningkatkan pembersihan kelembapan dan pemulihan audio secara signifikan.</string>
     <string name="tip2_preview">Untuk hasil terbaik, selalu posisikan ponsel agar lubang speaker menghadap ke bawah...</string>
 
     <string name="tip3_title">Bersihkan Mikrofon dengan Hati-hati</string>
-    <string name="tip3_preview">Mikrofon berperan penting dalam panggilan telepon, rekaman suara, dan panggilan video...</string>
+    <string name="tip3_desc">Mikrofon memainkan peran penting dalam panggilan telepon, rekaman suara, obrolan video, dan fungsi asisten suara. Seiring waktu, debu, serat, dan partikel kecil dapat terkumpul di sekitar lubang mikrofon, mengurangi kejelasan suara dan memengaruhi performa audio secara keseluruhan.\n\nPembersihan secara teratur membantu menjaga sensitivitas mikrofon dan memastikan suara Anda tetap jernih selama percakapan dan rekaman. Jika orang lain sering melaporkan bahwa suara Anda terdengar teredam atau jauh, tumpukan kotoran mungkin menyumbat lubang mikrofon.\n\nSelalu bersihkan dengan lembut dan hindari menggunakan tenaga berlebih. Alat yang tajam atau metode pembersihan yang agresif dapat merusak pelindung mikrofon dan komponen internal. Pendekatan yang hati-hati membantu menjaga performa jangka panjang dan kualitas audio mikrofon.</string>
+    <string name="tip3_preview">Bersihkan mikrofon dengan hati-hati...</string>
 
     <string name="tip4_title">Gunakan Tusuk Gigi untuk Menghilangkan Debu atau Kotoran dengan Hati-hati</string>
-    <string name="tip4_preview">Tusuk gigi kayu dapat digunakan untuk menghilangkan debu dan kotoran yang terlihat di sekitar mikrofon...</string>
+    <string name="tip4_desc">Tusuk gigi kayu dapat digunakan untuk menghilangkan debu dan kotoran yang terlihat di sekitar lubang mikrofon. Lakukan secara perlahan dan gunakan ujungnya saja di dekat area permukaan. Tujuannya adalah untuk melonggarkan kotoran di sekitar jaring pelindung tanpa menyentuh komponen internal.\n\nGunakan gerakan ringan dan terkendali serta periksa area tersebut di bawah pencahayaan yang baik. Jangan pernah memasukkan tusuk gigi terlalu dalam ke lubang mikrofon atau menekan langsung ke dalam, karena dapat merusak bagian sensitif di dalam perangkat.\n\nMembersihkan kotoran dalam jumlah kecil secara bertahap lebih aman dan sering kali lebih efektif daripada mencoba mencoba membersihkan semuanya sekaligus. Dengan perawatan yang tepat, pemeliharaan rutin mikrofon dapat meningkatkan kualitas panggilan, mengoptimalkan rekaman suara, dan membantu menjaga sistem audio ponsel Anda bekerja pada performa terbaiknya.</string>
+    <string name="tip4_preview">Gunakan tusuk gigi untuk menghilangkan debu atau kotoran dengan hati-hati...</string>
 
     <string name="title_air_blow">Tiupan Udara</string>
     <string name="label_custom_frequency">Frekuensi Kustom</string>

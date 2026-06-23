@@ -19,8 +19,8 @@
         <!-- Circular Back Button -->
         <ImageView
             android:id="@+id/btn_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
             android:src="@drawable/ic_back_arrow"
             android:background="@drawable/bg_settings_circle_button"
             android:padding="12dp"

@@ -35,7 +35,6 @@ class MainActivity : BaseActivity() {
     private var savedInstanceState: Bundle? = null
 
     private val handlerADS = Handler(Looper.getMainLooper())
-    private var isFirstLoad = true
     private var delayedLoadExpandTask: Runnable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -104,7 +103,7 @@ class MainActivity : BaseActivity() {
                 supportFragmentManager.findFragmentByTag("home") as? HomeFragment ?: HomeFragment()
             tipsFragment =
                 supportFragmentManager.findFragmentByTag("tips") as? TipsFragment ?: TipsFragment()
-            activeFragment = if (tipsFragment.isVisible) tipsFragment else homeFragment
+            activeFragment = if (!tipsFragment.isHidden) tipsFragment else homeFragment
         }
 
         binding.btnNavHome.setOnClickListener {
@@ -174,21 +173,8 @@ class MainActivity : BaseActivity() {
     override fun onResume() {
         super.onResume()
         if (!SharePreferenceUtils.isOrganic(this)) {
-            if (isFirstLoad) {
-                loadNativeBanner {
-                    delayedLoadExpandTask = Runnable {
-                        loadNativeCollapse()
-                        isFirstLoad = false
-                    }
-                    handlerADS.postDelayed(delayedLoadExpandTask!!, 1000)
-                }
-            } else {
-                loadNativeBanner {
-                    delayedLoadExpandTask = Runnable {
-                        loadNativeCollapse()
-                    }
-                    handlerADS.postDelayed(delayedLoadExpandTask!!, 45000)
-                }
+            loadNativeBanner {
+                scheduleNextCollapse(1000)
             }
         } else {
             binding.frAdsCollap.removeAllViews()
@@ -207,6 +193,16 @@ class MainActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         handlerADS.removeCallbacksAndMessages(null)
+    }
+
+    private fun scheduleNextCollapse(delayMs: Long) {
+        delayedLoadExpandTask?.let {
+            handlerADS.removeCallbacks(it)
+        }
+        delayedLoadExpandTask = Runnable {
+            loadNativeCollapse()
+        }
+        handlerADS.postDelayed(delayedLoadExpandTask!!, delayMs)
     }
 
     private fun loadNativeCollapse() {
@@ -234,7 +230,9 @@ class MainActivity : BaseActivity() {
                     closeButton?.setOnClickListener {
                         binding.frAdsCollap.removeAllViews()
                         binding.layoutBottomNav.visibility = View.VISIBLE
-                        loadNativeBanner()
+                        loadNativeBanner {
+                            scheduleNextCollapse(20000)
+                        }
                     }
 
                     binding.frAdsCollap.addView(adView)
@@ -246,11 +244,13 @@ class MainActivity : BaseActivity() {
                     if (isDestroyed || isFinishing) return
                     binding.frAdsCollap.removeAllViews()
                     binding.layoutBottomNav.visibility = View.VISIBLE
+                    scheduleNextCollapse(20000)
                 }
             })
         } else {
             binding.frAdsCollap.removeAllViews()
             binding.layoutBottomNav.visibility = View.VISIBLE
+            scheduleNextCollapse(20000)
         }
     }
 

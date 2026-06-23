@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Speaker Cleaner</string>
+    <string name="app_name">منظف السماعة</string>
     <string name="app_description">أزل الماء والغبار العالقين من سماعة هاتفك باستخدام الترددات الصوتية.</string>
     <string name="volume_warning_title">تحذير مستوى الصوت</string>
     <string name="volume_warning_desc">يرجى رفع مستوى الصوت إلى الحد الأقصى ووضع الهاتف بحيث تكون الشاشة للأسفل للحصول على أفضل النتائج.</string>

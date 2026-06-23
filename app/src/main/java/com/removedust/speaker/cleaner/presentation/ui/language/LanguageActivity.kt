@@ -97,18 +97,13 @@ class LanguageActivity : BaseActivity() {
             onItemClick = { lang ->
                 selectedLanguage = lang.code
                 
-                // 1. Save selected language immediately
-                SharePreferenceUtils.setLanguage(this@LanguageActivity, lang.code)
-
-                SystemUtil.saveLocale(this@LanguageActivity, lang.code)
-
                 // Refresh checked indicators in lists
                 adapter.notifyDataSetChanged()
 
                 // 2. Make button active visually and load select ad
                 binding.ivSelect.alpha = 1.0f
                 isLanguageSelected = true
-                binding.tvLanguageWarning.visibility = View.GONE
+                binding.tvLanguageWarning.visibility = View.VISIBLE
                 loadAdsNativeLanguageSelect()
             },
             isSelectedPredicate = { lang ->
@@ -135,6 +130,7 @@ class LanguageActivity : BaseActivity() {
 
             // Apply selected application locale dynamically on transition
             val localeCode = selectedLanguage
+            SharePreferenceUtils.setLanguage(this, localeCode)
             SystemUtil.saveLocale(this, localeCode)
             SystemUtil.changeLang(localeCode, this)
             val appLocale = LocaleListCompat.forLanguageTags(localeCode)

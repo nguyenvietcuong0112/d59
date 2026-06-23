@@ -68,16 +68,26 @@ class VibrationCleanActivity : BaseActivity() {
         }
 
         binding.cardModeNormal.setOnClickListener {
-            if (!isVibrating) {
+            if (isStrongMode) {
                 isStrongMode = false
                 updateSelectorUI()
+                if (isVibrating) {
+                    viewModel.updateManualFrequency(65)
+                    stopHardwareVibrate()
+                    startHardwareVibrate(false)
+                }
             }
         }
 
         binding.cardModeStrong.setOnClickListener {
-            if (!isVibrating) {
+            if (!isStrongMode) {
                 isStrongMode = true
                 updateSelectorUI()
+                if (isVibrating) {
+                    viewModel.updateManualFrequency(50)
+                    stopHardwareVibrate()
+                    startHardwareVibrate(true)
+                }
             }
         }
 
@@ -108,10 +118,6 @@ class VibrationCleanActivity : BaseActivity() {
         binding.btnVibrationStartStop.backgroundTintList = ColorStateList.valueOf(
             ContextCompat.getColor(this, R.color.error)
         )
-
-        // Disable mode selectors
-        binding.cardModeNormal.isEnabled = false
-        binding.cardModeStrong.isEnabled = false
 
         // 1. Play low frequency vibrating sound sweep (e.g. 50Hz for Strong, 65Hz for Normal)
         viewModel.startManualCleaning(if (isStrongMode) 50 else 65)
@@ -151,10 +157,6 @@ class VibrationCleanActivity : BaseActivity() {
             ContextCompat.getColor(this, R.color.primary_blue_selected)
         )
         binding.tvVibrationPercent.text = getString(R.string.text_percent, 0)
-
-        // Re-enable mode selectors
-        binding.cardModeNormal.isEnabled = true
-        binding.cardModeStrong.isEnabled = true
     }
 
     private fun observeViewModel() {
