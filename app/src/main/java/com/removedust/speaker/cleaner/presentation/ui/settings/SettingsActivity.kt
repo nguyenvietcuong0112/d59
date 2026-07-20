@@ -3,10 +3,13 @@ package com.removedust.speaker.cleaner.presentation.ui.settings
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
+import com.cscmobi.libraryads.ads.utils.EnumAdsNamePosition
+import com.cscmobi.libraryads.commons.utils.Constants
+import com.cscmobi.libraryads.views.language.CSCLanguageActivity
 import com.removedust.speaker.cleaner.BuildConfig
 import com.removedust.speaker.cleaner.base.BaseActivity
 import com.removedust.speaker.cleaner.databinding.ActivitySettingsBinding
-import com.removedust.speaker.cleaner.presentation.ui.language.LanguageActivity
+//import com.removedust.speaker.cleaner.presentation.ui.language.LanguageActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,8 +31,9 @@ class SettingsActivity : BaseActivity() {
 
 
         binding.btnSettingsLanguage.setOnClickListener {
-            val intent = Intent(this, LanguageActivity::class.java).apply {
-                putExtra(LanguageActivity.EXTRA_FROM_PROFILE, true)
+            val intent = Intent(this, CSCLanguageActivity::class.java).apply {
+                putExtra(Constants.FROM_SETTING, true)
+                putExtra(Constants.NAME_AD_NATIVE_LANGUAGE, "native_banner_home")
             }
             startActivity(intent)
         }

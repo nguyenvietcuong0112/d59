@@ -1,10 +1,8 @@
 package com.removedust.speaker.cleaner.presentation.ui.main
 
 import android.content.Intent
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import com.removedust.speaker.cleaner.base.BaseActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -12,17 +10,13 @@ import com.removedust.speaker.cleaner.R
 import com.removedust.speaker.cleaner.databinding.ActivityMainBinding
 import com.removedust.speaker.cleaner.presentation.ui.settings.SettingsActivity
 import com.removedust.speaker.cleaner.util.AdsConfig
-import android.view.LayoutInflater
-import android.widget.ImageView
 import android.os.Handler
 import android.os.Looper
-import com.google.android.gms.ads.nativead.NativeAd
-import com.google.android.gms.ads.nativead.NativeAdView
-import com.mallegan.ads.callback.NativeCallback
-import com.mallegan.ads.util.Admob
-import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
-import com.removedust.speaker.cleaner.util.SharePreferenceUtils
+import com.removedust.speaker.cleaner.util.RemoteConfigs
+import com.cscmobi.libraryads.ads.native_ads.CSCNativeManager
+
 import com.removedust.speaker.cleaner.util.LogEvent
+import com.removedust.speaker.cleaner.util.SharePreferenceUtils
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,10 +28,15 @@ class MainActivity : BaseActivity() {
     private lateinit var activeFragment: Fragment
     private var savedInstanceState: Bundle? = null
 
-    private val handlerADS = Handler(Looper.getMainLooper())
-    private var delayedLoadExpandTask: Runnable? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        if (intent.getBooleanExtra("disable_animation", false)) {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                overrideActivityTransition(OVERRIDE_TRANSITION_OPEN, 0, 0)
+            } else {
+                @Suppress("DEPRECATION")
+                overridePendingTransition(0, 0)
+            }
+        }
         this.savedInstanceState = savedInstanceState
         super.onCreate(savedInstanceState)
     }
@@ -172,128 +171,35 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (!SharePreferenceUtils.isOrganic(this)) {
-            loadNativeBanner {
-                scheduleNextCollapse(1000)
-            }
-        } else {
-            binding.frAdsCollap.removeAllViews()
-            binding.frAdsBanner.removeAllViews()
-        }
+        loadNativeBanner()
+        loadNativeCollapse()
+
     }
 
-    override fun onPause() {
-        super.onPause()
-        delayedLoadExpandTask?.let {
-            handlerADS.removeCallbacks(it)
-            delayedLoadExpandTask = null
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        handlerADS.removeCallbacksAndMessages(null)
-    }
-
-    private fun scheduleNextCollapse(delayMs: Long) {
-        delayedLoadExpandTask?.let {
-            handlerADS.removeCallbacks(it)
-        }
-        delayedLoadExpandTask = Runnable {
-            loadNativeCollapse()
-        }
-        handlerADS.postDelayed(delayedLoadExpandTask!!, delayMs)
-    }
 
     private fun loadNativeCollapse() {
-        val nativeAllId = try {
-            RemoteConfigManager.getInstance()
-                .getAdId("native_collab_home", getString(R.string.native_collab_home))
-        } catch (e: Exception) {
-            getString(R.string.native_collab_home)
-        }
+        val isEnabled = RemoteConfigs.native_collab_home
 
-        if (nativeAllId.isNotEmpty()) {
-            Admob.getInstance().loadNativeAd(this, nativeAllId, object : NativeCallback() {
-                override fun onNativeAdLoaded(nativeAd: NativeAd?) {
-                    if (isDestroyed || isFinishing) return
-
-                    val adView = LayoutInflater.from(this@MainActivity)
-                        .inflate(R.layout.layout_native_home_collapse, null) as NativeAdView
-
-                    binding.layoutBottomNav.visibility = View.GONE
-
-                    binding.frAdsCollap.removeAllViews()
-
-                    val closeButton = adView.findViewById<ImageView>(R.id.close)
-
-                    closeButton?.setOnClickListener {
-                        binding.frAdsCollap.removeAllViews()
-                        binding.layoutBottomNav.visibility = View.VISIBLE
-                        loadNativeBanner {
-                            scheduleNextCollapse(20000)
-                        }
-                    }
-
-                    binding.frAdsCollap.addView(adView)
-                    binding.frAdsCollap.bringToFront()
-                    Admob.getInstance().pushAdsToViewCustom(nativeAd, adView)
-                }
-
-                override fun onAdFailedToLoad() {
-                    if (isDestroyed || isFinishing) return
-                    binding.frAdsCollap.removeAllViews()
-                    binding.layoutBottomNav.visibility = View.VISIBLE
-                    scheduleNextCollapse(20000)
-                }
-            })
-        } else {
-            binding.frAdsCollap.removeAllViews()
-            binding.layoutBottomNav.visibility = View.VISIBLE
-            scheduleNextCollapse(20000)
-        }
+        CSCNativeManager.showCollapsibleNative(
+            activity = this,
+            adFrame = binding.frAdsCollap,
+            adName = "native_collab_home",
+            adId = getString(R.string.native_collab_home),
+            adLayout = R.layout.layout_native_home_collapse,
+            canShowAd = isEnabled,
+            refreshTime = 20_000L
+        )
     }
 
-    private fun loadNativeBanner(onLoaded: (() -> Unit)? = null) {
-        binding.frAdsCollap.removeAllViews()
+    private fun loadNativeBanner() {
+        val isEnabled = RemoteConfigs.native_banner_home
 
-        val nativeAllId = try {
-            RemoteConfigManager.getInstance()
-                .getAdId("native_banner_home", getString(R.string.native_banner_home))
-        } catch (e: Exception) {
-            getString(R.string.native_banner_home)
-        }
-
-        if (nativeAllId.isNotEmpty()) {
-            Admob.getInstance().loadNativeAd(this, nativeAllId, object : NativeCallback() {
-                override fun onNativeAdLoaded(nativeAd: NativeAd?) {
-                    if (isDestroyed || isFinishing) return
-
-                    val adView = LayoutInflater.from(this@MainActivity)
-                        .inflate(R.layout.layout_native_banner, null) as NativeAdView
-
-                    binding.layoutBottomNav.visibility = View.VISIBLE
-
-                    binding.frAdsBanner.removeAllViews()
-                    binding.frAdsBanner.addView(adView)
-                    binding.frAdsBanner.bringToFront()
-
-                    Admob.getInstance().pushAdsToViewCustom(nativeAd, adView)
-
-                    onLoaded?.invoke()
-                }
-
-                override fun onAdFailedToLoad() {
-                    if (isDestroyed || isFinishing) return
-                    binding.frAdsBanner.removeAllViews()
-                    binding.layoutBottomNav.visibility = View.VISIBLE
-                    onLoaded?.invoke()
-                }
-            })
-        } else {
-            binding.frAdsBanner.removeAllViews()
-            binding.layoutBottomNav.visibility = View.VISIBLE
-            onLoaded?.invoke()
-        }
+        CSCNativeManager.showNative(
+            adFrame = binding.frAdsBanner,
+            adName = "native_banner_home",
+            adId = getString(R.string.native_banner_home),
+            adLayout = R.layout.layout_native_banner,
+            canShowAd = isEnabled,
+        )
     }
 }

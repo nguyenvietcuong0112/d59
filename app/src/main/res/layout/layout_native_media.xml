@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.gms.ads.nativead.NativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.gms.ads.nativead.NativeAdView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/native_ad_view"
     android:layout_width="fill_parent"
     android:background="#EFEFEF"
     android:layout_height="wrap_content">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="250dp"
+        app:shimmer_auto_start="true">
+        <include layout="@layout/csc_shimer_top_layout_recycler_native" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <RelativeLayout
         android:id="@+id/ad_unit_content"
@@ -80,7 +92,7 @@
                 </LinearLayout>
             </LinearLayout>
             <com.google.android.gms.ads.nativead.MediaView
-                android:id="@+id/ad_media"
+                android:id="@+id/media_view"
                 android:layout_width="fill_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="@dimen/_5sdp"
@@ -92,7 +104,6 @@
                 android:id="@+id/ad_call_to_action"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/_35sdp"
-                android:layout_marginHorizontal="@dimen/_5sdp"
                 android:layout_marginVertical="@dimen/_5sdp"
                 android:background="@drawable/bg_button_ads"
                 android:gravity="center"

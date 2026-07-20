@@ -38,7 +38,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        app:layout_constraintBottom_toTopOf="@id/frAdsBanner">
+        app:layout_constraintBottom_toTopOf="@id/layoutAds">
 
         <TextView
             android:id="@+id/tvProgressPercent"
@@ -74,6 +74,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginBottom="40dp"
             android:text="@string/splash_ads_warning"
             android:textColor="@color/black"
@@ -82,16 +83,13 @@
     </RelativeLayout>
 
     <FrameLayout
-        android:id="@+id/frAdsBanner"
+        android:id="@+id/layoutAds"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" >
-        <include
-            layout="@layout/layout_banner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+
     </FrameLayout>
 
     <androidx.constraintlayout.widget.Guideline

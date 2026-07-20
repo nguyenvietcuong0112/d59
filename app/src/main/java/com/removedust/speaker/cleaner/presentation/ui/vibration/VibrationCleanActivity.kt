@@ -27,13 +27,9 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import dagger.hilt.android.AndroidEntryPoint
 
-import android.view.LayoutInflater
-import android.view.View
-import com.google.android.gms.ads.nativead.NativeAd
-import com.google.android.gms.ads.nativead.NativeAdView
-import com.mallegan.ads.callback.NativeCallback
-import com.mallegan.ads.util.Admob
-import com.removedust.speaker.cleaner.domain.remoteconfig.RemoteConfigManager
+
+import com.removedust.speaker.cleaner.util.RemoteConfigs
+import com.cscmobi.libraryads.ads.native_ads.CSCNativeManager
 import com.removedust.speaker.cleaner.util.LogEvent
 import com.removedust.speaker.cleaner.presentation.ui.testspeaker.TestSpeakerActivity
 
@@ -238,33 +234,15 @@ class VibrationCleanActivity : BaseActivity() {
     }
 
     private fun loadAdsNative() {
-        val adId = try {
-            RemoteConfigManager.getInstance()
-                .getAdId("native_all", getString(R.string.native_all))
-        } catch (e: Exception) {
-            getString(R.string.native_all)
-        }
-        if (adId.isNotEmpty()) {
-            Admob.getInstance().loadNativeAds(this, adId, 1, object : NativeCallback() {
-                override fun onNativeAdLoaded(nativeAd: NativeAd?) {
-                    super.onNativeAdLoaded(nativeAd)
-                    LogEvent.log(this@VibrationCleanActivity, "native_question_view")
-                    val adView = LayoutInflater.from(this@VibrationCleanActivity)
-                        .inflate(R.layout.layout_native_media, null) as NativeAdView
-                    binding.frAds.removeAllViews()
-                    binding.frAds.addView(adView)
-                    Admob.getInstance().pushAdsToViewCustom(nativeAd, adView)
-                }
+        val isEnabled = RemoteConfigs.native_all
 
-                override fun onAdFailedToLoad() {
-                    super.onAdFailedToLoad()
-                    binding.frAds.removeAllViews()
-                    binding.frAds.visibility = View.GONE
-                }
-            })
-        } else {
-            binding.frAds.visibility = View.GONE
-        }
+        CSCNativeManager.showNative(
+            adFrame = binding.frAds,
+            adName = "native_all",
+            adId = getString(R.string.native_all),
+            adLayout = R.layout.layout_native_media,
+            canShowAd = isEnabled
+        )
     }
 
     override fun onDestroy() {

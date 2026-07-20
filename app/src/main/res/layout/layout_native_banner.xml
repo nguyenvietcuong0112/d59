@@ -4,6 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#F8F8F8">
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_auto_start="true">
+        <include layout="@layout/csc_shimer_top_layout_recycler_native" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -67,24 +74,16 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/ad_badge"
-                    style="@style/AppTheme.AdAttribution"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center" />
+                    android:layout_width="19dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dip"
+                    android:background="@drawable/ad_text"
+                    android:gravity="center"
+                    android:text="Ad"
+                    android:textColor="#20C197"
+                    android:textSize="9sp" />
 
-                <TextView
-                    android:id="@+id/ad_body"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:ellipsize="end"
-                    android:gravity="start"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:text="fsdfsdfsf"
-                    android:textColor="@color/black"
-                    android:textSize="11sp" />
             </LinearLayout>
 
         </LinearLayout>

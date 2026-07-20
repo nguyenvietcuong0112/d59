@@ -1,18 +1,32 @@
 package com.removedust.speaker.cleaner.util
 
 import android.content.Context
+import com.cscmobi.libraryads.CSCFOConfigs
 
-import com.mallegan.ads.util.Admob
 
 object SharePreferenceUtils {
     private const val PREF_NAME = "speaker_cleaner_prefs"
     private const val KEY_LANGUAGE = "selected_language"
 
+
+    private const val KEY_IS_ORGANIC = "is_organic"
+
     fun isOrganic(context: Context?): Boolean {
-        return !Admob.getInstance().isLoadFullAds
-//        return  false
+        if (CSCFOConfigs.isOrganic) {
+            setOrganic(context, true)
+            return true
+        }
+        if (context == null) return false
+        val prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+//        return false;
+        return prefs.getBoolean(KEY_IS_ORGANIC, false)
     }
 
+    fun setOrganic(context: Context?, isOrganic: Boolean) {
+        if (context == null) return
+        val prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        prefs.edit().putBoolean(KEY_IS_ORGANIC, isOrganic).apply()
+    }
 
 
     fun getLanguage(context: Context?): String? {
