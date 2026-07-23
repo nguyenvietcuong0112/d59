@@ -12,7 +12,7 @@
         android:id="@+id/layoutAds"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <include layout="@layout/admob_layout_native_full" />
+        <include layout="@layout/admob_layout_native_full_inter" />
     </FrameLayout>
 
     <!-- Top control area (Countdown / Close button) -->
@@ -23,18 +23,17 @@
         android:layout_gravity="top|end"
         android:layout_margin="16dp">
 
-        <!-- Countdown TextView (shown during countdown) -->
+<!--        &lt;!&ndash; Countdown TextView (shown during countdown) &ndash;&gt;-->
         <TextView
             android:id="@+id/tvCountdown"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:gravity="center"
             android:text="3"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/transparent"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:visibility="visible"
-            android:background="#80000000" />
+            android:visibility="gone"/>
 
         <!-- Next / Close Button (hidden during countdown, shown after) -->
         <TextView
@@ -43,12 +42,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingHorizontal="16dp"
-            android:paddingVertical="8dp"
-            android:text="Skip"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:background="@drawable/close_ful_ads"
             android:visibility="gone"
-            android:background="#CC000000" />
+            />
     </FrameLayout>
 </FrameLayout>

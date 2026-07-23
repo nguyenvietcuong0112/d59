@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:visibility="gone">
 
-        <include layout="@layout/csc_admob_native_full_onboarding" />
+        <include layout="@layout/admob_layout_native_full_inter" />
     </FrameLayout>
 
 
@@ -32,9 +32,8 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:padding="5dp"
-            android:src="@drawable/tt_skip_btn"
-            app:tint="@color/primary" />
+            android:visibility="gone"
+            android:src="@drawable/close_ful_ads" />
     </RelativeLayout>
 
 

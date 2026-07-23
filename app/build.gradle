@@ -15,8 +15,8 @@ android {
         applicationId "com.removedust.speaker.cleaner"
         minSdk 24
         targetSdk 37
-        versionCode 2
-        versionName "0.0.2"
+        versionCode 4
+        versionName "0.0.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -101,7 +101,7 @@ dependencies {
     implementation libs.kotlin.stdlib
 
     //lib ads
-    implementation("com.cscapp:library:0.0.2")
+    implementation("com.cscapp:library-test:0.0.7")
     implementation "com.intuit.sdp:sdp-android:1.1.0"
     implementation "com.intuit.ssp:ssp-android:1.1.0"
 
